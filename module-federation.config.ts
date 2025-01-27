@@ -1,6 +1,5 @@
 import { createModuleFederationConfig } from '@module-federation/modern-js';
 
-// REMOTE
 export default createModuleFederationConfig({
     name: 'remoteDesignSystem',
     filename: 'remoteEntry.js',
@@ -14,8 +13,8 @@ export default createModuleFederationConfig({
         './SimpleButton': './src/components/button/SimpleButton.tsx',
         './Checkbox': './src/components/form/Checkbox.tsx',
         './Checkboxes': './src/components/form/Checkboxes.tsx',
-        // './DatePicker': './src/components/form/DatePicker.tsx',
-        // './DateProvider': './src/components/form/DateProvider.tsx',
+        './DatePicker': './src/components/form/DatePicker.tsx',
+        './DateProvider': './src/components/form/DateProvider.tsx',
         './Fieldset': './src/components/form/Fieldset.tsx',
         './HelperText': './src/components/form/HelperText.tsx',
         './Input': './src/components/form/Input.tsx',
@@ -52,15 +51,3 @@ export default createModuleFederationConfig({
         'react-dom': { singleton: true },
     },
 });
-
-// HOST
-// export default createModuleFederationConfig({
-//     name: 'host',
-//     remotes: {
-//         remote: 'remote@http://localhost:3006/mf-manifest.json',
-//     },
-//     shared: {
-//         react: { singleton: true },
-//         'react-dom': { singleton: true },
-//     },
-// });
