@@ -1,0 +1,8 @@
+.inputContainer {
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @media (min-width: 500px) {
+        width: var(--input-desktop-width);
+    }
+}

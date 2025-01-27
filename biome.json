@@ -1,37 +1,38 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": true,
-    "defaultBranch": "main",
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space"
-  },
-  "javascript": {
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "vcs": {
+        "enabled": true,
+        "defaultBranch": "main",
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
     "formatter": {
-      "quoteStyle": "single",
-      "arrowParentheses": "asNeeded",
-      "jsxQuoteStyle": "double",
-      "lineWidth": 80
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "arrowParentheses": "asNeeded",
+            "jsxQuoteStyle": "double",
+            "lineWidth": 120
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "suspicious": {
+                "noDuplicateFontNames": "off"
+            }
+        }
+    },
+    "organizeImports": {
+        "enabled": true
+    },
+    "files": {
+        "ignoreUnknown": true,
+        "ignore": [".vscode/**/*", "node_modules/**/*", "dist/**/*"]
     }
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noDuplicateFontNames": "off"
-      }
-    }
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "files": {
-    "ignoreUnknown": true,
-    "ignore": [".vscode/**/*", "node_modules/**/*", "dist/**/*"]
-  }
 }

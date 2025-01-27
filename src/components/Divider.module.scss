@@ -1,0 +1,12 @@
+.dividerLight,
+.dividerDark {
+    margin: 12px 0;
+}
+
+.dividerLight {
+    border: 1px solid var(--utility-neutral-10);
+}
+
+.dividerDark {
+    border: 1px solid var(--utility-neutral-20);
+}

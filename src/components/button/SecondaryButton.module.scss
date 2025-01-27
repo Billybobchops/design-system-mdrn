@@ -1,0 +1,60 @@
+@use '@styles/mixins.scss' as *;
+
+.button {
+    @include buttons;
+
+    &.blue,
+    &.green,
+    &.red {
+        background-color: var(--utility-neutral-0);
+
+        &:hover {
+            color: var(--utility-neutral-0);
+        }
+    }
+
+    &.red {
+        border: 2px solid var(--utility-red-50);
+        color: var(--utility-red-50);
+
+        &:hover {
+            background-color: var(--utility-red-70);
+            border: 2px solid var(--utility-red-70);
+        }
+    }
+
+    &.green {
+        border: 2px solid var(--utility-green-70);
+        color: var(--utility-green-70);
+
+        &:hover {
+            background-color: var(--utility-green-80);
+            border: 2px solid var(--utility-green-80);
+        }
+    }
+
+    &.blue {
+        border: 2px solid var(--theme-a-4);
+        color: var(--theme-a-4);
+
+        &:hover {
+            background-color: var(--theme-a-3);
+            border: 2px solid var(--theme-a-3);
+            color: var(--utility-neutral-0);
+        }
+    }
+
+    &.disabled {
+        background-color: var(--utility-neutral-10);
+        border: none;
+        color: var(--utility-neutral-60);
+
+        &:hover {
+            background-color: var(--utility-neutral-10);
+            border: none;
+            color: var(--utility-neutral-60);
+        }
+    }
+
+    @include mobile-100-w;
+}

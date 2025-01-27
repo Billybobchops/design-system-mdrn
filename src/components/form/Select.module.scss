@@ -1,0 +1,49 @@
+@use '@styles/mixins.scss' as *;
+
+.selectContainer {
+    margin-bottom: var(--input-container-margin-bottom);
+}
+
+.chevronPositioning {
+    position: relative;
+    align-items: center;
+    display: flex;
+    width: fit-content;
+
+    svg {
+        pointer-events: none;
+        position: absolute;
+        right: 1rem;
+    }
+
+    @include mobile-100-w;
+}
+
+.select {
+    appearance: none;
+    background: none;
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    font-size: var(--input-font-size);
+    margin: var(--input-margin);
+    margin-right: 0; // override
+    height: var(--input-height);
+    padding: var(--input-padding);
+    padding-right: var(--spacing-l); // override
+    width: var(--input-desktop-width);
+
+    &:focus-visible {
+        border: var(--input-border-focus);
+    }
+
+    &:hover {
+        border: var(--input-border-hover);
+    }
+
+    @include mobile-100-w;
+}
+
+.input[aria-invalid='true'] {
+    border-color: var(--input-invalid-border-color);
+    border-left-width: var(--input-invalid-border-left-width);
+}

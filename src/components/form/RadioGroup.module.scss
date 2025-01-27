@@ -1,0 +1,72 @@
+.radioOption {
+    align-items: center;
+    display: flex;
+    margin-bottom: var(--spacing-xxs);
+}
+
+.radio {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    padding: 0;
+    border: 2px solid var(--utility-neutral-50);
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    transition: outline 0.1s;
+
+    &:not(:disabled):checked {
+        border-color: var(--theme-a-3);
+        background-color: var(--theme-a-3);
+        background-clip: content-box;
+        padding: 2px;
+        background-image: radial-gradient(
+            circle,
+            var(--theme-a-3) 0%,
+            var(--theme-a-3) 50%,
+            transparent 60%,
+            transparent 100%
+        );
+    }
+
+    &:disabled {
+        background-color: var(--utility-neutral-50);
+    }
+
+    &:disabled:checked {
+        background-image: radial-gradient(
+            circle,
+            var(--utility-neutral-50) 0%,
+            var(--utility-neutral-50) 50%,
+            transparent 50%,
+            transparent 100%
+        );
+    }
+
+    &:focus-visible:not(:checked) {
+        outline: 2px solid var(--theme-a-3);
+        border: 2px solid var(--utility-neutral-50);
+        transform: scale(1.05);
+    }
+
+    &:not(:disabled):hover {
+        border: 2px solid var(--theme-a-3);
+        transform: scale(1.05);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+
+        &:focus-visible {
+            transform: scale(1);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) and (hover: hover) {
+        &:not(:disabled):hover {
+            transform: scale(1);
+        }
+    }
+}

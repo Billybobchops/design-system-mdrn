@@ -1,14 +1,16 @@
 {
-  "extends": "@modern-js/tsconfig/base",
-  "compilerOptions": {
-    "declaration": false,
-    "jsx": "preserve",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@shared/*": ["./shared/*"]
-    }
-  },
-  "include": ["src", "shared", "config", "modern.config.ts"],
-  "exclude": ["**/node_modules"]
+    "extends": "@modern-js/tsconfig/base",
+    "compilerOptions": {
+        "declaration": false,
+        "jsx": "preserve",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@shared/*": ["./shared/*"],
+            "@components/*": ["./src/components/*"],
+            "@styles/*": ["./src/styles/*"]
+        }
+    },
+    "include": ["src", "shared", "config", "modern.config.ts"],
+    "exclude": ["**/node_modules"]
 }

@@ -1,0 +1,17 @@
+.stepList {
+    display: flex;
+    list-style-type: none;
+}
+
+.step {
+    color: var(--utility-neutral-70);
+    font-size: clamp(0.75rem, 2vw + 0.25rem, 1rem);
+    margin-right: 40px;
+    padding: 10px 0;
+}
+
+.active {
+    color: var(--utility-neutral-80);
+    border-bottom: 5px solid var(--utility-green-20);
+    font-weight: 600;
+}

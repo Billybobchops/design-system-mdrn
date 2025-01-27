@@ -1,0 +1,56 @@
+@use '@styles/mixins.scss' as *;
+
+.button {
+    @include buttons;
+
+    background: none;
+    border: none;
+    border-radius: var(--border-radius-s);
+    color: var(--utility-neutral-100);
+    margin: 12px 20px;
+    padding: 0;
+
+    &.red,
+    &.green,
+    &.blue,
+    &.disabled {
+        background: none;
+
+        &:hover {
+            background: none;
+        }
+    }
+
+    &.red {
+        color: var(--utility-red-50);
+
+        &:hover {
+            color: var(--utility-red-70);
+        }
+    }
+
+    &.green {
+        color: var(--utility-green-60);
+
+        &:hover {
+            color: var(--utility-green-80);
+        }
+    }
+
+    &.blue {
+        color: var(--theme-a-4);
+
+        &:hover {
+            color: var(--theme-a-3);
+        }
+    }
+
+    &.disabled {
+        background: none;
+        color: var(--utility-neutral-60);
+    }
+
+    @media (max-width: 500px) {
+        margin: 0 12px 12px 12px;
+    }
+}

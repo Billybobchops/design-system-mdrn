@@ -1,116 +1,175 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-  background: linear-gradient(to bottom, transparent, #fff) #eceeef;
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* root font-size for entire app */
+    margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 0;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
 * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
 }
 
-.container-box {
-  min-height: 100vh;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
+:root {
+    /* Display Vars: just for demo gallery purposes */
+    --display-border: 3px dashed skyblue;
+    --component-area-border: 2px dashed #b511b5;
+
+    /* IC Product Colors */
+    --ic-blue-10: #e9eff7;
+    --ic-blue-20: #a5c0e1;
+    --ic-blue-30: #79a0d1;
+    --ic-blue-40: #4c81c2;
+    --ic-blue-50: #1f61b3;
+    --ic-blue-60: #194e8f;
+    --ic-blue-70: #133a6b;
+    --ic-blue-80: #0c2748;
+    --ic-blue-90: #061324;
+
+    /* Utility colors (theme-agnostic) */
+    --utility-green-10: #dbf1de;
+    --utility-green-20: #b8e3bd;
+    --utility-green-30: #94d49b;
+    --utility-green-40: #71c67a;
+    --utility-green-50: #4db859;
+    --utility-green-60: #3e9347;
+    --utility-green-70: #2e6e35;
+    --utility-green-80: #1f4a24;
+    --utility-green-90: #0f2512;
+
+    --utility-red-10: #f3d4d4;
+    --utility-red-20: #e7a9a9;
+    --utility-red-30: #dc7e7d;
+    --utility-red-40: #d05352;
+    --utility-red-50: #c42827;
+    --utility-red-60: #9d201f;
+    --utility-red-70: #761817;
+    --utility-red-80: #4e1010;
+    --utility-red-90: #270808;
+
+    --utility-yellow-10: #f6f2c8;
+    --utility-yellow-20: #f1ecac;
+    --utility-yellow-30: #ede690;
+    --utility-yellow-40: #e8df75;
+    --utility-yellow-50: #e4d959;
+    --utility-yellow-60: #beb54a;
+    --utility-yellow-70: #98913b;
+    --utility-yellow-80: #726c2c;
+    --utility-yellow-90: #5b5724;
+
+    --utility-neutral-0: #fff;
+    --utility-neutral-05: #f3f3f3;
+    --utility-neutral-10: #e8e8e8;
+    --utility-neutral-20: #d1d1d1;
+    --utility-neutral-30: #bababa;
+    --utility-neutral-40: #a3a3a3;
+    --utility-neutral-50: #a3a3a3;
+    --utility-neutral-60: #707070;
+    --utility-neutral-70: #545454;
+    --utility-neutral-80: #383838;
+    --utility-neutral-90: #1c1c1c;
+    --utility-neutral-100: #000;
+
+    /* Blue Theme Tokens */
+    --theme-a-1: var(--ic-blue-10);
+    --theme-a-2: var(--ic-blue-30);
+    --theme-a-3: var(--ic-blue-50);
+    --theme-a-4: var(--ic-blue-70);
+
+    /* Green Theme Tokens */
+
+    /* Grey Theme Tokens */
+
+    /* Spacing */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-s: 16px;
+    --spacing-m: 24px;
+    --spacing-l: 32px;
+    --spacing-xl: 40px;
+    --spacing-xxl: 48px;
+
+    /* Border Radius */
+    --border-radius-s: var(--spacing-xxs);
+    --border-radius-m: var(--spacing-xs);
+    --border-radius-l: var(--spacing-l);
+
+    /* Focus */
+    --outline-offset-s: 3px; /* change this to focus-outline ... etc.  */
+    --outline-offset-m: 4px;
+    --focus-outline: 2.5px solid var(--theme-a-3);
+
+    /* Buttons */
+    --button-border: none;
+    --button-focus-offset: var(--outline-offset-s);
+    --button-font-size: 1rem;
+    --button-font-weight: 700;
+    --button-margin: 0 var(--spacing-s) var(--spacing-s) 0;
+    --button-padding-large: 12px 70px;
+    --button-padding-small: 12px 20px;
+
+    /* Typography */
+    --h1-font-size: clamp(1.25rem, 4vw + 1rem, 2rem);
+    --h2-font-size: clamp(1.125rem, 2vw + 1rem, 1.5625rem);
+    --h3-font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+    --h4-font-size: 1rem;
+    --h5-font-size: 0.875rem;
+    --h6-font-size: 0.75rem;
+    --heading-margin: 0 0 var(--spacing-s) 0;
+    --body-font-size: clamp(0.75rem, 2vw + 0.55rem, 1rem);
+
+    /* Forms */
+    --input-border-radius: var(--border-radius-s);
+    --input-border: 1px solid var(--utility-neutral-50);
+    --input-border-focus: 2px solid var(--theme-a-3);
+    --input-border-hover: 1px solid var(--theme-a-3);
+    --input-container-margin-bottom: 1rem;
+    --input-desktop-width: 500px;
+    --input-font-size: 1rem;
+    --input-margin: var(--spacing-xxs) var(--spacing-xxs) var(--spacing-xxs) 0;
+    --input-padding: var(--spacing-xs) var(--spacing-s);
+    --input-height: var(--spacing-xl);
+    --input-invalid-border-color: var(--utility-red-50);
+    --input-invalid-border-left-width: 3px;
+    --label-font-size: 1rem;
+    --label-font-weight: 700;
+    --required-color: var(--utility-red-50);
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.sr-only {
+    -webkit-clip-path: inset(50%) !important;
+    border: 0 !important;
+    clip-path: inset(50%) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
 }
 
-.title {
-  display: flex;
-  margin: 4rem 0 4rem;
-  align-items: center;
-  font-size: 4rem;
-  font-weight: 600;
+*:not(dialog) {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-.logo {
-  width: 6rem;
-  margin: 7px 0 0 1rem;
+.no-scroll {
+    position: fixed;
+    width: 100%;
 }
 
-.name {
-  color: #4ecaff;
-}
-
-.description {
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.3rem;
-  color: #1b3a42;
-  margin-bottom: 5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 12px;
-  padding: 0.6rem 0.9rem;
-  font-size: 1.05rem;
-  font-family:
-    Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.container-box .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1100px;
-  margin-top: 3rem;
-}
-
-.card {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100px;
-  color: inherit;
-  text-decoration: none;
-  transition: 0.15s ease;
-  width: 45%;
-}
-
-.card:hover,
-.card:focus {
-  transform: scale(1.05);
-}
-
-.card h2 {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-.card p {
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-top: 1rem;
-}
-
-.arrow-right {
-  width: 1.3rem;
-  margin-left: 0.5rem;
-  margin-top: 3px;
+a {
+    color: inherit;
+    text-decoration: none;
 }
