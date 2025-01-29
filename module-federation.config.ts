@@ -4,6 +4,7 @@ export default createModuleFederationConfig({
     name: 'remoteDesignSystem',
     filename: 'remoteEntry.js',
     exposes: {
+        './DesignSystemRootStyles': './src/styles/design-system-styles.ts',
         './VisuallyHidden': './src/components/accessibility/VisuallyHidden.tsx',
         './CTAButton': './src/components/button/CTAButton.tsx',
         './IconButton': './src/components/button/IconButton.tsx',
@@ -40,11 +41,8 @@ export default createModuleFederationConfig({
         './Chip': './src/components/Chip.tsx',
         './Dialog': './src/components/Dialog.tsx',
         './Divider': './src/components/Divider.tsx',
-        './FeatureStatus': './src/components/FeatureStatus.tsx',
-        './Footer': './src/components/Footer.tsx',
         './Icon': './src/components/Icon.tsx',
         './InlineLink': './src/components/InlineLink.tsx',
-        './ProgressIndicator': './src/components/ProgressIndicator.tsx',
     },
     shared: {
         react: { singleton: true },

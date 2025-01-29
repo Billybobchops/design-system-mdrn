@@ -9,20 +9,15 @@ import ButtonPrimaryStory from './story/ButtonPrimaryStory';
 import ButtonSecondaryStory from './story/ButtonSecondaryStory';
 import ButtonSimpleStory from './story/ButtonSimpleStory';
 import DialogStory from './story/DialogStory';
-// import DateProvider from '~/components/form/DateProvider';
 import DividerStory from './story/DividerStory';
-import FeatureStatusStory from './story/FeatureStatusStory';
-import FooterStory from './story/FooterStory';
 import InlineLinkStory from './story/InlineLinkStory';
 import InputStory from './story/InputStory';
-import ProgressIndicatorStory from './story/ProgressIndicatorStory';
 import TabsStory from './story/TabStory';
 import TypographyStory from './story/TypographyStory';
 
 export function Gallery() {
     return (
         <main>
-            {/* <DateProvider> */}
             <GalleryDisplayArea title="Typography (Fluid)">
                 <TypographyStory />
             </GalleryDisplayArea>
@@ -83,21 +78,6 @@ export function Gallery() {
             <GalleryDisplayArea title="Divider">
                 <DividerStory />
             </GalleryDisplayArea>
-
-            {/* This should go in the Payer Portal App NOT here */}
-            <GalleryDisplayArea title="Feature Status">
-                <FeatureStatusStory />
-            </GalleryDisplayArea>
-
-            <GalleryDisplayArea title="Progress Indicator">
-                <ProgressIndicatorStory />
-            </GalleryDisplayArea>
-
-            {/* This should go in the Payer Portal App NOT here */}
-            <GalleryDisplayArea title="Footer">
-                <FooterStory />
-            </GalleryDisplayArea>
-            {/* </DateProvider> */}
         </main>
     );
 }

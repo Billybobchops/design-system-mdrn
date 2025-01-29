@@ -21,4 +21,7 @@ export default defineConfig({
         }),
         moduleFederationPlugin({ ssr: false }),
     ],
+    html: {
+        favicon: './src/assets/favicon-32x32.png',
+    },
 });

@@ -1,10 +1,10 @@
 import { Helmet } from '@modern-js/runtime/head';
-import './index.css';
+import '../styles/_design-system-root.scss';
 import { Gallery } from '@/gallery/Gallery';
 
 const Index = () => (
     <div>
-        <Helmet title="Starling UI Design System" />
+        <Helmet title="Design System" />
         <main>
             <Gallery />
         </main>
