@@ -1,0 +1,78 @@
+.nav {
+    background-color: var(--nav-background-color);
+}
+
+.navList {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    position: relative;
+}
+
+.linkGrid {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.navLink {
+    color: var(--nav-link-color);
+    display: inline-block;
+    font-size: var(--nav-link-font-size);
+    font-weight: var(--nav-link-font-weight);
+    line-height: 1.4;
+    padding: var(--spacing-s);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        border-bottom: var(--nav-link-hover-border);
+        color: var(--nav-link-hover-color);
+    }
+}
+
+.dropdownToggle {
+    background: none;
+    border: none;
+    color: var(--utility-neutral-100);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--theme-a-2);
+    }
+}
+
+.subMenu {
+    background: var(--utility-neutral-0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // need to use design-system elevation variable here
+    display: none; // Initially hidden
+    left: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+
+    .navItem:hover &,
+    .dropdownToggle[aria-expanded='true'] + & {
+        display: block;
+    }
+}
+
+.subMenuLink {
+    color: var(--theme-a-4);
+    border-bottom: var(--submenu-link-border);
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-m);
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+        background: var(--theme-a-1);
+    }
+}

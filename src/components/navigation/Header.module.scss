@@ -1,0 +1,11 @@
+.header {
+    align-items: center;
+    background: var(--utility-neutral-10);
+    border-bottom: 1px solid var(--utility-neutral-20); // temp
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.homeLink {
+    text-decoration: none;
+}

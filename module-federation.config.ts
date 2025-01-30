@@ -43,6 +43,7 @@ export default createModuleFederationConfig({
         './Divider': './src/components/Divider.tsx',
         './Icon': './src/components/Icon.tsx',
         './InlineLink': './src/components/InlineLink.tsx',
+        './Header': './src/components/navigation/Header.tsx',
     },
     shared: {
         react: { singleton: true },

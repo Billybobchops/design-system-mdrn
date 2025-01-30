@@ -12,12 +12,17 @@ import DialogStory from './story/DialogStory';
 import DividerStory from './story/DividerStory';
 import InlineLinkStory from './story/InlineLinkStory';
 import InputStory from './story/InputStory';
+import NavigationStory from './story/NavigationStory';
 import TabsStory from './story/TabStory';
 import TypographyStory from './story/TypographyStory';
 
 export function Gallery() {
     return (
         <main>
+            <GalleryDisplayArea title="WIP! Header + Navigation">
+                <NavigationStory />
+            </GalleryDisplayArea>
+
             <GalleryDisplayArea title="Typography (Fluid)">
                 <TypographyStory />
             </GalleryDisplayArea>
