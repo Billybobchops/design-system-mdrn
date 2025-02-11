@@ -31,6 +31,7 @@
 
     &:hover,
     &:focus {
+        color: var(--nav-link-hover-color);
         box-shadow: 0 var(--nav-link-hover-weight) 0 0
             var(--nav-link-hover-color);
     }
@@ -40,6 +41,11 @@
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.iconWrapper {
+    align-items: center;
+    display: flex;
 }
 
 .subMenu {

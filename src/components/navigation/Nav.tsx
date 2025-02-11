@@ -48,7 +48,7 @@ const NavItem = ({ link }: { link: NavLink }) => {
                             onKeyDown={handleKeyDown}
                             type="button"
                         >
-                            <span aria-hidden="true">
+                            <span aria-hidden="true" className={classes.iconWrapper}>
                                 <DropdownChevron
                                     fill={isHovered ? 'var(--nav-link-hover-color)' : 'var(--nav-link-color)'}
                                 />
