@@ -9,11 +9,17 @@ export default defineConfig({
     dev: {
         port: 3001,
     },
+    server: {
+        port: 3002,
+    },
     output: {
-        assetPrefix:
-            process.env.NODE_ENV === 'production'
-                ? 'https://starling-ui-design-system.netlify.app/'
-                : 'http://localhost:3001/',
+        distPath: {
+            root: './dist',
+        },
+        // assetPrefix:
+        //     process.env.NODE_ENV === 'production'
+        //         ? 'https://starling-ui-design-system.netlify.app/'
+        //         : 'http://localhost:3001/',
     },
     plugins: [
         appTools({

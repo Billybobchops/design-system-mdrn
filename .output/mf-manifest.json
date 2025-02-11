@@ -1,0 +1,927 @@
+{
+  "id": "remoteDesignSystem",
+  "name": "remoteDesignSystem",
+  "metaData": {
+    "name": "remoteDesignSystem",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.1.0",
+      "buildName": "design-system-mdrn"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "@mf-types.zip",
+      "api": "@mf-types.d.ts"
+    },
+    "globalName": "remoteDesignSystem",
+    "pluginVersion": "0.8.9",
+    "prefetchInterface": false,
+    "publicPath": "/"
+  },
+  "shared": [
+    {
+      "id": "remoteDesignSystem:react-dom",
+      "name": "react-dom",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ],
+          "sync": [
+            "static/js/async/7987.68a5216d.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "remoteDesignSystem:react",
+      "name": "react",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "remoteDesignSystem:DesignSystemRootStyles",
+      "name": "DesignSystemRootStyles",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_DesignSystemRootStyles.605e7259.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_DesignSystemRootStyles.83ff4d71.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./DesignSystemRootStyles"
+    },
+    {
+      "id": "remoteDesignSystem:VisuallyHidden",
+      "name": "VisuallyHidden",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_VisuallyHidden.7d85e40d.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./VisuallyHidden"
+    },
+    {
+      "id": "remoteDesignSystem:CTAButton",
+      "name": "CTAButton",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_CTAButton.b9169c62.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_CTAButton.96be3230.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./CTAButton"
+    },
+    {
+      "id": "remoteDesignSystem:IconButton",
+      "name": "IconButton",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_IconButton.3a8edea8.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_IconButton.c72b4a9e.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./IconButton"
+    },
+    {
+      "id": "remoteDesignSystem:LinkIconButton",
+      "name": "LinkIconButton",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_LinkIconButton.d2eb8704.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_LinkIconButton.2dac4036.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./LinkIconButton"
+    },
+    {
+      "id": "remoteDesignSystem:PrimaryButton",
+      "name": "PrimaryButton",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_PrimaryButton.90ae11f8.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_PrimaryButton.a037b97b.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./PrimaryButton"
+    },
+    {
+      "id": "remoteDesignSystem:SecondaryButton",
+      "name": "SecondaryButton",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_SecondaryButton.6df20e36.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_SecondaryButton.2a38d72b.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./SecondaryButton"
+    },
+    {
+      "id": "remoteDesignSystem:SimpleButton",
+      "name": "SimpleButton",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_SimpleButton.71b266b2.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_SimpleButton.3f9c0cc2.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./SimpleButton"
+    },
+    {
+      "id": "remoteDesignSystem:Checkbox",
+      "name": "Checkbox",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Checkbox.931285f7.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Checkbox.600d1cfa.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Checkbox"
+    },
+    {
+      "id": "remoteDesignSystem:Checkboxes",
+      "name": "Checkboxes",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/lib-polyfill.2de5afd8.js",
+            "static/js/async/__federation_expose_Checkboxes.49e0eaa1.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Checkboxes.f7fc035a.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Checkboxes"
+    },
+    {
+      "id": "remoteDesignSystem:DatePicker",
+      "name": "DatePicker",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/6425.553f0354.js",
+            "static/js/async/7068.8e0e31b0.js",
+            "static/js/async/__federation_expose_DatePicker.2692b1a6.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js",
+            "static/js/async/7987.68a5216d.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_DatePicker.a926b133.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./DatePicker"
+    },
+    {
+      "id": "remoteDesignSystem:DateProvider",
+      "name": "DateProvider",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/6425.553f0354.js",
+            "static/js/async/__federation_expose_DateProvider.805f31a2.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./DateProvider"
+    },
+    {
+      "id": "remoteDesignSystem:Fieldset",
+      "name": "Fieldset",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Fieldset.ae51f6db.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Fieldset.817a910f.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Fieldset"
+    },
+    {
+      "id": "remoteDesignSystem:HelperText",
+      "name": "HelperText",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_HelperText.b47d1bd0.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_HelperText.b56ded6a.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./HelperText"
+    },
+    {
+      "id": "remoteDesignSystem:Input",
+      "name": "Input",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Input.90173acd.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Input.147c29d0.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Input"
+    },
+    {
+      "id": "remoteDesignSystem:InputMonetary",
+      "name": "InputMonetary",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_InputMonetary.dcb89c21.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_InputMonetary.dc54e7c5.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./InputMonetary"
+    },
+    {
+      "id": "remoteDesignSystem:Label",
+      "name": "Label",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Label.4f37f317.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Label.b5cb1728.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Label"
+    },
+    {
+      "id": "remoteDesignSystem:MultiSelect",
+      "name": "MultiSelect",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_MultiSelect.2d43d92f.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_MultiSelect.a4737234.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./MultiSelect"
+    },
+    {
+      "id": "remoteDesignSystem:RadioGroup",
+      "name": "RadioGroup",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_RadioGroup.ba97872b.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_RadioGroup.432b32f5.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./RadioGroup"
+    },
+    {
+      "id": "remoteDesignSystem:Select",
+      "name": "Select",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_Select.3c326e94.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Select.dd35d555.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Select"
+    },
+    {
+      "id": "remoteDesignSystem:SelectAllCheckbox",
+      "name": "SelectAllCheckbox",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_SelectAllCheckbox.20fef742.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_SelectAllCheckbox.127a6bfa.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./SelectAllCheckbox"
+    },
+    {
+      "id": "remoteDesignSystem:Textarea",
+      "name": "Textarea",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Textarea.6bb24d2b.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Textarea.2b475c88.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Textarea"
+    },
+    {
+      "id": "remoteDesignSystem:Tab",
+      "name": "Tab",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Tab.98a4b062.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Tab.dd48c02f.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Tab"
+    },
+    {
+      "id": "remoteDesignSystem:TabList",
+      "name": "TabList",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_TabList.6355bcd3.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./TabList"
+    },
+    {
+      "id": "remoteDesignSystem:TabPanel",
+      "name": "TabPanel",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_TabPanel.ed56443a.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_TabPanel.80924b08.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./TabPanel"
+    },
+    {
+      "id": "remoteDesignSystem:Tabs",
+      "name": "Tabs",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Tabs.0c3791b6.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Tabs.1cec78c5.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Tabs"
+    },
+    {
+      "id": "remoteDesignSystem:TabsContext",
+      "name": "TabsContext",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_TabsContext.7668bce6.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./TabsContext"
+    },
+    {
+      "id": "remoteDesignSystem:Heading",
+      "name": "Heading",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Heading.3d818ee9.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Heading.ff62316f.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Heading"
+    },
+    {
+      "id": "remoteDesignSystem:IconParagraph",
+      "name": "IconParagraph",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_IconParagraph.18bd7655.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_IconParagraph.4f96a68a.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./IconParagraph"
+    },
+    {
+      "id": "remoteDesignSystem:Paragraph",
+      "name": "Paragraph",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Paragraph.4e0cca63.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Paragraph.90b5f640.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Paragraph"
+    },
+    {
+      "id": "remoteDesignSystem:UnorderedList",
+      "name": "UnorderedList",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_UnorderedList.3a9999f3.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_UnorderedList.55fa5caf.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./UnorderedList"
+    },
+    {
+      "id": "remoteDesignSystem:Accordion",
+      "name": "Accordion",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_Accordion.09454f75.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Accordion.f0cf3a81.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Accordion"
+    },
+    {
+      "id": "remoteDesignSystem:Alert",
+      "name": "Alert",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_Alert.ac777a5c.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Alert.f9c23b98.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Alert"
+    },
+    {
+      "id": "remoteDesignSystem:Badge",
+      "name": "Badge",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Badge.a07161ee.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Badge.019f20e9.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Badge"
+    },
+    {
+      "id": "remoteDesignSystem:Chip",
+      "name": "Chip",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_Chip.dbcf0072.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Chip.d16148f5.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Chip"
+    },
+    {
+      "id": "remoteDesignSystem:Dialog",
+      "name": "Dialog",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_Dialog.72149c31.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Dialog.dbcb3a4b.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Dialog"
+    },
+    {
+      "id": "remoteDesignSystem:Divider",
+      "name": "Divider",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Divider.d3a27425.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Divider.dd2cfa8d.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Divider"
+    },
+    {
+      "id": "remoteDesignSystem:Icon",
+      "name": "Icon",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_MultiSelect.2d43d92f.js",
+            "static/js/async/__federation_expose_Select.3c326e94.js",
+            "static/js/async/__federation_expose_Accordion.09454f75.js",
+            "static/js/async/__federation_expose_Alert.ac777a5c.js",
+            "static/js/async/__federation_expose_Chip.dbcf0072.js",
+            "static/js/async/__federation_expose_Dialog.72149c31.js",
+            "static/js/async/__federation_expose_Header.cc70080d.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_MultiSelect.a4737234.css",
+            "static/css/async/__federation_expose_Select.dd35d555.css",
+            "static/css/async/__federation_expose_Accordion.f0cf3a81.css",
+            "static/css/async/__federation_expose_Alert.f9c23b98.css",
+            "static/css/async/__federation_expose_Chip.d16148f5.css",
+            "static/css/async/__federation_expose_Dialog.dbcb3a4b.css",
+            "static/css/async/__federation_expose_Header.f85c0f6e.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Icon"
+    },
+    {
+      "id": "remoteDesignSystem:InlineLink",
+      "name": "InlineLink",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_InlineLink.cd1fa3df.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_InlineLink.6c5614a3.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./InlineLink"
+    },
+    {
+      "id": "remoteDesignSystem:Header",
+      "name": "Header",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_Icon.4408a61b.js",
+            "static/js/async/__federation_expose_Header.cc70080d.js"
+          ],
+          "async": [
+            "static/js/async/1512.f4346c26.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_Header.f85c0f6e.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./Header"
+    }
+  ]
+}
