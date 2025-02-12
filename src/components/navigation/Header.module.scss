@@ -3,7 +3,7 @@
     background: var(--utility-neutral-10);
     border-bottom: 1px solid var(--utility-neutral-20); // temp
     display: grid;
-    grid-template-columns: max-content auto;
+    grid-template-columns: max-content auto; // needs to break onto additional rows when run out of space.
 }
 
 .homeLink {

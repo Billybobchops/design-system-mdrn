@@ -26,7 +26,7 @@ const NavItem = ({ link }: { link: NavLink }) => {
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            setIsOpen(!isOpen);
+            setIsOpen(prev => !prev);
         }
     };
 
@@ -36,36 +36,33 @@ const NavItem = ({ link }: { link: NavLink }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <a href={link.href} className={classes.navLink}>
-                <div className={classes.linkGrid}>
+            <div className={classes.linkGrid}>
+                <a href={link.href} className={classes.navLink}>
                     <span>{link.label}</span>
-                    {link.subMenu && (
-                        <button
-                            aria-expanded={isOpen}
-                            aria-haspopup="true"
-                            className={classes.dropdownToggle}
-                            onClick={() => setIsOpen(!isOpen)}
-                            onKeyDown={handleKeyDown}
-                            type="button"
-                        >
-                            <span aria-hidden="true" className={classes.iconWrapper}>
-                                <DropdownChevron
-                                    fill={isHovered ? 'var(--nav-link-hover-color)' : 'var(--nav-link-color)'}
-                                />
-                            </span>
-                        </button>
-                    )}
-                </div>
-            </a>
+                </a>
+
+                {link.subMenu && (
+                    <button
+                        aria-expanded={isOpen}
+                        aria-haspopup="true"
+                        className={classes.dropdownToggle}
+                        onClick={() => setIsOpen(prev => !prev)}
+                        onKeyDown={handleKeyDown}
+                        type="button"
+                    >
+                        <span aria-hidden="true" className={classes.iconWrapper}>
+                            <DropdownChevron
+                                fill={isHovered ? 'var(--nav-link-hover-color)' : 'var(--nav-link-color)'}
+                            />
+                        </span>
+                    </button>
+                )}
+            </div>
 
             {link.subMenu && isOpen && (
                 <ul className={classes.subMenu}>
                     {link.subMenu.map(subLink => (
-                        <li key={subLink.label}>
-                            <a href={subLink.href} className={classes.subMenuLink}>
-                                {subLink.label}
-                            </a>
-                        </li>
+                        <NavItem key={subLink.label} link={subLink} />
                     ))}
                 </ul>
             )}

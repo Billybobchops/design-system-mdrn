@@ -12,11 +12,24 @@
 
 .navItem {
     position: relative;
+    padding: var(--nav-link-padding);
+
+    &:hover,
+    &:focus {
+        border-bottom: 2px solid var(--nav-link-hover-color);
+        color: var(--nav-link-hover-color);
+        margin-bottom: -2px;
+
+        .navLink {
+            color: var(--nav-link-hover-color);
+        }
+    }
 }
 
 .linkGrid {
     align-items: center;
     display: grid;
+    gap: var(--spacing-xs);
     grid-template-columns: repeat(2, auto);
 }
 
@@ -26,15 +39,7 @@
     font-size: var(--nav-link-font-size);
     font-weight: var(--nav-link-font-weight);
     line-height: 1.4;
-    padding: var(--nav-link-padding);
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-        color: var(--nav-link-hover-color);
-        box-shadow: 0 var(--nav-link-hover-weight) 0 0
-            var(--nav-link-hover-color);
-    }
 }
 
 .dropdownToggle {
@@ -52,27 +57,35 @@
     background: var(--submenu-background-color);
     box-shadow: var(--submenu-elevation);
     display: none; // Initially hidden
-    left: 0;
     list-style: none;
     position: absolute;
+    position: absolute;
+    right: 0;
     top: 100%;
+
+    .navItem {
+        border-bottom: var(--submenu-link-border);
+        color: var(--submenu-link-color);
+        display: block;
+        margin: 0;
+        padding: var(--submenu-link-padding);
+        text-decoration: none;
+        white-space: nowrap;
+
+        .navLink {
+            color: var(--submenu-link-color);
+            font-weight: var(--submenu-font-weight);
+        }
+
+        &:hover,
+        &:focus {
+            background: var(--submenu-link-hover-background);
+            margin-bottom: 0;
+        }
+    }
 
     .navItem:hover &,
     .dropdownToggle[aria-expanded='true'] + & {
         display: block;
-    }
-}
-
-.subMenuLink {
-    color: var(--submenu-link-color);
-    border-bottom: var(--submenu-link-border);
-    display: block;
-    padding: var(--submenu-link-padding);
-    text-decoration: none;
-    white-space: nowrap;
-
-    &:hover,
-    &:focus {
-        background: var(--submenu-link-hover-background);
     }
 }
