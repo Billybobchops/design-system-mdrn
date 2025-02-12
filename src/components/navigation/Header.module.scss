@@ -1,11 +1,23 @@
 .header {
+    border-bottom: 1px solid var(--utility-neutral-20); // temp
+}
+
+.container {
     align-items: center;
     background: var(--utility-neutral-10);
-    border-bottom: 1px solid var(--utility-neutral-20); // temp
-    display: grid;
-    grid-template-columns: max-content auto; // needs to break onto additional rows when run out of space.
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    max-width: var(--layout-max-width);
 }
 
 .homeLink {
     text-decoration: none;
+
+    img {
+        display: block;
+        padding: var(--spacing-xs);
+        max-height: 50px;
+    }
 }

@@ -4,6 +4,7 @@
 
 .navList {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     list-style: none;
     margin: 0;
@@ -61,7 +62,7 @@
     position: absolute;
     position: absolute;
     right: 0;
-    top: 100%;
+    top: 105%;
 
     .navItem {
         border-bottom: var(--submenu-link-border);

@@ -12,10 +12,12 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ homeLink, logoAltText, logoSrc, navLinks }) => {
     return (
         <header className={classes.header}>
-            <a href={homeLink} className={classes.homeLink}>
-                <img src={logoSrc} alt={logoAltText} />
-            </a>
-            <Nav links={navLinks} />
+            <div className={classes.container}>
+                <a href={homeLink} className={classes.homeLink}>
+                    <img src={logoSrc} alt={logoAltText} />
+                </a>
+                <Nav links={navLinks} />
+            </div>
         </header>
     );
 };

@@ -34,7 +34,10 @@ const NavItem = ({ link }: { link: NavLink }) => {
         <li
             className={classes.navItem}
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseLeave={() => {
+                setIsHovered(false);
+                setIsOpen(false);
+            }}
         >
             <div className={classes.linkGrid}>
                 <a href={link.href} className={classes.navLink}>
