@@ -1,5 +1,17 @@
 .nav {
     background-color: var(--nav-background-color);
+
+    @media (max-width: 768px) {
+        display: none;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .navOpen {
+        display: flex;
+        width: 100%;
+    }
 }
 
 .navList {
@@ -9,6 +21,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @media (max-width: 768px) {
+        background-color: var(--utility-neutral-0);
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 .navItem {
@@ -25,13 +43,27 @@
             color: var(--nav-link-hover-color);
         }
     }
+
+    @media (max-width: 768px) {
+        border-bottom: var(--submenu-link-border);
+
+        &:hover,
+        &:focus {
+            border-bottom: var(--submenu-link-border);
+            color: var(--submenu-link-color);
+
+            .navLink {
+                color: var(--submenu-link-color);
+            }
+        }
+    }
 }
 
 .linkGrid {
     align-items: center;
     display: grid;
     gap: var(--spacing-xs);
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: auto 20px;
 }
 
 .navLink {
@@ -57,12 +89,16 @@
 .subMenu {
     background: var(--submenu-background-color);
     box-shadow: var(--submenu-elevation);
-    display: none; // Initially hidden
+    display: none;
     list-style: none;
-    position: absolute;
     position: absolute;
     right: 0;
     top: 105%;
+
+    @media (max-width: 768px) {
+        position: static;
+        box-shadow: none;
+    }
 
     .navItem {
         border-bottom: var(--submenu-link-border);

@@ -5,11 +5,12 @@ import type { NavLink } from './types';
 
 type NavigationProps = {
     links: NavLink[];
+    isMobileNavOpen: boolean;
 };
 
-const Nav = ({ links }: NavigationProps) => {
+const Nav = ({ links, isMobileNavOpen }: NavigationProps) => {
     return (
-        <nav className={classes.nav} aria-label="Main Navigation">
+        <nav className={`${classes.nav} ${isMobileNavOpen ? classes.navOpen : ''}`} aria-label="Main Navigation">
             <ul className={classes.navList}>
                 {links.map(link => (
                     <NavItem key={link.label} link={link} />

@@ -1,87 +1,79 @@
-.menuToggle span {
-    -moz-transform: rotate(0deg);
-    -moz-transition: 0.25s ease-in-out;
-    -o-transform: rotate(0deg);
-    -o-transition: 0.25s ease-in-out;
+.menuToggle {
+    width: 35px; /* Reduced width */
+    height: 24px; /* Reduced height */
+    position: relative;
     -webkit-transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    background: #d3531a;
-    display: block;
-    height: 9px;
-    opacity: 1;
-    position: absolute;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.menuToggle span {
+    display: block;
+    position: absolute;
+    height: 3px; /* Reduced height */
+    width: 100%;
+    background: var(--theme-a-4);
+    border-radius: 4px; /* Reduced border-radius */
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
-    width: 50%;
 }
 
-.menuToggle span:nth-child(even) {
-    border-radius: 0 9px 9px 0;
-    left: 50%;
-}
-
-.menuToggle span:nth-child(odd) {
-    border-radius: 9px 0 0 9px;
-    left: 0px;
-}
-
-.menuToggle span:nth-child(1),
-.menuToggle span:nth-child(2) {
+.menuToggle span:nth-child(1) {
     top: 0px;
 }
 
-.menuToggle span:nth-child(3),
+.menuToggle span:nth-child(2),
+.menuToggle span:nth-child(3) {
+    top: 8px; /* Reduced gap */
+    top: 10px;
+}
+
 .menuToggle span:nth-child(4) {
-    top: 18px;
-}
-
-.menuToggle span:nth-child(5),
-.menuToggle span:nth-child(6) {
-    top: 36px;
-}
-
-.menuToggle.open span:nth-child(1),
-.menuToggle.open span:nth-child(6) {
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.menuToggle.open span:nth-child(2),
-.menuToggle.open span:nth-child(5) {
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    top: 16px; /* Reduced gap */
+    top: 20px;
 }
 
 .menuToggle.open span:nth-child(1) {
-    left: 5px;
-    top: 7px;
+    top: 8px;
+    width: 0%;
+    left: 50%;
 }
 
 .menuToggle.open span:nth-child(2) {
-    left: calc(50% - 5px);
-    top: 7px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .menuToggle.open span:nth-child(3) {
-    left: -50%;
-    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .menuToggle.open span:nth-child(4) {
-    left: 100%;
-    opacity: 0;
-}
-
-.menuToggle.open span:nth-child(5) {
-    left: 5px;
-    top: 29px;
-}
-
-.menuToggle.open span:nth-child(6) {
-    left: calc(50% - 5px);
-    top: 29px;
+    top: 8px;
+    width: 0%;
+    left: 50%;
 }
