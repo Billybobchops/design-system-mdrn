@@ -90,6 +90,10 @@
     display: flex;
 }
 
+.iconRotate {
+    transform: rotate(180deg);
+}
+
 .subMenu {
     background: var(--submenu-background-color);
     box-shadow: var(--submenu-elevation);
