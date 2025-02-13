@@ -70,13 +70,21 @@
     grid-template-columns: auto 20px;
 }
 
+.linkGridSingleColumn {
+    grid-template-columns: auto;
+}
+
 .navLink {
     color: var(--nav-link-color);
     display: inline-block;
     font-size: var(--nav-link-font-size);
     font-weight: var(--nav-link-font-weight);
-    line-height: 1.4;
+    line-height: 1;
     text-decoration: none;
+
+    svg {
+        vertical-align: middle;
+    }
 }
 
 .dropdownToggle {

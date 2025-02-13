@@ -19,7 +19,7 @@ import TypographyStory from './story/TypographyStory';
 export function Gallery() {
     return (
         <main>
-            <GalleryDisplayArea title="WIP! Header + Navigation">
+            <GalleryDisplayArea title="Header & Navigation">
                 <NavigationStory />
             </GalleryDisplayArea>
 

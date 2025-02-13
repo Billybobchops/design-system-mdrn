@@ -40,9 +40,10 @@ const NavItem = ({ link }: { link: NavLink }) => {
                 setIsOpen(false);
             }}
         >
-            <div className={classes.linkGrid}>
+            <div className={`${classes.linkGrid} ${link.subMenu ? '' : classes.linkGridSingleColumn}`}>
                 <a href={link.href} className={classes.navLink}>
-                    <span>{link.label}</span>
+                    {!link.iconOnly && <span>{link.label}</span>}
+                    {link.icon && link.icon}
                 </a>
 
                 {link.subMenu && (

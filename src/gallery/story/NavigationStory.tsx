@@ -1,4 +1,5 @@
 import logo from '@/assets/example-logo.png';
+import { Info } from '@/components/Icon';
 import Header from '@components/navigation/Header';
 
 const NavigationStory = () => {
@@ -54,6 +55,7 @@ const NavigationStory = () => {
             ],
         },
         { label: 'Sign Out', href: '/signout' },
+        { label: 'Settings', href: '/settings', icon: <Info fill="var(--nav-link-color)" />, iconOnly: true },
     ];
 
     return (

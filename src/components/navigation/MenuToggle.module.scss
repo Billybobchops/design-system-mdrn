@@ -1,15 +1,15 @@
 .menuToggle {
-    width: 35px; /* Reduced width */
-    height: 24px; /* Reduced height */
+    width: 30px;
+    height: 18px;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    -webkit-transition: 3s ease-in-out;
+    -moz-transition: 3s ease-in-out;
+    -o-transition: 3s ease-in-out;
+    transition: 3s ease-in-out;
     cursor: pointer;
     display: none;
 
@@ -21,20 +21,20 @@
 .menuToggle span {
     display: block;
     position: absolute;
-    height: 3px; /* Reduced height */
+    height: 2px;
     width: 100%;
     background: var(--theme-a-4);
-    border-radius: 4px; /* Reduced border-radius */
+    border-radius: var(--border-radius-m);
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .menuToggle span:nth-child(1) {
@@ -43,13 +43,11 @@
 
 .menuToggle span:nth-child(2),
 .menuToggle span:nth-child(3) {
-    top: 8px; /* Reduced gap */
-    top: 10px;
+    top: 8px;
 }
 
 .menuToggle span:nth-child(4) {
-    top: 16px; /* Reduced gap */
-    top: 20px;
+    top: 16px;
 }
 
 .menuToggle.open span:nth-child(1) {
