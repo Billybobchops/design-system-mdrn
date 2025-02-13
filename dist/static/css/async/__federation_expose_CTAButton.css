@@ -1,0 +1,55 @@
+.src-components-button-CTAButton-module__button-yJmNvm {
+  border: var(--button-border);
+  border-radius: var(--spacing-xxs);
+  color: var(--utility-neutral-0);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  margin: var(--button-margin);
+  padding: var(--button-padding-small);
+  border-radius: var(--border-radius-l);
+  border: 2px solid var(--utility-neutral-10);
+  padding: var(--button-padding-large);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__red-TwP5Zn {
+  background-color: var(--utility-red-50);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__red-TwP5Zn:hover {
+  background-color: var(--utility-red-70);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__green-vDE2nI {
+  background-color: var(--utility-green-60);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__green-vDE2nI:hover {
+  background-color: var(--utility-green-80);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__blue-eMHrzP {
+  background-color: var(--theme-a-4);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__blue-eMHrzP:hover {
+  background-color: var(--theme-a-3);
+}
+.src-components-button-CTAButton-module__button-yJmNvm:focus-visible {
+  outline: 2.5px solid var(--theme-a-3);
+  outline-offset: var(--outline-offset-s);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__disabled-i9tCfZ {
+  background-color: var(--utility-neutral-10);
+  color: var(--utility-neutral-60);
+}
+.src-components-button-CTAButton-module__button-yJmNvm.src-components-button-CTAButton-module__disabled-i9tCfZ:hover {
+  background-color: var(--utility-neutral-10);
+  color: var(--utility-neutral-60);
+}
+.src-components-button-CTAButton-module__button-yJmNvm .src-components-button-CTAButton-module__iconStart-hvtw44 {
+  margin-right: var(--spacing-xs);
+}
+.src-components-button-CTAButton-module__button-yJmNvm .src-components-button-CTAButton-module__iconEnd-U9iHTB {
+  margin-left: var(--spacing-xs);
+}
+@media (max-width: 500px) {
+  .src-components-button-CTAButton-module__button-yJmNvm {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=__federation_expose_CTAButton.css.map*/

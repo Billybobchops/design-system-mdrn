@@ -1,0 +1,13 @@
+.src-components-typography-IconParagraph-module__grid-Ygw9La {
+  align-items: start;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: auto 1fr;
+}
+.src-components-typography-Paragraph-module__paragraph-nbU6aD {
+  font-size: var(--body-font-size);
+  line-height: 1.5rem;
+  margin: 0 0 var(--spacing-s) 0;
+}
+
+/*# sourceMappingURL=__federation_expose_IconParagraph.css.map*/

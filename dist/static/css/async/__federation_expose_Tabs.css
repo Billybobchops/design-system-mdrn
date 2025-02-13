@@ -1,0 +1,11 @@
+.src-components-tabular-Tabs-module__tabContainer-SoeTZi {
+  display: block;
+}
+@media (max-width: 500px) {
+  .src-components-tabular-Tabs-module__tabContainer-SoeTZi {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+/*# sourceMappingURL=__federation_expose_Tabs.css.map*/

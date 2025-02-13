@@ -1,0 +1,721 @@
+{
+  "routeAssets": {
+    "__federation_expose_Accordion": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "__federation_expose_Accordion"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Accordion.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Accordion.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Accordion.css"
+      ]
+    },
+    "__federation_expose_Alert": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "__federation_expose_Alert"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Alert.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Alert.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Alert.css"
+      ]
+    },
+    "__federation_expose_Badge": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Badge"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Badge.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Badge.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Badge.css"
+      ]
+    },
+    "__federation_expose_CTAButton": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_CTAButton"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_CTAButton.css",
+        "http://localhost:3001/static/js/async/__federation_expose_CTAButton.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_CTAButton.css"
+      ]
+    },
+    "__federation_expose_Checkbox": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Checkbox"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Checkbox.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Checkbox.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Checkbox.css"
+      ]
+    },
+    "__federation_expose_Checkboxes": {
+      "chunkIds": [
+        "lib-polyfill",
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Checkboxes"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/lib-polyfill.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Checkboxes.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Checkboxes.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Checkboxes.css"
+      ]
+    },
+    "__federation_expose_Chip": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "__federation_expose_Chip"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Chip.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Chip.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Chip.css"
+      ]
+    },
+    "__federation_expose_DatePicker": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "vendors-node_modules_mui_x-date-pickers_AdapterDayjs_AdapterDayjs_js-node_modules_mui_x-date--c63479",
+        "vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6",
+        "vendors-node_modules_mui_x-date-pickers_DatePicker_DatePicker_js-node_modules_rspack_core_dis-ef8d53",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "webpack_sharing_consume_default_react_react-webpack_sharing_consume_default_react_react",
+        "webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_consume_default_react-dom-ff86fb",
+        "__federation_expose_DatePicker"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_mui_x-date-pickers_AdapterDayjs_AdapterDayjs_js-node_modules_mui_x-date--c63479.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_mui_x-date-pickers_DatePicker_DatePicker_js-node_modules_rspack_core_dis-ef8d53.js",
+        "http://localhost:3001/static/css/async/__federation_expose_DatePicker.css",
+        "http://localhost:3001/static/js/async/__federation_expose_DatePicker.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_DatePicker.css"
+      ]
+    },
+    "__federation_expose_DateProvider": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "vendors-node_modules_mui_x-date-pickers_AdapterDayjs_AdapterDayjs_js-node_modules_mui_x-date--c63479",
+        "vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "webpack_sharing_consume_default_react_react-webpack_sharing_consume_default_react_react",
+        "__federation_expose_DateProvider"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_mui_x-date-pickers_AdapterDayjs_AdapterDayjs_js-node_modules_mui_x-date--c63479.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6.js",
+        "http://localhost:3001/static/js/async/__federation_expose_DateProvider.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "__federation_expose_DesignSystemRootStyles": {
+      "chunkIds": [
+        "__federation_expose_DesignSystemRootStyles"
+      ],
+      "assets": [
+        "http://localhost:3001/static/css/async/__federation_expose_DesignSystemRootStyles.css",
+        "http://localhost:3001/static/js/async/__federation_expose_DesignSystemRootStyles.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_DesignSystemRootStyles.css"
+      ]
+    },
+    "__federation_expose_Dialog": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "src_components_Dialog_tsx",
+        "__federation_expose_Dialog"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/js/async/src_components_Dialog_tsx.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Dialog.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Dialog.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Dialog.css"
+      ]
+    },
+    "__federation_expose_Divider": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Divider"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Divider.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Divider.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Divider.css"
+      ]
+    },
+    "__federation_expose_Fieldset": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Fieldset"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Fieldset.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Fieldset.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Fieldset.css"
+      ]
+    },
+    "__federation_expose_Header": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "src_components_navigation_Header_tsx",
+        "__federation_expose_Header"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/js/async/src_components_navigation_Header_tsx.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Header.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Header.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Header.css"
+      ]
+    },
+    "__federation_expose_Heading": {
+      "chunkIds": [
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Heading"
+      ],
+      "assets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Heading.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Heading.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Heading.css"
+      ]
+    },
+    "__federation_expose_HelperText": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_HelperText"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_HelperText.css",
+        "http://localhost:3001/static/js/async/__federation_expose_HelperText.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_HelperText.css"
+      ]
+    },
+    "__federation_expose_Icon": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Icon"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "__federation_expose_IconButton": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_IconButton"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_IconButton.js",
+        "http://localhost:3001/static/css/async/__federation_expose_IconButton.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_IconButton.css"
+      ]
+    },
+    "__federation_expose_IconParagraph": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_IconParagraph"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_IconParagraph.js",
+        "http://localhost:3001/static/css/async/__federation_expose_IconParagraph.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_IconParagraph.css"
+      ]
+    },
+    "__federation_expose_InlineLink": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_InlineLink"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_InlineLink.css",
+        "http://localhost:3001/static/js/async/__federation_expose_InlineLink.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_InlineLink.css"
+      ]
+    },
+    "__federation_expose_Input": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Input"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Input.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Input.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Input.css"
+      ]
+    },
+    "__federation_expose_InputMonetary": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_InputMonetary"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_InputMonetary.css",
+        "http://localhost:3001/static/js/async/__federation_expose_InputMonetary.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_InputMonetary.css"
+      ]
+    },
+    "__federation_expose_Label": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Label"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Label.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Label.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Label.css"
+      ]
+    },
+    "__federation_expose_LinkIconButton": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_LinkIconButton"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_LinkIconButton.css",
+        "http://localhost:3001/static/js/async/__federation_expose_LinkIconButton.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_LinkIconButton.css"
+      ]
+    },
+    "__federation_expose_MultiSelect": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "src_components_form_MultiSelect_tsx",
+        "__federation_expose_MultiSelect"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/css/async/src_components_form_MultiSelect_tsx.css",
+        "http://localhost:3001/static/js/async/src_components_form_MultiSelect_tsx.js",
+        "http://localhost:3001/static/js/async/__federation_expose_MultiSelect.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/src_components_form_MultiSelect_tsx.css"
+      ]
+    },
+    "__federation_expose_Paragraph": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_Paragraph"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Paragraph.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Paragraph.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Paragraph.css"
+      ]
+    },
+    "__federation_expose_PrimaryButton": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_PrimaryButton"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_PrimaryButton.css",
+        "http://localhost:3001/static/js/async/__federation_expose_PrimaryButton.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_PrimaryButton.css"
+      ]
+    },
+    "__federation_expose_RadioGroup": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_RadioGroup"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_RadioGroup.js",
+        "http://localhost:3001/static/css/async/__federation_expose_RadioGroup.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_RadioGroup.css"
+      ]
+    },
+    "__federation_expose_SecondaryButton": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_SecondaryButton"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_SecondaryButton.js",
+        "http://localhost:3001/static/css/async/__federation_expose_SecondaryButton.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_SecondaryButton.css"
+      ]
+    },
+    "__federation_expose_Select": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Icon",
+        "__federation_expose_Select"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Select.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Select.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Select.css"
+      ]
+    },
+    "__federation_expose_SelectAllCheckbox": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_SelectAllCheckbox"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_SelectAllCheckbox.css",
+        "http://localhost:3001/static/js/async/__federation_expose_SelectAllCheckbox.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_SelectAllCheckbox.css"
+      ]
+    },
+    "__federation_expose_SimpleButton": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_SimpleButton"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_SimpleButton.css",
+        "http://localhost:3001/static/js/async/__federation_expose_SimpleButton.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_SimpleButton.css"
+      ]
+    },
+    "__federation_expose_Tab": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Tab"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Tab.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Tab.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Tab.css"
+      ]
+    },
+    "__federation_expose_TabList": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_TabList"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_TabList.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "__federation_expose_TabPanel": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_TabPanel"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_TabPanel.js",
+        "http://localhost:3001/static/css/async/__federation_expose_TabPanel.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_TabPanel.css"
+      ]
+    },
+    "__federation_expose_Tabs": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Tabs"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Tabs.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Tabs.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Tabs.css"
+      ]
+    },
+    "__federation_expose_TabsContext": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_TabsContext"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_TabsContext.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "__federation_expose_Textarea": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "__federation_expose_Textarea"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/css/async/__federation_expose_Textarea.css",
+        "http://localhost:3001/static/js/async/__federation_expose_Textarea.js"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_Textarea.css"
+      ]
+    },
+    "__federation_expose_UnorderedList": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_UnorderedList"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_UnorderedList.js",
+        "http://localhost:3001/static/css/async/__federation_expose_UnorderedList.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/__federation_expose_UnorderedList.css"
+      ]
+    },
+    "__federation_expose_VisuallyHidden": {
+      "chunkIds": [
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "__federation_expose_VisuallyHidden"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_VisuallyHidden.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "async-main": {
+      "chunkIds": [
+        "lib-polyfill",
+        "lib-router",
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6",
+        "vendors-node_modules_modern-js_runtime_dist_esm_core_config_js-node_modules_modern-js_main_in-72cac8",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "async-main"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/lib-polyfill.js",
+        "http://localhost:3001/static/js/async/lib-router.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_modern-js_runtime_dist_esm_core_config_js-node_modules_modern-js_main_in-72cac8.js",
+        "http://localhost:3001/static/js/async/async-main.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "main": {
+      "chunkIds": [
+        "lib-polyfill",
+        "lib-router",
+        "vendors-node_modules_react_jsx-dev-runtime_js",
+        "vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6",
+        "vendors-node_modules_modern-js_runtime_dist_esm_core_config_js-node_modules_modern-js_main_in-72cac8",
+        "-webpack_sharing_consume_default_react_react-_86f4",
+        "-webpack_sharing_consume_default_react_react-_58b7",
+        "async-main"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/lib-polyfill.js",
+        "http://localhost:3001/static/js/async/lib-router.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_react_jsx-dev-runtime_js.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_hoist-non-react-statics_dist_hoist-non-react-statics_cjs_js-node_modules-5496a6.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_modern-js_runtime_dist_esm_core_config_js-node_modules_modern-js_main_in-72cac8.js",
+        "http://localhost:3001/static/js/async/async-main.js"
+      ],
+      "referenceCssAssets": []
+    },
+    "page": {
+      "chunkIds": [
+        "vendors-node_modules_mui_x-date-pickers_AdapterDayjs_AdapterDayjs_js-node_modules_mui_x-date--c63479",
+        "vendors-node_modules_mui_x-date-pickers_DatePicker_DatePicker_js-node_modules_rspack_core_dis-ef8d53",
+        "vendors-node_modules_react-helmet_es_Helmet_js",
+        "__federation_expose_Icon",
+        "webpack_sharing_consume_default_react_react-webpack_sharing_consume_default_react_react",
+        "src_components_form_MultiSelect_tsx",
+        "src_components_Dialog_tsx",
+        "src_components_navigation_Header_tsx",
+        "webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_consume_default_react-dom-ff86fb",
+        "page"
+      ],
+      "assets": [
+        "http://localhost:3001/static/js/async/vendors-node_modules_mui_x-date-pickers_AdapterDayjs_AdapterDayjs_js-node_modules_mui_x-date--c63479.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_mui_x-date-pickers_DatePicker_DatePicker_js-node_modules_rspack_core_dis-ef8d53.js",
+        "http://localhost:3001/static/js/async/vendors-node_modules_react-helmet_es_Helmet_js.js",
+        "http://localhost:3001/static/js/async/__federation_expose_Icon.js",
+        "http://localhost:3001/static/css/async/src_components_form_MultiSelect_tsx.css",
+        "http://localhost:3001/static/js/async/src_components_form_MultiSelect_tsx.js",
+        "http://localhost:3001/static/js/async/src_components_Dialog_tsx.js",
+        "http://localhost:3001/static/js/async/src_components_navigation_Header_tsx.js",
+        "http://localhost:3001/static/js/async/page.js",
+        "http://localhost:3001/static/css/async/page.css"
+      ],
+      "referenceCssAssets": [
+        "http://localhost:3001/static/css/async/src_components_form_MultiSelect_tsx.css",
+        "http://localhost:3001/static/css/async/page.css"
+      ]
+    },
+    "remoteDesignSystem": {
+      "chunkIds": [
+        "remoteDesignSystem"
+      ],
+      "assets": [
+        "http://localhost:3001/remoteEntry.js"
+      ],
+      "referenceCssAssets": []
+    }
+  }
+}

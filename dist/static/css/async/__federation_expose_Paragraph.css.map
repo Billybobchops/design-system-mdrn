@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/async/__federation_expose_Paragraph.css","sources":["/Users/billchlanda/Desktop/design-system-mdrn/src/components/typography/Paragraph.module.scss"],"sourcesContent":[".paragraph {\n  font-size: var(--body-font-size);\n  line-height: 1.5rem;\n  margin: 0 0 var(--spacing-s) 0;\n}"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA"}

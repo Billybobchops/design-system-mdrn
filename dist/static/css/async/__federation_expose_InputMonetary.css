@@ -1,0 +1,83 @@
+.src-components-form-HelperText-module__helperText-anzvNa {
+  display: block;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.src-components-form-Label-module__label-zC20Px {
+  display: block;
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+}
+
+.src-components-form-Label-module__required-oQntt9 {
+  color: var(--required-color);
+}
+.src-components-form-InputMonetary-module__inputContainer-ERj_NV {
+  margin-bottom: var(--input-container-margin-bottom);
+}
+
+.src-components-form-InputMonetary-module__input-AMmTlt {
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+  font-size: var(--input-font-size);
+  height: var(--input-height);
+  margin: var(--input-margin);
+  padding: var(--input-padding);
+  width: var(--input-desktop-width);
+}
+.src-components-form-InputMonetary-module__input-AMmTlt:focus-visible {
+  border: var(--input-border-focus);
+}
+.src-components-form-InputMonetary-module__input-AMmTlt:hover {
+  border: var(--input-border-hover);
+}
+.src-components-form-InputMonetary-module__input-AMmTlt:disabled {
+  background-color: var(--utility-neutral-05);
+}
+.src-components-form-InputMonetary-module__input-AMmTlt:disabled:hover {
+  border: var(--input-border);
+}
+@media (max-width: 500px) {
+  .src-components-form-InputMonetary-module__input-AMmTlt {
+    width: 100%;
+  }
+}
+
+.src-components-form-InputMonetary-module__input-AMmTlt[aria-invalid=true] {
+  border-color: var(--input-invalid-border-color);
+  border-left-width: var(--input-invalid-border-left-width);
+}
+
+.src-components-form-InputMonetary-module__inputContainer-ERj_NV,
+.src-components-form-InputMonetary-module__inputInnerContainer-MJnEVJ,
+.src-components-form-InputMonetary-module__input-AMmTlt {
+  width: var(--input-desktop-width);
+}
+@media (max-width: 500px) {
+  .src-components-form-InputMonetary-module__inputContainer-ERj_NV,
+  .src-components-form-InputMonetary-module__inputInnerContainer-MJnEVJ,
+  .src-components-form-InputMonetary-module__input-AMmTlt {
+    width: 100%;
+  }
+}
+
+.src-components-form-InputMonetary-module__inputContainer-ERj_NV {
+  margin-bottom: var(--input-container-margin-bottom);
+}
+.src-components-form-InputMonetary-module__inputContainer-ERj_NV .src-components-form-InputMonetary-module__inputInnerContainer-MJnEVJ {
+  margin: var(--input-margin);
+  position: relative;
+}
+.src-components-form-InputMonetary-module__inputContainer-ERj_NV .src-components-form-InputMonetary-module__inputInnerContainer-MJnEVJ .src-components-form-InputMonetary-module__inputAdornment-UUYkyj {
+  align-items: center;
+  display: flex;
+  font-size: var(--input-font-size);
+  height: 100%;
+  margin: 0 var(--spacing-s);
+  position: absolute;
+}
+.src-components-form-InputMonetary-module__inputContainer-ERj_NV .src-components-form-InputMonetary-module__inputInnerContainer-MJnEVJ .src-components-form-InputMonetary-module__input-AMmTlt {
+  padding-left: var(--spacing-l);
+}
+
+/*# sourceMappingURL=__federation_expose_InputMonetary.css.map*/
