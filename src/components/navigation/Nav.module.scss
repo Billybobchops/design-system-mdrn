@@ -30,6 +30,7 @@
 }
 
 .navItem {
+    display: flex;
     position: relative;
     padding: var(--nav-link-padding);
 
@@ -45,6 +46,7 @@
     }
 
     @media (max-width: 768px) {
+        display: block;
         border-bottom: var(--submenu-link-border);
 
         &:last-child {
