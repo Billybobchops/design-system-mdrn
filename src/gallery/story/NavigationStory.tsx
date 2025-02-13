@@ -5,7 +5,7 @@ const NavigationStory = () => {
     const navLinks = [
         {
             label: 'My Account',
-            href: '/#',
+            href: '/account',
             subMenu: [
                 { label: 'View or Pay Open Invoices', href: '/account/openinvoices' },
                 { label: 'View or Pay Closed Invoices', href: '/account/closedinvoices' },
@@ -15,7 +15,7 @@ const NavigationStory = () => {
         },
         {
             label: 'My Profile',
-            href: '/#',
+            href: '/profile',
             subMenu: [
                 { label: 'AutoPay', href: '/profile/autopay' },
                 { label: 'Change Password', href: '/profile/changepassword' },
@@ -31,7 +31,7 @@ const NavigationStory = () => {
         },
         {
             label: 'Support',
-            href: '/#',
+            href: '/support',
             subMenu: [
                 {
                     label: 'Help - User Videos',

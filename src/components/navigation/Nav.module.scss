@@ -47,6 +47,10 @@
     @media (max-width: 768px) {
         border-bottom: var(--submenu-link-border);
 
+        &:last-child {
+            border: none;
+        }
+
         &:hover,
         &:focus {
             border-bottom: var(--submenu-link-border);
@@ -118,6 +122,35 @@
         &:focus {
             background: var(--submenu-link-hover-background);
             margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            margin: 0 calc(-1 * var(--spacing-s));
+
+            &:first-child {
+                border-top: var(--submenu-link-border);
+                margin-top: var(--spacing-s);
+            }
+
+            &:last-child {
+                border-bottom: none;
+                margin-bottom: calc(-1 * var(--spacing-s));
+            }
+
+            &:hover,
+            &:focus {
+                background: none;
+            }
+
+            .subMenu .navItem {
+                &:first-child {
+                    margin-top: var(--spacing-xs);
+                }
+
+                &:last-child {
+                    margin-bottom: calc(-1 * var(--spacing-xs));
+                }
+            }
         }
     }
 
