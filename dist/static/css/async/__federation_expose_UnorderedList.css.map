@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/async/__federation_expose_UnorderedList.css","sources":["/Users/billchlanda/Desktop/design-system-mdrn/src/components/typography/UnorderedList.module.scss"],"sourcesContent":[".list {\n  margin: 0 0 var(--spacing-s) var(--spacing-m);\n}"],"names":[],"mappings":"AAAA;AACA;AACA"}

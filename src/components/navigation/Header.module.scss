@@ -19,6 +19,10 @@
         display: block;
         padding: var(--spacing-xs);
         max-height: 50px;
+
+        @media (max-width: 390px) {
+            max-height: 40px;
+        }
     }
 }
 

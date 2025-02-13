@@ -13,6 +13,7 @@ node_modules/
 *.tsbuildinfo
 .changeset/pre.json
 
+dist/
 coverage/
 release/
 output/

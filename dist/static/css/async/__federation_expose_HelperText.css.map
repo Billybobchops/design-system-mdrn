@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/async/__federation_expose_HelperText.css","sources":["/Users/billchlanda/Desktop/design-system-mdrn/src/components/form/HelperText.module.scss"],"sourcesContent":[".helperText {\n  display: block;\n  font-size: 12px;\n  margin-left: 5px;\n}"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA"}
