@@ -16,10 +16,10 @@ export default defineConfig({
         distPath: {
             root: './dist',
         },
-        // assetPrefix:
-        //     process.env.NODE_ENV === 'production'
-        //         ? 'https://starling-ui-design-system.netlify.app/'
-        //         : 'http://localhost:3001/',
+        assetPrefix:
+            process.env.NODE_ENV === 'production'
+                ? 'https://starling-ui-design-system.netlify.app/'
+                : 'http://localhost:3001/',
     },
     plugins: [
         appTools({
