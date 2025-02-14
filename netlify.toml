@@ -6,3 +6,23 @@
 from = "/*"
 to = "/index.html"
 status = 200
+
+[[redirects]]
+  from = "/mf-manifest.json"
+  to = "/mf-manifest.json"
+  status = 200
+
+[[redirects]]
+  from = "/remoteEntry.js"
+  to = "/remoteEntry.js"
+  status = 200
+
+[[headers]]
+  for = "/mf-manifest.json"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/remoteEntry.js"
+  [headers.values]
+    Content-Type = "application/javascript"
