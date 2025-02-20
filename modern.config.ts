@@ -9,9 +9,9 @@ export default defineConfig({
     dev: {
         port: 3001,
     },
-    server: {
-        port: 3002,
-    },
+    // server: {
+    //     port: 3002,
+    // },
     output: {
         distPath: {
             root: './dist',
@@ -20,6 +20,7 @@ export default defineConfig({
             process.env.NODE_ENV === 'production'
                 ? 'https://starling-ui-design-system.netlify.app/'
                 : 'http://localhost:3001/',
+        enableAssetManifest: true,
     },
     plugins: [
         appTools({

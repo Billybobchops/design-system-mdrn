@@ -1,7 +1,7 @@
-export type NavLink = {
+export type NavigationLink = {
     href: string;
     label: string;
-    subMenu?: NavLink[];
+    subMenu?: NavigationLink[];
     icon?: React.ReactNode;
     iconOnly?: boolean;
 };

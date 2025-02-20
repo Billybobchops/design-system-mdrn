@@ -2,13 +2,13 @@ import MenuToggle from '@components/navigation/MenuToggle';
 import Nav from '@components/navigation/Nav';
 import { useState } from 'react';
 import classes from './Header.module.scss';
-import type { NavLink } from './types';
+import type { NavigationLink } from './types';
 
 interface HeaderProps {
     homeLink: string;
     logoAltText: string;
     logoSrc: string;
-    navLinks: NavLink[];
+    navLinks: NavigationLink[];
 }
 
 const Header: React.FC<HeaderProps> = ({ homeLink, logoAltText, logoSrc, navLinks }) => {

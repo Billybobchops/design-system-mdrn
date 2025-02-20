@@ -1,10 +1,11 @@
 import { DropdownChevron } from '@components/Icon';
+import { NavLink } from '@modern-js/runtime/router';
 import { useState } from 'react';
 import classes from './Nav.module.scss';
-import type { NavLink } from './types';
+import type { NavigationLink } from './types';
 
 type NavigationProps = {
-    links: NavLink[];
+    links: NavigationLink[];
     isMobileNavOpen: boolean;
 };
 
@@ -20,7 +21,7 @@ const Nav = ({ links, isMobileNavOpen }: NavigationProps) => {
     );
 };
 
-const NavItem = ({ link }: { link: NavLink }) => {
+const NavItem = ({ link }: { link: NavigationLink }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -41,10 +42,10 @@ const NavItem = ({ link }: { link: NavLink }) => {
             }}
         >
             <div className={`${classes.linkGrid} ${link.subMenu ? '' : classes.linkGridSingleColumn}`}>
-                <a href={link.href} className={classes.navLink}>
+                <NavLink to={link.href} className={classes.navLink}>
                     {!link.iconOnly && <span>{link.label}</span>}
                     {link.icon && link.icon}
-                </a>
+                </NavLink>
 
                 {link.subMenu && (
                     <button
