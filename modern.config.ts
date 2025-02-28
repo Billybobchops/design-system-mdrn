@@ -9,9 +9,11 @@ export default defineConfig({
     dev: {
         port: 3001,
     },
-    // server: {
-    //     port: 3002,
-    // },
+    server: {
+        ssr: {
+            forceCSR: true,
+        },
+    },
     output: {
         distPath: {
             root: './dist',
