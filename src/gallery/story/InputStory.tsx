@@ -1,5 +1,5 @@
 import Checkboxes from '@components/form/Checkboxes';
-import DatePickerInput from '@components/form/DatePicker';
+// import DatePickerInput from '@components/form/DatePicker';
 import Input from '@components/form/Input';
 import InputMonetary from '@components/form/InputMonetary';
 import MultiSelect from '@components/form/MultiSelect';
@@ -73,11 +73,11 @@ const InputStory = () => {
                 required={true}
                 type="tel"
             />
-            <DatePickerInput
+            {/* <DatePickerInput
                 label="Start date of first payment"
                 helperText="Please select a date for your first payment."
                 required={true}
-            />
+            /> */}
             <Select
                 label="Select an account"
                 name="selectAccount"

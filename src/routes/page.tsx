@@ -1,10 +1,10 @@
-import { Helmet } from '@modern-js/runtime/head';
+// import { Helmet } from '@modern-js/runtime/head';
 import '../styles/_design-system-root.scss';
 import { Gallery } from '@/gallery/Gallery';
 
 const Index = () => (
     <div>
-        <Helmet title="Design System" />
+        {/* <Helmet title="Design System" /> */}
         <main>
             <Gallery />
         </main>
