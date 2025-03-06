@@ -14,7 +14,7 @@ export default createModuleFederationConfig({
         './SimpleButton': './src/components/button/SimpleButton.tsx',
         './Checkbox': './src/components/form/Checkbox.tsx',
         './Checkboxes': './src/components/form/Checkboxes.tsx',
-        // './DatePicker': './src/components/form/DatePicker.tsx',
+        './DatePicker': './src/components/form/DatePicker.tsx',
         './DateProvider': './src/components/form/DateProvider.tsx',
         './Fieldset': './src/components/form/Fieldset.tsx',
         './HelperText': './src/components/form/HelperText.tsx',

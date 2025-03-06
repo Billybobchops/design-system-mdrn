@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "modern build"
+  command = "modern deploy"
 
 [[redirects]]
   from = "/*"
