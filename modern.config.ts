@@ -14,9 +14,6 @@ export default defineConfig({
             process.env.NODE_ENV === 'production'
                 ? 'https://starling-ui-design-system.netlify.app/'
                 : 'http://localhost:3001/',
-        cssModules: {
-            namedExport: true,
-        },
     },
     plugins: [
         appTools({
