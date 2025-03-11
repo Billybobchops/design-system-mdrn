@@ -9,12 +9,12 @@ export default defineConfig({
     dev: {
         port: 3001,
     },
-    // output: {
-    //     assetPrefix:
-    //         process.env.NODE_ENV === 'production'
-    //             ? 'https://starling-ui-design-system.netlify.app/'
-    //             : 'http://localhost:3001/',
-    // },
+    output: {
+        assetPrefix:
+            process.env.NODE_ENV === 'production'
+                ? 'https://starling-ui-design-system.netlify.app/'
+                : 'http://localhost:3001/',
+    },
     plugins: [
         appTools({
             bundler: 'rspack', // Set to 'webpack' to enable webpack
