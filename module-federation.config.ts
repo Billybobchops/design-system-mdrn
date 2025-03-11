@@ -2,7 +2,10 @@ import { createModuleFederationConfig } from '@module-federation/modern-js';
 
 export default createModuleFederationConfig({
     name: 'remoteDesignSystem',
-    filename: 'remoteEntry.js',
+    manifest: {
+        filePath: 'static',
+    },
+    filename: 'static/remoteEntry.js',
     exposes: {
         './DesignSystemRootStyles': './src/styles/design-system-styles.ts',
         './VisuallyHidden': './src/components/accessibility/VisuallyHidden.tsx',

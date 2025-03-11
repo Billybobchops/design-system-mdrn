@@ -9,16 +9,12 @@ export default defineConfig({
     dev: {
         port: 3001,
     },
-    output: {
-        distPath: {
-            root: './dist',
-        },
-        assetPrefix:
-            process.env.NODE_ENV === 'production'
-                ? 'https://starling-ui-design-system.netlify.app/'
-                : 'http://localhost:3001/',
-        enableAssetManifest: true,
-    },
+    // output: {
+    //     assetPrefix:
+    //         process.env.NODE_ENV === 'production'
+    //             ? 'https://starling-ui-design-system.netlify.app/'
+    //             : 'http://localhost:3001/',
+    // },
     plugins: [
         appTools({
             bundler: 'rspack', // Set to 'webpack' to enable webpack
@@ -27,5 +23,6 @@ export default defineConfig({
     ],
     html: {
         favicon: './src/assets/favicon-32x32.png',
+        // favicon: './static/image/favicon-32x32.png',
     },
 });
