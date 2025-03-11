@@ -36,8 +36,11 @@ const Accordion: React.FC<AccordionProps> = ({ children, title }) => {
                     onMouseLeave={() => setIsHovered(false)}
                     type="button"
                 >
-                    <span aria-hidden="true" className={iconClasses}>
+                    <span className={iconClasses}>
                         <Chevron fill={isHovered ? 'var(--theme-a-3)' : 'var(--theme-a-4)'} />
+                    </span>
+                    <span className="sr-only">
+                        {isOpen ? 'Collapse' : 'Expand'} {title}
                     </span>
                     {title}
                 </button>

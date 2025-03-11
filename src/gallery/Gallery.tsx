@@ -14,6 +14,7 @@ import InlineLinkStory from './story/InlineLinkStory';
 import InputStory from './story/InputStory';
 import NavigationStory from './story/NavigationStory';
 import TabsStory from './story/TabStory';
+import TableStory from './story/TableStory';
 import TypographyStory from './story/TypographyStory';
 
 export function Gallery() {
@@ -78,6 +79,10 @@ export function Gallery() {
 
             <GalleryDisplayArea title="Inputs">
                 <InputStory />
+            </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Table">
+                <TableStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Divider">
