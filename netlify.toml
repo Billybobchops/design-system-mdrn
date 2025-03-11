@@ -3,7 +3,7 @@
   command = "modern deploy"
 
 [[headers]]
-  for = "/static/*"
+  for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "https://payer-portal-mdrn.netlify.app/"
     Access-Control-Allow-Methods = "GET, OPTIONS"
