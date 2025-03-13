@@ -17,7 +17,7 @@ const Textarea: React.FC<TextareaProps> = ({ disabled = false, helperText = '', 
 
     return (
         <div className={classes.inputContainer}>
-            <Label inputID={inputID} label={label} required={required} />
+            <Label inline={false} inputID={inputID} label={label} required={required} />
             <textarea
                 aria-invalid={false}
                 aria-describedby={helperID}

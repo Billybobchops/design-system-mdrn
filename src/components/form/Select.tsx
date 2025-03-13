@@ -36,7 +36,7 @@ const Select: React.FC<SelectProps> = ({
 
     return (
         <div className={classes.selectContainer}>
-            <Label inputID={selectID} label={label} required={required} />
+            <Label inline={false} inputID={selectID} label={label} required={required} />
             <div className={classes.chevronPositioning}>
                 <select
                     aria-describedby={helperID}

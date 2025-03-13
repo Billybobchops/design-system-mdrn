@@ -18,7 +18,7 @@ const DatePickerInput: React.FC<DatePickerInputProps> = ({ label, helperText = '
     return (
         <DateProvider>
             <div className={classes.inputContainer}>
-                <Label inputID={inputID} label={label} required={required} />
+                <Label inline={false} inputID={inputID} label={label} required={required} />
                 <DatePicker
                     slotProps={{ textField: { fullWidth: true, placeholder: '' } }}
                     sx={{

@@ -23,7 +23,7 @@ const InputMonetary: React.FC<InputMonetaryProps> = ({
 
     return (
         <div className={classes.inputContainer}>
-            <Label inputID={inputID} label={label} required={required} />
+            <Label inline={false} inputID={inputID} label={label} required={required} />
             <div className={classes.inputInnerContainer}>
                 <div className={classes.inputAdornment}>$</div>
                 <input
