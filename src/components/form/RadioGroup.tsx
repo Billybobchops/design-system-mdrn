@@ -1,7 +1,7 @@
 import Fieldset from '@components/form/Fieldset';
+import Label from '@components/form/Label';
 import { useState } from 'react';
 import classes from './RadioGroup.module.scss';
-
 interface RadioGroupProps {
     legend: string;
     options: { id: string }[];
@@ -17,7 +17,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({ legend, options }) => {
         <Fieldset legend={legend}>
             {options.map((option, i) => {
                 return (
-                    <label className={classes.radioOption} key={option.id}>
+                    <Label inline={true} inputID={option.id} key={option.id}>
                         <input
                             checked={selected.id === option.id}
                             className={classes.radio}
@@ -27,7 +27,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({ legend, options }) => {
                             value={option.id}
                         />
                         {option.id}
-                    </label>
+                    </Label>
                 );
             })}
         </Fieldset>

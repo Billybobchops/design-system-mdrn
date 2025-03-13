@@ -4,6 +4,11 @@
     font-weight: var(--label-font-weight);
 }
 
+.inlineLabel {
+    align-items: center;
+    display: flex;
+}
+
 .required {
     color: var(--required-color);
 }

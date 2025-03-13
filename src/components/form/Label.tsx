@@ -1,16 +1,19 @@
 import classes from './Label.module.scss';
 
 interface LabelProps {
+    children?: React.ReactNode;
+    inline: boolean;
     inputID: string;
-    label: string;
-    required: boolean;
+    label?: string;
+    required?: boolean;
 }
 
-const Label: React.FC<LabelProps> = ({ inputID, label, required }) => {
+const Label: React.FC<LabelProps> = ({ children, inline, inputID, label, required }) => {
     return (
-        <label className={classes.label} htmlFor={inputID}>
+        <label className={inline ? classes.inlineLabel : classes.label} htmlFor={inputID}>
             {label}
-            {required && <span className={classes.required}> *</span>}
+            {required && !inline && <span className={classes.required}> *</span>}
+            {children}
         </label>
     );
 };

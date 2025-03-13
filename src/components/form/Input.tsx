@@ -18,7 +18,7 @@ const Input: React.FC<InputProps> = ({ disabled = false, helperText = '', label,
 
     return (
         <div className={classes.inputContainer}>
-            <Label inputID={inputID} label={label} required={required} />
+            <Label inline={false} inputID={inputID} label={label} required={required} />
             <input
                 aria-invalid={false}
                 aria-describedby={helperID}

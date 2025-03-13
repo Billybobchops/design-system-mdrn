@@ -3,11 +3,11 @@ import { Chevron } from '@components/Icon';
 import SimpleButton from '@components/button/SimpleButton';
 import Checkbox from '@components/form/Checkbox';
 import HelperText from '@components/form/HelperText';
+import Label from '@components/form/Label';
 import SelectAllCheckbox from '@components/form/SelectAllCheckbox';
 import type React from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useId } from 'react';
-import Label from './Label';
 import classes from './MultiSelect.module.scss';
 
 interface MultiSelectOption {
@@ -104,7 +104,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
 
     return (
         <div className={classes.multiSelectContainer} ref={containerRef}>
-            <Label inputID={selectID} label={label} required={required} />
+            <Label inline={false} inputID={selectID} label={label} required={required} />
             <div className={classes.chevronPositioning}>
                 <button
                     aria-expanded={isOpen}
@@ -134,7 +134,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                     <div className={classes.multiSelectDropdown} role="listbox">
                         <ul className={classes.multiSelectList}>
                             <li className={`${classes.multiSelectItem} ${classes.selectAll}`}>
-                                <label htmlFor="Select All">
+                                <Label inline={true} inputID="Select All">
                                     <SelectAllCheckbox
                                         checked={isAllSelected}
                                         onChange={handleToggleAll}
@@ -142,7 +142,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                                         partialCheck={!isEmpty && !isAllSelected}
                                     />
                                     Select All
-                                </label>
+                                </Label>
                             </li>
 
                             {filteredOptions.map((option, i) => (
@@ -150,7 +150,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                                     className={`${classes.multiSelectItem} ${isInputActive && i === 0 ? classes.hoverActive : ''}`}
                                     key={option.value}
                                 >
-                                    <label htmlFor={option.value}>
+                                    <Label inline={true} inputID={option.value}>
                                         <Checkbox
                                             checked={selectedValues.includes(option.value)}
                                             disabled={disabled}
@@ -158,7 +158,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                                             id={option.value}
                                         />
                                         {option.value}
-                                    </label>
+                                    </Label>
                                 </li>
                             ))}
                         </ul>

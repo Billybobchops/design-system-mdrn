@@ -31,7 +31,11 @@ const InputStory = () => {
             id: 'interstellar',
             checked: false,
         },
-        { text: 'Inception', id: 'inception', checked: false },
+        {
+            text: 'Inception',
+            id: 'inception',
+            checked: false,
+        },
     ];
     const radioGroupOptions = [{ id: 'Bland' }, { id: 'Medium' }, { id: 'Hot' }, { id: 'Absolute Destruction' }];
 
