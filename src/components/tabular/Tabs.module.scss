@@ -1,8 +1,10 @@
-.tabContainer {
-    display: block;
+@layer component {
+    .tabContainer {
+        display: block;
 
-    @media (max-width: 500px) {
-        display: grid;
-        grid-template-columns: auto 1fr;
+        @media (max-width: 500px) {
+            display: grid;
+            grid-template-columns: auto 1fr;
+        }
     }
 }

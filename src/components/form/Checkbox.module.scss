@@ -1,5 +1,7 @@
 @use '@styles/mixins.scss' as *;
 
-.checkbox {
-    @include checkboxes;
+@layer component {
+    .checkbox {
+        @include checkboxes;
+    }
 }

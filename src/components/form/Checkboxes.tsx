@@ -2,7 +2,6 @@ import Checkbox from '@components/form/Checkbox';
 import Fieldset from '@components/form/Fieldset';
 import Label from '@components/form/Label';
 import { useState } from 'react';
-import classes from './Checkboxes.module.scss';
 
 interface CheckboxesProps {
     legend: string;

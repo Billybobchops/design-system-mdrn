@@ -1,3 +1,5 @@
-.tabPanel {
-    padding: 20px;
+@layer component {
+    .tabPanel {
+        padding: 20px;
+    }
 }

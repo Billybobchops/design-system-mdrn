@@ -1,33 +1,35 @@
 @use '@styles/mixins.scss' as *;
 
-@include inputs;
+@layer component {
+    @include inputs;
 
-.inputContainer,
-.inputInnerContainer,
-.input {
-    width: var(--input-desktop-width);
+    .inputContainer,
+    .inputInnerContainer,
+    .input {
+        width: var(--input-desktop-width);
 
-    @include mobile-100-w;
-}
+        @include mobile-100-w;
+    }
 
-.inputContainer {
-    margin-bottom: var(--input-container-margin-bottom);
+    .inputContainer {
+        margin-bottom: var(--input-container-margin-bottom);
 
-    .inputInnerContainer {
-        margin: var(--input-margin);
-        position: relative;
+        .inputInnerContainer {
+            margin: var(--input-margin);
+            position: relative;
 
-        .inputAdornment {
-            align-items: center;
-            display: flex;
-            font-size: var(--input-font-size);
-            height: 100%;
-            margin: 0 var(--spacing-s);
-            position: absolute;
-        }
+            .inputAdornment {
+                align-items: center;
+                display: flex;
+                font-size: var(--input-font-size);
+                height: 100%;
+                margin: 0 var(--spacing-s);
+                position: absolute;
+            }
 
-        .input {
-            padding-left: var(--spacing-l);
+            .input {
+                padding-left: var(--spacing-l);
+            }
         }
     }
 }

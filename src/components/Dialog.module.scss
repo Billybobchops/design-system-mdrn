@@ -1,68 +1,70 @@
 @use '@styles/mixins.scss' as *;
 
-.dialog dialog {
-    border: none;
-    border-radius: var(--border-radius-m);
-    max-height: 600px;
-    max-width: 600px;
-    padding: var(--spacing-l) var(--spacing-l) 0 var(--spacing-l);
-    width: calc(100% - 120px);
-}
-
-.dialog dialog::backdrop {
-    background-color: var(--utility-neutral-80);
-    transition: display 0.7s allow-discrete, overlay 0.7s allow-discrete,
-        background-color 0.7s;
-    opacity: 0.8;
-}
-
-.dialogGrid {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-}
-
-.dialogTitle {
-    margin-bottom: 20px;
-}
-
-.actionBar {
-    background-color: var(--utility-neutral-0);
-    border-top: 2px solid var(--utility-neutral-30);
-    bottom: 0;
-    display: grid;
-    justify-content: end;
-    position: sticky;
-    width: 100%;
-
-    @media (max-width: 500px) {
-        justify-content: center;
+@layer component {
+    .dialog dialog {
+        border: none;
+        border-radius: var(--border-radius-m);
+        max-height: 600px;
+        max-width: 600px;
+        padding: var(--spacing-l) var(--spacing-l) 0 var(--spacing-l);
+        width: calc(100% - 120px);
     }
-}
 
-.actions {
-    margin-top: var(--spacing-s);
-
-    @include mobile-100-w;
-
-    @media (max-width: 500px) {
-        display: flex;
-        flex-direction: column-reverse;
+    .dialog dialog::backdrop {
+        background-color: var(--utility-neutral-80);
+        transition: display 0.7s allow-discrete, overlay 0.7s allow-discrete,
+            background-color 0.7s;
+        opacity: 0.8;
     }
-}
 
-.menuClose {
-    margin: var(--spacing-s);
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: transparent;
-    border: none;
-}
+    .dialogGrid {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+    }
 
-.textCenter {
-    text-align: center;
-}
+    .dialogTitle {
+        margin-bottom: 20px;
+    }
 
-.buttonCenter {
-    justify-self: center;
+    .actionBar {
+        background-color: var(--utility-neutral-0);
+        border-top: 2px solid var(--utility-neutral-30);
+        bottom: 0;
+        display: grid;
+        justify-content: end;
+        position: sticky;
+        width: 100%;
+
+        @media (max-width: 500px) {
+            justify-content: center;
+        }
+    }
+
+    .actions {
+        margin-top: var(--spacing-s);
+
+        @include mobile-100-w;
+
+        @media (max-width: 500px) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .menuClose {
+        margin: var(--spacing-s);
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: transparent;
+        border: none;
+    }
+
+    .textCenter {
+        text-align: center;
+    }
+
+    .buttonCenter {
+        justify-self: center;
+    }
 }

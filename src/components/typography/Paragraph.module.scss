@@ -1,5 +1,7 @@
-.paragraph {
-    font-size: var(--body-font-size);
-    line-height: 1.5rem;
-    margin: 0 0 var(--spacing-s) 0;
+@layer component {
+    .paragraph {
+        font-size: var(--body-font-size);
+        line-height: 1.5rem;
+        margin: 0 0 var(--spacing-s) 0;
+    }
 }

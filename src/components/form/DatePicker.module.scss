@@ -1,8 +1,10 @@
-.inputContainer {
-    margin-bottom: 1rem;
-    width: 100%;
+@layer component {
+    .inputContainer {
+        margin-bottom: 1rem;
+        width: 100%;
 
-    @media (min-width: 500px) {
-        width: var(--input-desktop-width);
+        @media (min-width: 500px) {
+            width: var(--input-desktop-width);
+        }
     }
 }

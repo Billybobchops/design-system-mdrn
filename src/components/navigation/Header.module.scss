@@ -1,42 +1,44 @@
-.header {
-    border-bottom: 1px solid var(--utility-neutral-20); // temp
-}
+@layer component {
+    .header {
+        border-bottom: 1px solid var(--utility-neutral-20); // temp
+    }
 
-.container {
-    align-items: center;
-    background: var(--utility-neutral-10);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto;
-    max-width: var(--layout-max-width);
-}
+    .container {
+        align-items: center;
+        background: var(--utility-neutral-10);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: auto;
+        max-width: var(--layout-max-width);
+    }
 
-.homeLink {
-    text-decoration: none;
+    .homeLink {
+        text-decoration: none;
 
-    img {
-        display: block;
-        padding: var(--spacing-xs);
-        max-height: 50px;
+        img {
+            display: block;
+            padding: var(--spacing-xs);
+            max-height: 50px;
 
-        @media (max-width: 390px) {
-            max-height: 40px;
+            @media (max-width: 390px) {
+                max-height: 40px;
+            }
         }
     }
-}
 
-.menuButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none; // Initially hidden on larger screens
-    padding: 0;
-    margin: 0 var(--spacing-s);
-    z-index: 10; // Ensure it's above the nav when open
+    .menuButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none; // Initially hidden on larger screens
+        padding: 0;
+        margin: 0 var(--spacing-s);
+        z-index: 10; // Ensure it's above the nav when open
 
-    // Make the button appear on mobile
-    @media (max-width: 768px) {
-        display: block;
+        // Make the button appear on mobile
+        @media (max-width: 768px) {
+            display: block;
+        }
     }
 }

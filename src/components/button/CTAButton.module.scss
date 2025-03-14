@@ -1,11 +1,13 @@
 @use '@styles/mixins.scss' as *;
 
-.button {
-    @include buttons;
+@layer component {
+    .button {
+        @include buttons;
 
-    border-radius: var(--border-radius-l);
-    border: 2px solid var(--utility-neutral-10);
-    padding: var(--button-padding-large);
+        border-radius: var(--border-radius-l);
+        border: 2px solid var(--utility-neutral-10);
+        padding: var(--button-padding-large);
 
-    @include mobile-100-w;
+        @include mobile-100-w;
+    }
 }

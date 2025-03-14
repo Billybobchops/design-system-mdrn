@@ -1,3 +1,5 @@
+@layer design-system, component, spacing;
+
 @layer design-system {
     html,
     body {
@@ -196,5 +198,99 @@
     a {
         color: inherit;
         text-decoration: none;
+    }
+}
+
+@layer spacing {
+    /* Utility Spacing */
+    @each $size,
+        $value
+            in (
+                xxs: var(--spacing-xxs),
+                xs: var(--spacing-xs),
+                s: var(--spacing-s),
+                m: var(--spacing-m),
+                l: var(--spacing-l),
+                xl: var(--spacing-xl),
+                xxl: var(--spacing-xxl)
+            )
+    {
+        .u-mb-#{$size} {
+            margin-bottom: $value;
+        }
+
+        .u-mt-#{$size} {
+            margin-top: $value;
+        }
+
+        .u-ml-#{$size} {
+            margin-left: $value;
+        }
+
+        .u-mr-#{$size} {
+            margin-right: $value;
+        }
+
+        .u-mx-#{$size} {
+            margin-left: $value;
+            margin-right: $value;
+        }
+
+        .u-my-#{$size} {
+            margin-top: $value;
+            margin-bottom: $value;
+        }
+
+        .u-pb-#{$size} {
+            padding-bottom: $value;
+        }
+
+        .u-pt-#{$size} {
+            padding-top: $value;
+        }
+
+        .u-pl-#{$size} {
+            padding-left: $value;
+        }
+
+        .u-pr-#{$size} {
+            padding-right: $value;
+        }
+
+        .u-px-#{$size} {
+            padding-left: $value;
+            padding-right: $value;
+        }
+
+        .u-py-#{$size} {
+            padding-top: $value;
+            padding-bottom: $value;
+        }
+    }
+
+    .u-mb-none {
+        margin-bottom: 0;
+    }
+
+    .u-mt-none {
+        margin-top: 0;
+    }
+
+    .u-ml-none {
+        margin-left: 0;
+    }
+
+    .u-mr-none {
+        margin-right: 0;
+    }
+
+    .u-mx-none {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .u-my-none {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }

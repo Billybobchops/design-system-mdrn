@@ -1,58 +1,60 @@
 @use '@styles/mixins.scss' as *;
 
-.button {
-    @include buttons;
+@layer component {
+    .button {
+        @include buttons;
 
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    line-height: 1;
-    padding: 4px;
-    vertical-align: middle;
-    color: var(--theme-a-4);
-
-    .iconStart,
-    .iconEnd {
         align-items: center;
-        display: flex;
-    }
-
-    &.red,
-    &.green,
-    &.blue,
-    &.disabled {
-        background: none;
-
-        &:hover {
-            background: none;
-        }
-    }
-
-    &.red {
-        color: var(--utility-red-50);
-
-        &:hover {
-            color: var(--utility-red-70);
-        }
-    }
-
-    &.green {
-        color: var(--utility-green-70);
-
-        &:hover {
-            color: var(--utility-green-80);
-        }
-    }
-
-    &.blue {
+        display: inline-flex;
+        justify-content: center;
+        line-height: 1;
+        padding: 4px;
+        vertical-align: middle;
         color: var(--theme-a-4);
 
-        &:hover {
-            color: var(--theme-a-3);
+        .iconStart,
+        .iconEnd {
+            align-items: center;
+            display: flex;
         }
-    }
 
-    &.disabled {
-        color: var(--utility-neutral-60);
+        &.red,
+        &.green,
+        &.blue,
+        &.disabled {
+            background: none;
+
+            &:hover {
+                background: none;
+            }
+        }
+
+        &.red {
+            color: var(--utility-red-50);
+
+            &:hover {
+                color: var(--utility-red-70);
+            }
+        }
+
+        &.green {
+            color: var(--utility-green-70);
+
+            &:hover {
+                color: var(--utility-green-80);
+            }
+        }
+
+        &.blue {
+            color: var(--theme-a-4);
+
+            &:hover {
+                color: var(--theme-a-3);
+            }
+        }
+
+        &.disabled {
+            color: var(--utility-neutral-60);
+        }
     }
 }

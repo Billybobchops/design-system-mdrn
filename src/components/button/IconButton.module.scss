@@ -1,65 +1,67 @@
 @use '@styles/mixins.scss' as *;
 
-.button {
-    @include buttons;
+@layer component {
+    .button {
+        @include buttons;
 
-    align-items: center;
-    display: inline-flex;
-    padding: var(--spacing-xs);
+        align-items: center;
+        display: inline-flex;
+        padding: var(--spacing-xs);
 
-    svg {
-        fill: currentColor;
-    }
-
-    &:hover svg {
-        fill: var(--utility-neutral-0);
-    }
-
-    &.red,
-    &.green,
-    &.blue {
-        background: none;
-    }
-
-    &.red {
-        color: var(--utility-red-70);
-
-        &:hover {
-            background-color: var(--utility-red-50);
-            color: var(--utility-neutral-0);
+        svg {
+            fill: currentColor;
         }
-    }
 
-    &.green {
-        color: var(--utility-green-80);
-
-        &:hover {
-            background-color: var(--utility-green-60);
-            color: var(--utility-neutral-0);
+        &:hover svg {
+            fill: var(--utility-neutral-0);
         }
-    }
 
-    &.blue {
-        color: var(--theme-a-4);
-
-        &:hover {
-            background-color: var(--theme-a-3);
-            color: var(--utility-neutral-0);
+        &.red,
+        &.green,
+        &.blue {
+            background: none;
         }
-    }
 
-    &.disabled {
-        background-color: var(--utility-neutral-10);
-        border: none;
-        color: var(--utility-neutral-60);
+        &.red {
+            color: var(--utility-red-70);
 
-        &:hover {
+            &:hover {
+                background-color: var(--utility-red-50);
+                color: var(--utility-neutral-0);
+            }
+        }
+
+        &.green {
+            color: var(--utility-green-80);
+
+            &:hover {
+                background-color: var(--utility-green-60);
+                color: var(--utility-neutral-0);
+            }
+        }
+
+        &.blue {
+            color: var(--theme-a-4);
+
+            &:hover {
+                background-color: var(--theme-a-3);
+                color: var(--utility-neutral-0);
+            }
+        }
+
+        &.disabled {
             background-color: var(--utility-neutral-10);
             border: none;
             color: var(--utility-neutral-60);
 
-            svg {
-                fill: var(--utility-neutral-60);
+            &:hover {
+                background-color: var(--utility-neutral-10);
+                border: none;
+                color: var(--utility-neutral-60);
+
+                svg {
+                    fill: var(--utility-neutral-60);
+                }
             }
         }
     }

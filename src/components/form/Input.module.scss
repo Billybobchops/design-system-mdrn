@@ -1,3 +1,5 @@
 @use '@styles/mixins.scss' as *;
 
-@include inputs;
+@layer component {
+    @include inputs;
+}

@@ -1,15 +1,17 @@
 @use '@styles/mixins.scss' as *;
 
-.button {
-    @include buttons;
+@layer component {
+    .button {
+        @include buttons;
 
-    border-radius: var(--border-radius-s);
+        border-radius: var(--border-radius-s);
 
-    .innerButton {
-        align-items: center;
-        display: flex;
-        justify-content: center;
+        .innerButton {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        @include mobile-100-w;
     }
-
-    @include mobile-100-w;
 }

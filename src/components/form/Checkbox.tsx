@@ -1,3 +1,5 @@
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import classes from './Checkbox.module.scss';
 
 interface CheckboxProps {
@@ -5,14 +7,15 @@ interface CheckboxProps {
     disabled?: boolean;
     id?: string;
     onChange: () => void;
+    spacing?: Spacing | Spacing[];
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ checked, disabled = false, id, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ checked, disabled = false, id, onChange, spacing }) => {
     return (
         <input
             aria-checked={checked}
             checked={checked}
-            className={classes.checkbox}
+            className={clsx(classes.checkbox, spacing)}
             disabled={disabled}
             id={id}
             name={id}

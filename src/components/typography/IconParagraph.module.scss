@@ -1,6 +1,8 @@
-.grid {
-    align-items: start;
-    display: grid;
-    gap: 6px;
-    grid-template-columns: auto 1fr;
+@layer component {
+    .grid {
+        align-items: start;
+        display: grid;
+        gap: 6px;
+        grid-template-columns: auto 1fr;
+    }
 }

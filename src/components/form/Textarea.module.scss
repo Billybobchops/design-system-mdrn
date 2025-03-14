@@ -1,7 +1,9 @@
 @use '@styles/mixins.scss' as *;
 
-@include inputs;
+@layer component {
+    @include inputs;
 
-.input {
-    height: 120px;
+    .input {
+        height: 120px;
+    }
 }

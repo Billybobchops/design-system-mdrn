@@ -1,32 +1,34 @@
-.chip,
-.chip .icon {
-    align-items: center;
-    display: grid;
-}
-
-.chip {
-    background-color: var(--theme-a-1);
-    border-radius: var(--border-radius-s);
-    border: 1px solid var(--theme-a-2);
-    color: var(--theme-a-4);
-    font-size: 14px;
-    font-weight: 700;
-    grid-template-columns: repeat(2, auto);
-    margin: 0;
-
-    .title {
-        margin: var(--spacing-xxs) var(--spacing-xs);
+@layer component {
+    .chip,
+    .chip .icon {
+        align-items: center;
+        display: grid;
     }
 
-    .icon {
-        padding: var(--spacing-xxs);
+    .chip {
+        background-color: var(--theme-a-1);
+        border-radius: var(--border-radius-s);
+        border: 1px solid var(--theme-a-2);
+        color: var(--theme-a-4);
+        font-size: 14px;
+        font-weight: 700;
+        grid-template-columns: repeat(2, auto);
+        margin: 0;
+
+        .title {
+            margin: var(--spacing-xxs) var(--spacing-xs);
+        }
+
+        .icon {
+            padding: var(--spacing-xxs);
+        }
+
+        .iconHover {
+            background-color: var(--theme-a-3);
+        }
     }
 
-    .iconHover {
-        background-color: var(--theme-a-3);
+    .chipHover {
+        border: 1px solid var(--theme-a-3);
     }
-}
-
-.chipHover {
-    border: 1px solid var(--theme-a-3);
 }

@@ -1,132 +1,134 @@
 @use '@styles/mixins.scss' as *;
 
-.multiSelectContainer {
-    margin-bottom: var(--input-container-margin-bottom);
-    width: var(--input-desktop-width);
+@layer component {
+    .multiSelectContainer {
+        margin-bottom: var(--input-container-margin-bottom);
+        width: var(--input-desktop-width);
 
-    .chevronPositioning {
-        align-items: center;
-        display: flex;
-        position: relative;
-        width: fit-content;
+        .chevronPositioning {
+            align-items: center;
+            display: flex;
+            position: relative;
+            width: fit-content;
 
-        svg {
-            transform: rotate(90deg);
-            pointer-events: none;
-            position: absolute;
-            right: 1rem;
-            top: 42%;
-        }
-
-        .activeChevron svg {
-            transform: rotate(-90deg);
-        }
-
-        @include mobile-100-w;
-    }
-
-    .multiSelectButton {
-        appearance: none;
-        background: none;
-        border-radius: var(--input-border-radius);
-        border: var(--input-border);
-        font-size: var(--input-font-size);
-        margin: var(--input-margin);
-
-        input[aria-label='Search options'] {
-            font-size: var(--input-font-size);
-            height: var(--input-height);
-            padding-right: var(--spacing-l);
-            padding: var(--input-padding);
-            text-align: left;
-            width: var(--input-desktop-width);
-
-            &:focus-visible {
-                border: var(--input-border-focus);
+            svg {
+                transform: rotate(90deg);
+                pointer-events: none;
+                position: absolute;
+                right: 1rem;
+                top: 42%;
             }
 
-            &:hover {
-                border: var(--input-border-hover);
+            .activeChevron svg {
+                transform: rotate(-90deg);
             }
 
             @include mobile-100-w;
         }
 
-        @include mobile-100-w;
-    }
+        .multiSelectButton {
+            appearance: none;
+            background: none;
+            border-radius: var(--input-border-radius);
+            border: var(--input-border);
+            font-size: var(--input-font-size);
+            margin: var(--input-margin);
 
-    .multiSelectDropdown {
-        background: #fff;
-        border: 1px solid #ccc;
-        left: 0;
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        z-index: 1;
-    }
+            input[aria-label='Search options'] {
+                font-size: var(--input-font-size);
+                height: var(--input-height);
+                padding-right: var(--spacing-l);
+                padding: var(--input-padding);
+                text-align: left;
+                width: var(--input-desktop-width);
 
-    .multiSelectSearch {
-        border: 1px solid #ccc;
-        padding: var(--spacing-xs);
-        width: calc(100% - 16px);
-    }
+                &:focus-visible {
+                    border: var(--input-border-focus);
+                }
 
-    .multiSelectList {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        max-height: 200px;
-        overflow-y: auto;
-    }
+                &:hover {
+                    border: var(--input-border-hover);
+                }
 
-    .multiSelectItem {
-        label {
-            display: flex;
-            align-items: center;
+                @include mobile-100-w;
+            }
 
-            input {
-                margin: var(--spacing-xs);
-                margin: 12px;
+            @include mobile-100-w;
+        }
+
+        .multiSelectDropdown {
+            background: #fff;
+            border: 1px solid #ccc;
+            left: 0;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .multiSelectSearch {
+            border: 1px solid #ccc;
+            padding: var(--spacing-xs);
+            width: calc(100% - 16px);
+        }
+
+        .multiSelectList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .multiSelectItem {
+            label {
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin: var(--spacing-xs);
+                    margin: 12px;
+                }
+            }
+
+            &:hover {
+                background-color: var(--theme-a-1);
+                border-bottom: 1px solid var(--theme-a-3);
             }
         }
 
-        &:hover {
+        .hoverActive {
             background-color: var(--theme-a-1);
             border-bottom: 1px solid var(--theme-a-3);
         }
-    }
 
-    .hoverActive {
-        background-color: var(--theme-a-1);
-        border-bottom: 1px solid var(--theme-a-3);
-    }
+        .selectAll {
+            border-bottom: 1px solid var(--utility-neutral-20);
+            font-weight: 700;
+        }
 
-    .selectAll {
-        border-bottom: 1px solid var(--utility-neutral-20);
-        font-weight: 700;
-    }
+        .input[aria-invalid='true'] {
+            border-color: var(--input-invalid-border-color);
+            border-left-width: var(--input-invalid-border-left-width);
+        }
 
-    .input[aria-invalid='true'] {
-        border-color: var(--input-invalid-border-color);
-        border-left-width: var(--input-invalid-border-left-width);
-    }
+        .chipContainer {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin: var(--spacing-xs) 0 var(--spacing-xxs) 0;
+            width: 100%;
 
-    .chipContainer {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--spacing-xs);
-        margin: var(--spacing-xs) 0 var(--spacing-xxs) 0;
-        width: 100%;
-
-        .cancelLink {
-            button {
-                font-weight: 400;
-                margin: var(--spacing-xxs) 12px;
-                text-decoration: underline;
+            .cancelLink {
+                button {
+                    font-weight: 400;
+                    margin: var(--spacing-xxs) 12px;
+                    text-decoration: underline;
+                }
             }
         }
-    }
 
-    @include mobile-100-w;
+        @include mobile-100-w;
+    }
 }

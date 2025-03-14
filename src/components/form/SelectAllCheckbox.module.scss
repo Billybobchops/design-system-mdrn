@@ -1,19 +1,21 @@
 @use '@styles/mixins.scss' as *;
 
-.checkbox {
-    @include checkboxes;
+@layer component {
+    .checkbox {
+        @include checkboxes;
 
-    &.partialCheck {
-        background-color: var(--theme-a-3);
-        border-color: var(--theme-a-3);
-    }
+        &.partialCheck {
+            background-color: var(--theme-a-3);
+            border-color: var(--theme-a-3);
+        }
 
-    &.partialCheck::before {
-        background-color: var(--utility-neutral-0);
-        clip-path: none;
-        content: '';
-        height: 2px;
-        transform: scale(1);
-        width: 0.65em;
+        &.partialCheck::before {
+            background-color: var(--utility-neutral-0);
+            clip-path: none;
+            content: '';
+            height: 2px;
+            transform: scale(1);
+            width: 0.65em;
+        }
     }
 }
