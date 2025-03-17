@@ -1,4 +1,6 @@
-@layer component {
+@import '@styles/layer-order.scss';
+
+@layer components {
     .list {
         margin: 0 0 var(--spacing-s) var(--spacing-m);
     }

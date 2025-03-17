@@ -7,6 +7,7 @@ export default createModuleFederationConfig({
     },
     filename: 'static/remoteEntry.js',
     exposes: {
+        './DesignSystemRootStyles': './src/styles/design-system-styles.ts',
         './VisuallyHidden': './src/components/accessibility/VisuallyHidden.tsx',
         './CTAButton': './src/components/button/CTAButton.tsx',
         './IconButton': './src/components/button/IconButton.tsx',
@@ -46,7 +47,7 @@ export default createModuleFederationConfig({
         './Icon': './src/components/Icon.tsx',
         './InlineLink': './src/components/InlineLink.tsx',
         './Header': './src/components/navigation/Header.tsx',
-        './DesignSystemRootStyles': './src/styles/design-system-styles.ts',
+        './DesignSystemSpacing': './src/styles/design-system-spacing.ts',
     },
     shared: {
         react: { singleton: true, requiredVersion: '18.3.1' },

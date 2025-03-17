@@ -1,3 +1,5 @@
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import React from 'react';
 import classes from './CTAButton.module.scss';
 
@@ -6,6 +8,7 @@ interface ButtonProps {
     disabled: boolean;
     icon?: React.ReactElement<React.SVGProps<SVGSVGElement>>;
     iconPosition?: 'start' | 'end';
+    spacing?: Spacing | Spacing[];
     text: string;
     type?: 'button' | 'submit';
     variant?: 'blue' | 'green';
@@ -16,6 +19,7 @@ const CTAButton: React.FC<ButtonProps> = ({
     disabled = false,
     icon,
     iconPosition = 'end',
+    spacing,
     text,
     type = 'button',
     variant = 'blue',
@@ -24,7 +28,7 @@ const CTAButton: React.FC<ButtonProps> = ({
 
     return (
         <button
-            className={`${classes.button} ${variant ? classes[variant] : ''} ${disabled ? classes.disabled : ''}`}
+            className={clsx(classes.button, classes[variant], disabled && classes.disabled, spacing)}
             disabled={disabled}
             onClick={clickHandler}
             type={type}

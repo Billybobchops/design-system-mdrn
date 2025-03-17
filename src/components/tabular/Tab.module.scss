@@ -1,4 +1,6 @@
-@layer component {
+@import '@styles/layer-order.scss';
+
+@layer components {
     .tab {
         background-color: var(--utility-neutral-05);
         border: 1px solid var(--utility-neutral-20);

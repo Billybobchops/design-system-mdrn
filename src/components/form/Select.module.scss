@@ -1,6 +1,7 @@
 @use '@styles/mixins.scss' as *;
+@import '@styles/layer-order.scss';
 
-@layer component {
+@layer components {
     .selectContainer {
         margin-bottom: var(--input-container-margin-bottom);
     }

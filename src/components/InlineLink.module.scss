@@ -1,4 +1,6 @@
-@layer component {
+@import '@styles/layer-order.scss';
+
+@layer components {
     .link {
         color: var(--theme-a-4);
         text-decoration: underline;

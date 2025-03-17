@@ -1,4 +1,6 @@
-@layer component {
+@import '@styles/layer-order.scss';
+
+@layer components {
     .tabPanel {
         padding: 20px;
     }

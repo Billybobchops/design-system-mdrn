@@ -1,4 +1,6 @@
-@layer component {
+@import '@styles/layer-order.scss';
+
+@layer components {
     .label {
         display: block;
         font-size: var(--label-font-size);
