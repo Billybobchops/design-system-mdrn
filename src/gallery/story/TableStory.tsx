@@ -43,7 +43,7 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
             <MuiTableRow>
                 <MuiTableCell colSpan={5}>
                     <MuiCollapse in={isOpen}>
-                        <Heading level={'h3'}>Account Settings</Heading>
+                        <Heading semanticLevel={'h3'}>Account Settings</Heading>
                     </MuiCollapse>
                 </MuiTableCell>
             </MuiTableRow>

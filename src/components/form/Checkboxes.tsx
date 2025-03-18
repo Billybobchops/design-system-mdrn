@@ -1,14 +1,16 @@
 import Checkbox from '@components/form/Checkbox';
 import Fieldset from '@components/form/Fieldset';
 import Label from '@components/form/Label';
+import type { Spacing } from '@styles/spacing';
 import { useState } from 'react';
 
 interface CheckboxesProps {
     legend: string;
+    spacing?: Spacing | Spacing[];
     options: { text: string; id: string; checked: boolean; required?: boolean }[];
 }
 
-const Checkboxes: React.FC<CheckboxesProps> = ({ legend, options }) => {
+const Checkboxes: React.FC<CheckboxesProps> = ({ legend, spacing, options }) => {
     const [checkedItems, setCheckedItems] = useState(options);
     const handleChange = (index: number) => {
         setCheckedItems(
@@ -19,7 +21,7 @@ const Checkboxes: React.FC<CheckboxesProps> = ({ legend, options }) => {
     };
 
     return (
-        <Fieldset legend={legend}>
+        <Fieldset legend={legend} spacing={spacing}>
             {checkedItems.map((item, i) => {
                 return (
                     <Label inline={true} key={item.id} inputID={item.id} required={item.required}>

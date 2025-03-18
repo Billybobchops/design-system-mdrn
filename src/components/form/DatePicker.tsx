@@ -1,23 +1,26 @@
 import HelperText from '@components/form/HelperText';
 import Label from '@components/form/Label';
 import { DatePicker } from '@mui/x-date-pickers';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import { useId } from 'react';
 import classes from './DatePicker.module.scss';
 import DateProvider from './DateProvider';
 
 interface DatePickerInputProps {
-    label: string;
     helperText?: string;
+    label: string;
     required: boolean;
+    spacing?: Spacing | Spacing[];
 }
 
-const DatePickerInput: React.FC<DatePickerInputProps> = ({ label, helperText = '', required }) => {
+const DatePickerInput: React.FC<DatePickerInputProps> = ({ label, helperText = '', required, spacing }) => {
     const inputID = useId();
     const helperID = useId();
 
     return (
         <DateProvider>
-            <div className={classes.inputContainer}>
+            <div className={clsx(classes.inputContainer, spacing)}>
                 <Label inline={false} inputID={inputID} label={label} required={required} />
                 <DatePicker
                     slotProps={{ textField: { fullWidth: true, placeholder: '' } }}

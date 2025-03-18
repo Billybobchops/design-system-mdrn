@@ -1,5 +1,7 @@
 import HelperText from '@components/form/HelperText';
 import Label from '@components/form/Label';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import { useId } from 'react';
 import classes from './InputMonetary.module.scss';
 
@@ -9,6 +11,7 @@ interface InputMonetaryProps {
     label: string;
     name: string;
     required: boolean;
+    spacing?: Spacing | Spacing[];
 }
 
 const InputMonetary: React.FC<InputMonetaryProps> = ({
@@ -17,12 +20,13 @@ const InputMonetary: React.FC<InputMonetaryProps> = ({
     label,
     name,
     required = false,
+    spacing,
 }) => {
     const inputID = useId();
     const helperID = useId();
 
     return (
-        <div className={classes.inputContainer}>
+        <div className={clsx(classes.inputContainer, spacing)}>
             <Label inline={false} inputID={inputID} label={label} required={required} />
             <div className={classes.inputInnerContainer}>
                 <div className={classes.inputAdornment}>$</div>

@@ -47,6 +47,7 @@ export default createModuleFederationConfig({
         './Icon': './src/components/Icon.tsx',
         './InlineLink': './src/components/InlineLink.tsx',
         './Header': './src/components/navigation/Header.tsx',
+        './AccountLinks': './src/components/AccountLinks.tsx',
         './DesignSystemSpacing': './src/styles/design-system-spacing.ts',
     },
     shared: {

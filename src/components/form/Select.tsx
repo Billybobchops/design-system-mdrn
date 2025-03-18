@@ -1,5 +1,7 @@
 import { SelectChevron } from '@components/Icon';
 import HelperText from '@components/form/HelperText';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import { useId } from 'react';
 import Label from './Label';
 import classes from './Select.module.scss';
@@ -15,6 +17,7 @@ interface SelectProps {
     name: string;
     required?: boolean;
     options: SelectOption[];
+    spacing?: Spacing | Spacing[];
     // onChange: (value: string) => void;
 }
 
@@ -25,6 +28,7 @@ const Select: React.FC<SelectProps> = ({
     name,
     required = false,
     options,
+    spacing,
     // onChange,
 }) => {
     const selectID = useId();
@@ -35,7 +39,7 @@ const Select: React.FC<SelectProps> = ({
     // };
 
     return (
-        <div className={classes.selectContainer}>
+        <div className={clsx(classes.selectContainer, spacing)}>
             <Label inline={false} inputID={selectID} label={label} required={required} />
             <div className={classes.chevronPositioning}>
                 <select

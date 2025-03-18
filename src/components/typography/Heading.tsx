@@ -1,16 +1,19 @@
+import clsx from 'clsx';
 import React from 'react';
 import classes from './Heading.module.scss';
 
-interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
-    addOnClass?: string;
+type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+interface HeadingProps {
     children: React.ReactNode;
-    level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    classLevel?: HeadingLevel;
+    semanticLevel: HeadingLevel;
 }
 
-const Heading: React.FC<HeadingProps> = ({ level, children, addOnClass }) => {
-    const headingClass = `${classes[level]} ${addOnClass ? addOnClass : ''}`;
+const Heading: React.FC<HeadingProps> = ({ semanticLevel, classLevel, children }) => {
+    const headingClass = clsx(classes[classLevel ?? semanticLevel]);
 
-    return React.createElement(level, { className: headingClass }, children);
+    return React.createElement(semanticLevel, { className: headingClass }, children);
 };
 
 export default Heading;

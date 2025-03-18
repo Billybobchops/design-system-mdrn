@@ -1,5 +1,6 @@
 import GalleryDisplayArea from './GalleryDisplayArea';
 import AccordionStory from './story/AccordionStory';
+import AccountLinksStory from './story/AccountLinksStory';
 import AlertStory from './story/AlertStory';
 import BadgeStory from './story/BadgeStory';
 import ButtonCTAStory from './story/ButtonCTAStory';
@@ -30,6 +31,10 @@ export function Gallery() {
 
             <GalleryDisplayArea title="Inline Link">
                 <InlineLinkStory />
+            </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Account Links (legacy)">
+                <AccountLinksStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Primary Button">

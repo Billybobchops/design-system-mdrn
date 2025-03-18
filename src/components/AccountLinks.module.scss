@@ -1,0 +1,29 @@
+@import '@styles/layer-order.scss';
+
+@layer components {
+    .accountLink {
+        color: var(--theme-a-4);
+        display: block;
+        margin: 0 var(--spacing-xs) var(--spacing-xs) 0;
+        text-decoration: underline;
+        width: fit-content;
+
+        &:hover {
+            color: var(--theme-a-3);
+            text-decoration: none;
+        }
+    }
+
+    .selected {
+        background-color: var(--utility-green-70);
+        border-radius: var(--border-radius-l);
+        color: var(--utility-neutral-0);
+        padding: var(--spacing-xxs) var(--spacing-xs);
+        text-decoration: none;
+
+        &:hover {
+            background-color: var(--utility-green-70);
+            color: var(--utility-neutral-0);
+        }
+    }
+}

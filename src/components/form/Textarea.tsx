@@ -1,5 +1,7 @@
 import HelperText from '@components/form/HelperText';
 import Label from '@components/form/Label';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import { useId } from 'react';
 import classes from './Textarea.module.scss';
 
@@ -9,14 +11,22 @@ interface TextareaProps {
     label: string;
     name: string;
     required: boolean;
+    spacing?: Spacing | Spacing[];
 }
 
-const Textarea: React.FC<TextareaProps> = ({ disabled = false, helperText = '', label, name, required = false }) => {
+const Textarea: React.FC<TextareaProps> = ({
+    disabled = false,
+    helperText = '',
+    label,
+    name,
+    required = false,
+    spacing,
+}) => {
     const inputID = useId();
     const helperID = useId();
 
     return (
-        <div className={classes.inputContainer}>
+        <div className={clsx(classes.inputContainer, spacing)}>
             <Label inline={false} inputID={inputID} label={label} required={required} />
             <textarea
                 aria-invalid={false}

@@ -1,3 +1,5 @@
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import React from 'react';
 import { useState } from 'react';
 import classes from './LinkIconButton.module.scss';
@@ -7,6 +9,7 @@ interface IconButtonProps {
     disabled: boolean;
     icon?: React.ReactElement<React.SVGProps<SVGSVGElement>>;
     iconPosition?: 'start' | 'end';
+    spacing?: Spacing | Spacing[];
     text: string;
     type?: 'button' | 'submit';
     variant?: 'blue' | 'green' | 'red';
@@ -17,6 +20,7 @@ const IconButton: React.FC<IconButtonProps> = ({
     disabled = false,
     icon,
     iconPosition = 'end',
+    spacing,
     text,
     type = 'button',
     variant = 'blue',
@@ -37,14 +41,11 @@ const IconButton: React.FC<IconButtonProps> = ({
                 return { fill: 'var(--utility-neutral-60)', hoverFill: 'var(--utility-neutral-60)' };
         }
     };
-
     const fillColor = isHovered ? getFillColor(variant, disabled).hoverFill : getFillColor(variant, disabled).fill;
-
-    const buttonClasses = `${classes.button} ${disabled ? classes.disabled : classes[variant]}`;
 
     return (
         <button
-            className={buttonClasses}
+            className={clsx(classes.button, classes[variant], disabled && classes.disabled, spacing)}
             disabled={disabled}
             onClick={clickHandler}
             onMouseEnter={() => setIsHovered(true)}

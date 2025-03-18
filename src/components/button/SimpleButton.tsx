@@ -1,8 +1,11 @@
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import classes from './SimpleButton.module.scss';
 
 interface SimpleButtonProps {
     clickHandler: () => void;
     disabled?: boolean;
+    spacing?: Spacing | Spacing[];
     text: string;
     type?: 'button' | 'submit';
     variant?: 'blue' | 'green' | 'red';
@@ -11,14 +14,18 @@ interface SimpleButtonProps {
 const SimpleButton: React.FC<SimpleButtonProps> = ({
     clickHandler,
     disabled = false,
+    spacing,
     text,
     type = 'button',
     variant = 'blue',
 }) => {
-    const buttonClasses = `${classes.button} ${disabled ? classes.disabled : classes[variant]}`;
-
     return (
-        <button className={buttonClasses} disabled={disabled} onClick={clickHandler} type={type}>
+        <button
+            className={clsx(classes.button, classes[variant], disabled && classes.disabled, spacing)}
+            disabled={disabled}
+            onClick={clickHandler}
+            type={type}
+        >
             {text}
         </button>
     );

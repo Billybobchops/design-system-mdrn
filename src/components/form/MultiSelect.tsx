@@ -5,6 +5,8 @@ import Checkbox from '@components/form/Checkbox';
 import HelperText from '@components/form/HelperText';
 import Label from '@components/form/Label';
 import SelectAllCheckbox from '@components/form/SelectAllCheckbox';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import type React from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useId } from 'react';
@@ -24,6 +26,7 @@ interface MultiSelectProps {
     placeholder?: string;
     required?: boolean;
     selectedValues: string[];
+    spacing?: Spacing | Spacing[];
 }
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -36,6 +39,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     placeholder = 'Select options...',
     required = false,
     selectedValues,
+    spacing,
 }) => {
     const selectID = useId();
     const helperID = useId();
@@ -103,7 +107,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     }, []);
 
     return (
-        <div className={classes.multiSelectContainer} ref={containerRef}>
+        <div className={clsx(classes.multiSelectContainer, spacing)} ref={containerRef}>
             <Label inline={false} inputID={selectID} label={label} required={required} />
             <div className={classes.chevronPositioning}>
                 <button

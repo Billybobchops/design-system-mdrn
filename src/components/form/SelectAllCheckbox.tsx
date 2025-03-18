@@ -1,3 +1,5 @@
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import classes from './SelectAllCheckbox.module.scss';
 
 interface SelectAllCheckboxProps {
@@ -6,6 +8,7 @@ interface SelectAllCheckboxProps {
     id?: string;
     onChange: () => void;
     partialCheck: boolean;
+    spacing?: Spacing | Spacing[];
 }
 
 const SelectAllCheckbox: React.FC<SelectAllCheckboxProps> = ({
@@ -14,12 +17,13 @@ const SelectAllCheckbox: React.FC<SelectAllCheckboxProps> = ({
     id,
     onChange,
     partialCheck = false,
+    spacing,
 }) => {
     return (
         <input
             aria-checked={checked}
             checked={checked}
-            className={`${classes.checkbox} ${partialCheck ? classes.partialCheck : ''}`}
+            className={clsx(classes.checkbox, partialCheck && classes.partialCheck, spacing)}
             disabled={disabled}
             id={id}
             name={id}

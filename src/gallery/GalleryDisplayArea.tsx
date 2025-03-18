@@ -10,7 +10,7 @@ interface GalleryDisplayAreaProps {
 const GalleryDisplayArea: React.FC<GalleryDisplayAreaProps> = ({ children, title }) => {
     return (
         <section className={classes.galleryDisplayArea}>
-            <Heading level="h2">{title}</Heading>
+            <Heading semanticLevel="h2">{title}</Heading>
             {children}
         </section>
     );

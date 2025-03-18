@@ -1,5 +1,7 @@
 import InputHelperText from '@components/form/HelperText';
 import Label from '@components/form/Label';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import { useId } from 'react';
 import classes from './Input.module.scss';
 
@@ -9,15 +11,24 @@ interface InputProps {
     label: string;
     name: string;
     required: boolean;
+    spacing?: Spacing | Spacing[];
     type: 'text' | 'tel' | 'number';
 }
 
-const Input: React.FC<InputProps> = ({ disabled = false, helperText = '', label, name, required = false, type }) => {
+const Input: React.FC<InputProps> = ({
+    disabled = false,
+    helperText = '',
+    label,
+    name,
+    required = false,
+    spacing,
+    type,
+}) => {
     const inputID = useId();
     const helperID = useId();
 
     return (
-        <div className={classes.inputContainer}>
+        <div className={clsx(classes.inputContainer, spacing)}>
             <Label inline={false} inputID={inputID} label={label} required={required} />
             <input
                 aria-invalid={false}
