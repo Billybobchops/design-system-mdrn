@@ -49,10 +49,9 @@ export function Gallery() {
                 <ButtonLinkIconStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Icon Button (Broken .. merge with Link Icon Button)">
-                {/* MERGE with Link Icon Buttons for developer simplicity? */}
+            {/* <GalleryDisplayArea title="Icon Button (Broken .. merge with Link Icon Button)">
                 <ButtonIconStory />
-            </GalleryDisplayArea>
+            </GalleryDisplayArea> */}
 
             <GalleryDisplayArea title="Simple Button">
                 <ButtonSimpleStory />
