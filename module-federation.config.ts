@@ -48,6 +48,8 @@ export default createModuleFederationConfig({
         './InlineLink': './src/components/InlineLink.tsx',
         './Header': './src/components/navigation/Header.tsx',
         './AccountLinks': './src/components/AccountLinks.tsx',
+        './Form': './src/components/form/Form.tsx',
+        './PhoneInput': './src/components/form/PhoneInput.tsx',
         './DesignSystemSpacing': './src/styles/design-system-spacing.ts',
     },
     shared: {
@@ -55,5 +57,6 @@ export default createModuleFederationConfig({
         'react-dom': { singleton: true, requiredVersion: '18.3.1' },
         'react-router-dom': { singleton: true, requiredVersion: '18.3.1' },
         clsx: { singleton: true, requiredVersion: '2.1.1' },
+        'react-hook-form': { singleton: true, requiredVersion: '7.54.2' },
     },
 });

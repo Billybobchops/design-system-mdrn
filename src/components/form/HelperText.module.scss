@@ -4,6 +4,9 @@
     .helperText {
         display: block;
         font-size: 12px;
-        margin-left: 5px;
+    }
+
+    .errorText {
+        color: var(--utility-red-70);
     }
 }

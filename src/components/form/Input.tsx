@@ -3,6 +3,7 @@ import Label from '@components/form/Label';
 import type { Spacing } from '@styles/spacing';
 import clsx from 'clsx';
 import { useId } from 'react';
+import { useForm } from 'react-hook-form';
 import classes from './Input.module.scss';
 
 interface InputProps {
@@ -12,7 +13,7 @@ interface InputProps {
     name: string;
     required: boolean;
     spacing?: Spacing | Spacing[];
-    type: 'text' | 'tel' | 'number';
+    type: 'text' | 'number';
 }
 
 const Input: React.FC<InputProps> = ({
@@ -26,6 +27,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
     const inputID = useId();
     const helperID = useId();
+    const { register } = useForm();
 
     return (
         <div className={clsx(classes.inputContainer, spacing)}>
@@ -36,8 +38,9 @@ const Input: React.FC<InputProps> = ({
                 className={classes.input}
                 disabled={disabled}
                 id={inputID}
-                name={name}
+                // name={name}
                 required={required}
+                {...register(name)}
                 type={type}
             />
             <InputHelperText helperID={helperID} helperText={helperText} />

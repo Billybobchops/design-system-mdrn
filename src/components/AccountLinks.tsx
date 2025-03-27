@@ -32,7 +32,6 @@ const AccountLinks: React.FC<AccountLinksProps> = ({ links, spacing }) => {
                 <a
                     key={link.text}
                     href={link.href}
-                    // className={clsx({ [classes.selected]: selected === link }, classes.accountLink)}
                     className={clsx({ [classes.selected]: selected?.text === link.text }, classes.accountLink)}
                     onClick={e => onOptionChange(i, e)}
                 >
