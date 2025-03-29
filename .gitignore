@@ -2,10 +2,13 @@
 
 .pnp
 .pnp.js
+.env
 .env.local
 .env.*.local
 .history
 *.log*
+*.figma.tsx
+figma.config.json
 
 node_modules/
 .yarn-integrity

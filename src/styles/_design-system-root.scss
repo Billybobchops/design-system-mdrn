@@ -1,4 +1,4 @@
-@layer reset, design-system, components, overrides, spacing;
+@import './layer-order';
 @import './design-system-reset';
 @import './design-system-spacing';
 

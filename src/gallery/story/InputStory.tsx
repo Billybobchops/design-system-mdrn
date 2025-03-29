@@ -41,6 +41,7 @@ const InputStory = () => {
             checked: false,
         },
     ];
+
     const radioGroupOptions = [{ id: 'Bland' }, { id: 'Medium' }, { id: 'Hot' }, { id: 'Absolute Destruction' }];
 
     const [selectedValues, setSelectValues] = useState<string[]>(['Real Estate', 'Utility']);
