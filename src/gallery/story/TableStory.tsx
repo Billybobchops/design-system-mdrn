@@ -41,6 +41,61 @@ const dummyRowData: RowData[] = [
             { invoice: 'INV-009', amount: 105.75, date: '2021-01-03' },
         ],
     },
+    {
+        customerName: 'Octavian Augustus',
+        accountNumber: 'CSD32344986',
+        payments: [
+            { invoice: 'INV-010', amount: 404.59, date: '2021-01-01' },
+            { invoice: 'INV-011', amount: 510.5, date: '2021-01-02' },
+            { invoice: 'INV-012', amount: 1.75, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Marcus Aurelius',
+        accountNumber: 'DSD44444986',
+        payments: [
+            { invoice: 'INV-013', amount: 9404.59, date: '2021-01-01' },
+            { invoice: 'INV-014', amount: 10.5, date: '2021-01-02' },
+            { invoice: 'INV-015', amount: 41.75, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Quark Gul Dukat',
+        accountNumber: 'XSD44044989',
+        payments: [
+            { invoice: 'INV-016', amount: 4.59, date: '2021-01-01' },
+            { invoice: 'INV-017', amount: 13.5, date: '2021-01-02' },
+            { invoice: 'INV-018', amount: 310.5, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Quintus Fabius Maximus',
+        accountNumber: 'FDD44044911',
+        payments: [
+            { invoice: 'INV-019', amount: 4100.59, date: '2021-01-01' },
+            { invoice: 'INV-020', amount: 223.5, date: '2021-01-02' },
+            { invoice: 'INV-021', amount: 10.5, date: '2021-01-03' },
+            { invoice: 'INV-022', amount: 4310.5, date: '2021-01-04' },
+        ],
+    },
+    {
+        customerName: 'Duchamp Dax',
+        accountNumber: 'ZZE44044911',
+        payments: [
+            { invoice: 'INV-023', amount: 30.59, date: '2021-01-01' },
+            { invoice: 'INV-024', amount: 90.5, date: '2021-01-02' },
+            { invoice: 'INV-025', amount: 10.5, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Karl Friedrich Gauss',
+        accountNumber: 'XZE44044887',
+        payments: [
+            { invoice: 'INV-026', amount: 2330.59, date: '2021-01-01' },
+            { invoice: 'INV-027', amount: 450.5, date: '2021-01-02' },
+            { invoice: 'INV-029', amount: 4.5, date: '2021-01-03' },
+        ],
+    },
 ];
 
 const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
@@ -48,8 +103,15 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
 
     return (
         <>
-            <MuiTableRow>
-                <MuiTableCell sx={{ width: '5%' }}>
+            <MuiTableRow isNested={false} sx={isOpen ? { borderTop: '1.5px solid var(--theme-a-4)' } : {}}>
+                <MuiTableCell
+                    sx={{
+                        width: '5%',
+                        // display: 'inline-block',
+                        padding: '0 !important',
+                        borderBottom: isOpen ? '1.5px solid var(--theme-a-4)' : 'none',
+                    }}
+                >
                     <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
                 </MuiTableCell>
                 <MuiTableCell sx={{ width: '20%' }}>{row.customerName}</MuiTableCell>
@@ -59,14 +121,16 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
                 <MuiTableCell sx={{ width: '20%' }}>Payment Date</MuiTableCell>
             </MuiTableRow>
 
-            <MuiTableRow>
+            <MuiTableRow isNested={true}>
                 <MuiTableCell colSpan={6} sx={{ padding: 0 }}>
                     <MuiCollapse in={isOpen}>
                         <MuiTable>
                             <MuiTableBody>
                                 {row.payments.map(payment => (
-                                    <MuiTableRow key={payment.invoice}>
-                                        <MuiTableCell sx={{ width: '5%' }} />
+                                    <MuiTableRow key={payment.invoice} isNested={true}>
+                                        <MuiTableCell
+                                            sx={{ width: '5%', backgroundColor: isOpen ? 'var(--ic-blue-10)' : '' }}
+                                        />
                                         <MuiTableCell sx={{ width: '20%' }} />
                                         <MuiTableCell sx={{ width: '20%' }} />
                                         <MuiTableCell sx={{ width: '20%' }}>{payment.invoice}</MuiTableCell>
@@ -86,12 +150,16 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
 };
 
 const CollapsibleTable = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <>
-            <MuiTable>
+            <MuiTable isStriped={true}>
                 <MuiTableHead>
-                    <MuiTableRow>
-                        <MuiTableCell sx={{ width: '5%' }} />
+                    <MuiTableRow isNested={false}>
+                        <MuiTableCell sx={{ width: '5%', padding: 0 }}>
+                            <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+                        </MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Customer Name</MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Account Number</MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Invoices</MuiTableCell>

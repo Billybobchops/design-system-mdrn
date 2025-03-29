@@ -2,11 +2,16 @@
 
 @layer components {
     .button {
+        align-items: center;
         background: none;
         border: none;
+        display: flex;
+        justify-content: center;
+        padding: 22px;
     }
 
     .openButton {
+        background-color: var(--ic-blue-10);
         transform: rotate(90deg);
     }
 }
