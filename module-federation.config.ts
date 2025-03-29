@@ -50,6 +50,12 @@ export default createModuleFederationConfig({
         './AccountLinks': './src/components/AccountLinks.tsx',
         './Form': './src/components/form/Form.tsx',
         './PhoneInput': './src/components/form/PhoneInput.tsx',
+        './MuiTable': './src/components/table/MuiTable.tsx',
+        './MuiTableBody': './src/components/table/MuiTableBody.tsx',
+        './MuiTableCell': './src/components/table/MuiTableCell.tsx',
+        './MuiTableHead': './src/components/table/MuiTableHead.tsx',
+        './MuiTableRow': './src/components/table/MuiTableRow.tsx',
+        './MuiCollapse': './src/components/table/MuiCollapse.tsx',
         './DesignSystemSpacing': './src/styles/design-system-spacing.ts',
     },
     shared: {

@@ -1,0 +1,12 @@
+@import '@styles/layer-order.scss';
+
+@layer components {
+    .button {
+        background: none;
+        border: none;
+    }
+
+    .openButton {
+        transform: rotate(90deg);
+    }
+}
