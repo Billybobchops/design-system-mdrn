@@ -25,6 +25,9 @@ const MuiTable: React.FC<MuiTableProps> = ({ children, isStriped = false }) => {
                               '& .MuiTableRow-root:not(.nested-row) .MuiTableCell-root': {
                                   padding: '12px var(--spacing-xs)',
                               },
+                              '& .MuiTableRow-root.nested-row .nested-row .MuiTableCell-root': {
+                                  padding: '12px var(--spacing-xs)',
+                              },
                               '& .MuiTableRow-head': {
                                   borderBottom: '2px solid var(--theme-a-4)',
                               },
