@@ -1,9 +1,11 @@
-import MuiTableHead from '@/components/table/MuiTableHead';
 import CollapseButton from '@components/table/CollapseButton';
 import MuiCollapse from '@components/table/MuiCollapse';
 import MuiTable from '@components/table/MuiTable';
 import MuiTableBody from '@components/table/MuiTableBody';
 import MuiTableCell from '@components/table/MuiTableCell';
+import MuiTableFooter from '@components/table/MuiTableFooter';
+import MuiTableHead from '@components/table/MuiTableHead';
+import MuiTablePagination from '@components/table/MuiTablePagination';
 import MuiTableRow from '@components/table/MuiTableRow';
 import { useState } from 'react';
 
@@ -96,6 +98,15 @@ const dummyRowData: RowData[] = [
             { invoice: 'INV-029', amount: 4.5, date: '2021-01-03' },
         ],
     },
+    {
+        customerName: 'Constantine XI Palaiologos',
+        accountNumber: 'SZE44044999',
+        payments: [
+            { invoice: 'INV-030', amount: 42330.59, date: '2021-01-01' },
+            { invoice: 'INV-031', amount: 66450.5, date: '2021-01-02' },
+            { invoice: 'INV-032', amount: 404.5, date: '2021-01-03' },
+        ],
+    },
 ];
 
 const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
@@ -104,16 +115,7 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
     return (
         <>
             <MuiTableRow isNested={false} sx={isOpen ? { borderTop: '1.5px solid var(--theme-a-4)' } : {}}>
-                <MuiTableCell
-                    sx={{
-                        width: '5%',
-                        // display: 'inline-block',
-                        padding: '0 !important',
-                        borderBottom: isOpen ? '1.5px solid var(--theme-a-4)' : 'none',
-                    }}
-                >
-                    <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-                </MuiTableCell>
+                <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
                 <MuiTableCell sx={{ width: '20%' }}>{row.customerName}</MuiTableCell>
                 <MuiTableCell sx={{ width: '20%' }}>{row.accountNumber}</MuiTableCell>
                 <MuiTableCell sx={{ width: '20%' }}>Invoice Number</MuiTableCell>
@@ -129,7 +131,7 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
                                 {row.payments.map(payment => (
                                     <MuiTableRow key={payment.invoice} isNested={true}>
                                         <MuiTableCell
-                                            sx={{ width: '5%', backgroundColor: isOpen ? 'var(--ic-blue-10)' : '' }}
+                                            sx={{ padding: 0, backgroundColor: isOpen ? 'var(--ic-blue-10)' : '' }}
                                         />
                                         <MuiTableCell sx={{ width: '20%' }} />
                                         <MuiTableCell sx={{ width: '20%' }} />
@@ -151,15 +153,27 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
 
 const CollapsibleTable = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
+
+    const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setRowsPerPage(Number.parseInt(event.target.value, 10));
+        setPage(0);
+    };
+
+    // Avoid a layout jump when reaching the last page with empty rows.
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dummyRowData.length) : 0;
 
     return (
         <>
             <MuiTable isStriped={true}>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
-                        <MuiTableCell sx={{ width: '5%', padding: 0 }}>
-                            <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-                        </MuiTableCell>
+                        <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
                         <MuiTableCell sx={{ width: '20%' }}>Customer Name</MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Account Number</MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Invoices</MuiTableCell>
@@ -168,21 +182,38 @@ const CollapsibleTable = () => {
                     </MuiTableRow>
                 </MuiTableHead>
                 <MuiTableBody>
-                    {dummyRowData.map(row => (
+                    {(rowsPerPage > 0
+                        ? dummyRowData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                        : dummyRowData
+                    ).map(row => (
                         <CollapsibleTableRow key={row.accountNumber} row={row} />
                     ))}
+                    {/* {emptyRows > 0 && (
+                        <MuiTableRow style={{ height: 53 * emptyRows }}>
+                            <MuiTableCell colSpan={6} />
+                        </MuiTableRow>
+                    )} */}
                 </MuiTableBody>
+
+                <MuiTableFooter>
+                    <MuiTableRow isNested={false}>
+                        <MuiTablePagination
+                            count={dummyRowData.length}
+                            colSpan={6}
+                            rowsPerPage={rowsPerPage}
+                            page={page}
+                            handleChangePage={handleChangePage}
+                            handleChangeRowsPerPage={handleChangeRowsPerPage}
+                        />
+                    </MuiTableRow>
+                </MuiTableFooter>
             </MuiTable>
         </>
     );
 };
 
 const TableStory = () => {
-    return (
-        <>
-            <CollapsibleTable />
-        </>
-    );
+    return <CollapsibleTable />;
 };
 
 export default TableStory;

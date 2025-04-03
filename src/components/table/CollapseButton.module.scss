@@ -7,11 +7,12 @@
         border: none;
         display: flex;
         justify-content: center;
-        padding: 22px;
+        padding: 14px 0;
+        height: 100%;
+        width: 100%;
     }
 
     .openButton {
         background-color: var(--ic-blue-10);
-        transform: rotate(90deg);
     }
 }

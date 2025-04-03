@@ -1,11 +1,14 @@
+import { FirstPage, LastPage, NextPage, PreviousPage } from '@components/Icon';
 import Box from '@mui/material/Box';
 import TablePagination from '@mui/material/TablePagination';
+import clsx from 'clsx';
+import classes from './MuiTablePagination.module.scss';
 
 interface MuiTablePaginationActionsProps {
     count: number;
     page: number;
     rowsPerPage: number;
-    onPageChange: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void;
+    onPageChange: (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => void;
 }
 
 const MuiTablePaginationActions: React.FC<MuiTablePaginationActionsProps> = ({
@@ -31,52 +34,86 @@ const MuiTablePaginationActions: React.FC<MuiTablePaginationActionsProps> = ({
     };
 
     return (
-        <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-            <button type="button" onClick={handleFirstPageButtonClick} disabled={page === 0} aria-label="first page">
-                {/* <FirstPageIcon /> */}
-            </button>
-            <button type="button" onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
-                {/* <KeyboardArrowLeft /> */}
+        <Box sx={{ display: 'flex', gap: 'var(--spacing-s)', margin: '0 var(--spacing-s)' }}>
+            {/* replace these with icon buttons and delete MuiTablePagination.module.scss */}
+            {/* This will be better componentization and have ability to hook into disabled state style changes */}
+            <button
+                className={clsx(classes.paginationButton)}
+                type="button"
+                onClick={handleFirstPageButtonClick}
+                disabled={page === 0}
+                aria-label="first page"
+            >
+                <FirstPage fill={'var(--theme-a-3)'} />
             </button>
             <button
+                className={classes.paginationButton}
+                type="button"
+                onClick={handleBackButtonClick}
+                disabled={page === 0}
+                aria-label="previous page"
+            >
+                <PreviousPage fill={'var(--theme-a-3)'} />
+            </button>
+            <button
+                className={classes.paginationButton}
                 type="button"
                 onClick={handleNextButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label="next page"
             >
-                {/* <KeyboardArrowRight /> */}
+                <NextPage fill={'var(--theme-a-3)'} />
             </button>
             <button
+                className={classes.paginationButton}
                 type="button"
                 onClick={handleLastPageButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label="last page"
             >
-                {/* <LastPageIcon /> */}
+                <LastPage fill={'var(--theme-a-3)'} />
             </button>
         </Box>
     );
 };
 
-// const MuiTablePagination: React.FC = () => {
-//     return (
-//         <TablePagination
-//             rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-//             colSpan={3}
-//             count={rows.length}
-//             rowsPerPage={rowsPerPage}
-//             page={page}
-//             slotProps={{
-//                 select: {
-//                     inputProps: {
-//                         'aria-label': 'rows per page',
-//                     },
-//                     native: true,
-//                 },
-//             }}
-//             onPageChange={handleChangePage}
-//             onRowsPerPageChange={handleChangeRowsPerPage}
-//             ActionsComponent={TablePaginationActions}
-//         />
-//     );
-// };
+interface MuiTablePaginationProps {
+    count: number;
+    colSpan: number;
+    rowsPerPage: number;
+    page: number;
+    handleChangePage: (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => void;
+    handleChangeRowsPerPage: (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
+}
+
+const MuiTablePagination: React.FC<MuiTablePaginationProps> = ({
+    count,
+    colSpan,
+    rowsPerPage,
+    page,
+    handleChangePage,
+    handleChangeRowsPerPage,
+}) => {
+    return (
+        <TablePagination
+            rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+            colSpan={colSpan}
+            count={count}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            slotProps={{
+                select: {
+                    inputProps: {
+                        'aria-label': 'rows per page',
+                    },
+                    native: true,
+                },
+            }}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            ActionsComponent={MuiTablePaginationActions}
+        />
+    );
+};
+
+export default MuiTablePagination;

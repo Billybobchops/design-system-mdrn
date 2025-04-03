@@ -85,9 +85,9 @@ export function Gallery() {
                 <InputStory />
             </GalleryDisplayArea>
 
-            {/* <GalleryDisplayArea title="Table">
+            <GalleryDisplayArea title="Table">
                 <TableStory />
-            </GalleryDisplayArea> */}
+            </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Divider">
                 <DividerStory />

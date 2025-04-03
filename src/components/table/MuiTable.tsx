@@ -28,9 +28,12 @@ const MuiTable: React.FC<MuiTableProps> = ({ children, isStriped = false }) => {
                               '& .MuiTableRow-head': {
                                   borderBottom: '2px solid var(--theme-a-4)',
                               },
-                              '& .MuiTableRow-root:not(.MuiTableRow-head, .nested-row):hover': {
+                              '& .MuiTableRow-root:not(.nested-row, .MuiTableRow-head, .MuiTableRow-footer):hover': {
                                   borderTop: '1.5px solid var(--theme-a-4)',
                                   borderBottom: '1.5px solid var(--theme-a-4)',
+                              },
+                              '& .MuiTableCell-root.MuiTableCell-footer.MuiTablePagination-root': {
+                                  padding: '0 !important',
                               },
                           }
                         : {}
