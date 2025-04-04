@@ -10,7 +10,7 @@ interface IconButtonProps {
     icon?: React.ReactElement<React.SVGProps<SVGSVGElement>>;
     iconPosition?: 'start' | 'end';
     spacing?: Spacing | Spacing[];
-    text: string;
+    text?: string;
     type?: 'button' | 'submit';
     variant?: 'blue' | 'green' | 'red';
 }
@@ -32,20 +32,35 @@ const IconButton: React.FC<IconButtonProps> = ({
         }
         switch (variant) {
             case 'blue':
-                return { fill: 'var(--theme-a-4)', hoverFill: 'var(--theme-a-3)' };
+                return { fill: 'var(--theme-a-4)', hoverFill: text ? 'var(--theme-a-3)' : 'var(--utility-neutral-0)' };
             case 'green':
-                return { fill: 'var(--utility-green-70)', hoverFill: 'var(--utility-green-80)' };
+                return {
+                    fill: 'var(--utility-green-70)',
+                    hoverFill: text ? 'var(--utility-green-80)' : 'var(--utility-neutral-0)',
+                };
             case 'red':
-                return { fill: 'var(--utility-red-50)', hoverFill: 'var(--utility-red-70)' };
+                return {
+                    fill: 'var(--utility-red-50)',
+                    hoverFill: text ? 'var(--utility-red-70)' : 'var(--utility-neutral-0)',
+                };
             default:
-                return { fill: 'var(--utility-neutral-60)', hoverFill: 'var(--utility-neutral-60)' };
+                return {
+                    fill: 'var(--utility-neutral-60)',
+                    hoverFill: text ? 'var(--utility-neutral-60)' : 'var(--utility-neutral-0)',
+                };
         }
     };
     const fillColor = isHovered ? getFillColor(variant, disabled).hoverFill : getFillColor(variant, disabled).fill;
 
     return (
         <button
-            className={clsx(classes.button, classes[variant], disabled && classes.disabled, spacing)}
+            className={clsx(
+                classes.button,
+                classes[variant],
+                !text && classes.iconOnly,
+                disabled && classes.disabled,
+                spacing,
+            )}
             disabled={disabled}
             onClick={clickHandler}
             onMouseEnter={() => setIsHovered(true)}
@@ -57,7 +72,7 @@ const IconButton: React.FC<IconButtonProps> = ({
                     {React.cloneElement(icon, { fill: fillColor })}
                 </span>
             )}
-            <span>{text}</span>
+            {text && <span>{text}</span>}
             {icon && iconPosition === 'end' && (
                 <span aria-hidden="true" className={classes.iconEnd}>
                     {React.cloneElement(icon, { fill: fillColor })}

@@ -1,7 +1,8 @@
+import Divider from '@/components/Divider';
 import { Chevron, NewWindow, Plus, Remove } from '@components/Icon';
 import LinkIconButton from '@components/button/LinkIconButton';
 
-const ButtonLinkIconStory = () => {
+const LinkIconButtonStory = () => {
     return (
         <>
             <LinkIconButton disabled={false} icon={<Chevron />} text="Recent Open Invoices" variant="blue" />
@@ -36,8 +37,15 @@ const ButtonLinkIconStory = () => {
             />
             <LinkIconButton disabled={false} icon={<Plus />} iconPosition="start" text="Add Account" variant="green" />
             <LinkIconButton disabled={true} icon={<Plus />} iconPosition="start" text="Add Account" variant="green" />
+
+            <Divider isDark={true} />
+
+            <LinkIconButton disabled={false} icon={<Plus />} iconPosition="start" variant="red" />
+            <LinkIconButton disabled={false} icon={<Plus />} iconPosition="start" variant="green" />
+            <LinkIconButton disabled={false} icon={<Plus />} iconPosition="start" variant="blue" />
+            <LinkIconButton disabled={true} icon={<Plus />} iconPosition="start" variant="green" />
         </>
     );
 };
 
-export default ButtonLinkIconStory;
+export default LinkIconButtonStory;

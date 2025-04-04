@@ -56,6 +56,40 @@
 
         &.disabled {
             color: var(--utility-neutral-60);
+
+            &:hover {
+                color: var(--utility-neutral-60);
+            }
+        }
+
+        &.iconOnly {
+            padding: var(--spacing-xxs);
+
+            &:hover {
+                &.red {
+                    background: var(--utility-red-50);
+                }
+
+                &.green {
+                    background: var(--utility-green-60);
+                }
+
+                &.blue {
+                    background: var(--theme-a-3);
+                }
+            }
+
+            &.disabled {
+                background: var(--utility-neutral-10);
+
+                &:hover {
+                    background: var(--utility-neutral-10);
+                }
+            }
+
+            span {
+                margin: 0;
+            }
         }
     }
 }

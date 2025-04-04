@@ -10,7 +10,6 @@ export default createModuleFederationConfig({
         './DesignSystemRootStyles': './src/styles/design-system-styles.ts',
         './VisuallyHidden': './src/components/accessibility/VisuallyHidden.tsx',
         './CTAButton': './src/components/button/CTAButton.tsx',
-        './IconButton': './src/components/button/IconButton.tsx',
         './LinkIconButton': './src/components/button/LinkIconButton.tsx',
         './PrimaryButton': './src/components/button/PrimaryButton.tsx',
         './SecondaryButton': './src/components/button/SecondaryButton.tsx',
