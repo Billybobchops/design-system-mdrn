@@ -80,10 +80,10 @@
             }
 
             &.disabled {
-                background: var(--utility-neutral-10);
+                background: none;
 
                 &:hover {
-                    background: var(--utility-neutral-10);
+                    background: none;
                 }
             }
 

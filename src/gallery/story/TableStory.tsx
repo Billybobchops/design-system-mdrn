@@ -107,6 +107,96 @@ const dummyRowData: RowData[] = [
             { invoice: 'INV-032', amount: 404.5, date: '2021-01-03' },
         ],
     },
+    {
+        customerName: 'Leonardo Fibonacci',
+        accountNumber: 'FIB12345678',
+        payments: [
+            { invoice: 'INV-033', amount: 1234.56, date: '2021-01-01' },
+            { invoice: 'INV-034', amount: 789.01, date: '2021-01-02' },
+            { invoice: 'INV-035', amount: 456.78, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Ada Lovelace',
+        accountNumber: 'ADA98765432',
+        payments: [
+            { invoice: 'INV-036', amount: 9876.54, date: '2021-01-01' },
+            { invoice: 'INV-037', amount: 5432.1, date: '2021-01-02' },
+            { invoice: 'INV-038', amount: 210.98, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Alan Turing',
+        accountNumber: 'TUR19283746',
+        payments: [
+            { invoice: 'INV-039', amount: 1928.37, date: '2021-01-01' },
+            { invoice: 'INV-040', amount: 3746.29, date: '2021-01-02' },
+            { invoice: 'INV-041', amount: 4629.18, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Grace Hopper',
+        accountNumber: 'HOP11223344',
+        payments: [
+            { invoice: 'INV-042', amount: 1122.33, date: '2021-01-01' },
+            { invoice: 'INV-043', amount: 3344.55, date: '2021-01-02' },
+            { invoice: 'INV-044', amount: 5566.77, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Charles Babbage',
+        accountNumber: 'BAB55667788',
+        payments: [
+            { invoice: 'INV-045', amount: 5566.77, date: '2021-01-01' },
+            { invoice: 'INV-046', amount: 7788.99, date: '2021-01-02' },
+            { invoice: 'INV-047', amount: 9900.11, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Nikola Tesla',
+        accountNumber: 'TES99887766',
+        payments: [
+            { invoice: 'INV-048', amount: 9988.77, date: '2021-01-01' },
+            { invoice: 'INV-049', amount: 7766.55, date: '2021-01-02' },
+            { invoice: 'INV-050', amount: 5544.33, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Marie Curie',
+        accountNumber: 'CUR44556677',
+        payments: [
+            { invoice: 'INV-051', amount: 4455.66, date: '2021-01-01' },
+            { invoice: 'INV-052', amount: 6677.88, date: '2021-01-02' },
+            { invoice: 'INV-053', amount: 8899.0, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Isaac Newton',
+        accountNumber: 'NEW33221100',
+        payments: [
+            { invoice: 'INV-054', amount: 3322.11, date: '2021-01-01' },
+            { invoice: 'INV-055', amount: 1100.22, date: '2021-01-02' },
+            { invoice: 'INV-056', amount: 2200.33, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Galileo Galilei',
+        accountNumber: 'GAL22334455',
+        payments: [
+            { invoice: 'INV-057', amount: 2233.44, date: '2021-01-01' },
+            { invoice: 'INV-058', amount: 3445.56, date: '2021-01-02' },
+            { invoice: 'INV-059', amount: 4556.67, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Johannes Kepler',
+        accountNumber: 'KEP55667788',
+        payments: [
+            { invoice: 'INV-060', amount: 5566.77, date: '2021-01-01' },
+            { invoice: 'INV-061', amount: 7788.99, date: '2021-01-02' },
+            { invoice: 'INV-062', amount: 9900.11, date: '2021-01-03' },
+        ],
+    },
 ];
 
 const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {

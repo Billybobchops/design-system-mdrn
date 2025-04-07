@@ -5,7 +5,8 @@ import { useState } from 'react';
 import classes from './LinkIconButton.module.scss';
 
 interface IconButtonProps {
-    clickHandler?: () => void;
+    ariaLabel?: string;
+    clickHandler?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     disabled: boolean;
     icon?: React.ReactElement<React.SVGProps<SVGSVGElement>>;
     iconPosition?: 'start' | 'end';
@@ -16,6 +17,7 @@ interface IconButtonProps {
 }
 
 const IconButton: React.FC<IconButtonProps> = ({
+    ariaLabel,
     clickHandler,
     disabled = false,
     icon,
@@ -32,7 +34,10 @@ const IconButton: React.FC<IconButtonProps> = ({
         }
         switch (variant) {
             case 'blue':
-                return { fill: 'var(--theme-a-4)', hoverFill: text ? 'var(--theme-a-3)' : 'var(--utility-neutral-0)' };
+                return {
+                    fill: 'var(--theme-a-4)',
+                    hoverFill: text ? 'var(--theme-a-3)' : 'var(--utility-neutral-0)',
+                };
             case 'green':
                 return {
                     fill: 'var(--utility-green-70)',
@@ -54,6 +59,7 @@ const IconButton: React.FC<IconButtonProps> = ({
 
     return (
         <button
+            aria-label={ariaLabel}
             className={clsx(
                 classes.button,
                 classes[variant],

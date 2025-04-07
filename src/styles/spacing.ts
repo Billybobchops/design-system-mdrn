@@ -13,7 +13,7 @@ const baseClasses = [
     'u-px',
     'u-py',
 ] as const;
-const noneClasses = ['u-mb-none', 'u-mt-none', 'u-ml-none', 'u-mr-none', 'u-mx-none', 'u-my-none'] as const;
+const noneClasses = ['u-mb-none', 'u-mt-none', 'u-ml-none', 'u-mr-none', 'u-mx-none', 'u-my-none', 'u-m-none'] as const;
 
 // Generate all possible class combinations
 type Size = (typeof sizes)[number];
