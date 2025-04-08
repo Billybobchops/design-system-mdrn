@@ -7,6 +7,7 @@ import MuiTableFooter from '@components/table/MuiTableFooter';
 import MuiTableHead from '@components/table/MuiTableHead';
 import MuiTablePagination from '@components/table/MuiTablePagination';
 import MuiTableRow from '@components/table/MuiTableRow';
+import Box from '@mui/material/Box';
 import { useState } from 'react';
 
 type RowData = {
@@ -197,6 +198,24 @@ const dummyRowData: RowData[] = [
             { invoice: 'INV-062', amount: 9900.11, date: '2021-01-03' },
         ],
     },
+    {
+        customerName: 'John von Neumann',
+        accountNumber: 'VON99887766',
+        payments: [
+            { invoice: 'INV-063', amount: 25566.77, date: '2021-01-01' },
+            { invoice: 'INV-064', amount: 74788.99, date: '2021-01-02' },
+            { invoice: 'INV-065', amount: 900.11, date: '2021-01-03' },
+        ],
+    },
+    {
+        customerName: 'Afredis Mokpeksoon',
+        accountNumber: 'AFN99887766',
+        payments: [
+            { invoice: 'INV-066', amount: 66.77, date: '2021-01-01' },
+            { invoice: 'INV-067', amount: 88.99, date: '2021-01-02' },
+            { invoice: 'INV-068', amount: 30.11, date: '2021-01-03' },
+        ],
+    },
 ];
 
 const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
@@ -204,7 +223,10 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
 
     return (
         <>
-            <MuiTableRow isNested={false} sx={isOpen ? { borderTop: '1.5px solid var(--theme-a-4)' } : {}}>
+            <MuiTableRow
+                isNested={false}
+                sx={{ boxShadow: isOpen ? '0 -1px 0 0 var(--theme-a-4)' : 'none', position: 'relative' }}
+            >
                 <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
                 <MuiTableCell sx={{ width: '20%' }}>{row.customerName}</MuiTableCell>
                 <MuiTableCell sx={{ width: '20%' }}>{row.accountNumber}</MuiTableCell>
@@ -221,7 +243,11 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
                                 {row.payments.map(payment => (
                                     <MuiTableRow key={payment.invoice} isNested={true}>
                                         <MuiTableCell
-                                            sx={{ padding: 0, backgroundColor: isOpen ? 'var(--ic-blue-10)' : '' }}
+                                            sx={{
+                                                padding: 0,
+                                                backgroundColor: isOpen ? 'var(--ic-blue-10)' : '',
+                                                minWidth: '50px',
+                                            }}
                                         />
                                         <MuiTableCell sx={{ width: '20%' }} />
                                         <MuiTableCell sx={{ width: '20%' }} />
@@ -259,7 +285,7 @@ const CollapsibleTable = () => {
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dummyRowData.length) : 0;
 
     return (
-        <>
+        <Box sx={{ width: '100%', overflowX: 'auto' }}>
             <MuiTable isStriped={true}>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
@@ -278,11 +304,11 @@ const CollapsibleTable = () => {
                     ).map(row => (
                         <CollapsibleTableRow key={row.accountNumber} row={row} />
                     ))}
-                    {/* {emptyRows > 0 && (
-                        <MuiTableRow style={{ height: 53 * emptyRows }}>
+                    {emptyRows > 0 && (
+                        <MuiTableRow isNested={false} sx={{ height: 50 * emptyRows }}>
                             <MuiTableCell colSpan={6} />
                         </MuiTableRow>
-                    )} */}
+                    )}
                 </MuiTableBody>
 
                 <MuiTableFooter>
@@ -298,7 +324,7 @@ const CollapsibleTable = () => {
                     </MuiTableRow>
                 </MuiTableFooter>
             </MuiTable>
-        </>
+        </Box>
     );
 };
 

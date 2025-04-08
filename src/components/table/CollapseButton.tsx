@@ -1,5 +1,4 @@
 import { TableChevronCollapsed, TableChevronExpanded } from '@components/Icon';
-import clsx from 'clsx';
 import classes from './CollapseButton.module.scss';
 import MuiTableCell from './MuiTableCell';
 
@@ -13,12 +12,13 @@ const CollapseButton: React.FC<CollapseButtonProps> = ({ onClick, isOpen }) => {
         <MuiTableCell
             sx={{
                 padding: '0 !important',
-                borderBottom: isOpen ? '1.5px solid var(--theme-a-4)' : 'none',
-
-                '& MuiTableCell-root': {},
+                backgroundColor: isOpen ? 'var(--ic-blue-10)' : 'none',
+                boxShadow: isOpen ? '0 1px 0 0 var(--theme-a-4)' : 'none',
+                position: isOpen ? 'relative' : 'static',
+                minWidth: '50px',
             }}
         >
-            <button className={clsx(classes.button, isOpen && classes.openButton)} onClick={onClick} type="button">
+            <button className={classes.button} onClick={onClick} type="button">
                 {isOpen ? (
                     <TableChevronExpanded fill={'var(--theme-a-3)'} />
                 ) : (

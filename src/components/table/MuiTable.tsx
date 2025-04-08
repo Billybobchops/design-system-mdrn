@@ -13,8 +13,11 @@ const MuiTable: React.FC<MuiTableProps> = ({ children, isStriped = false }) => {
                 sx={
                     isStriped
                         ? {
-                              //   borderCollapse: 'separate',
-                              //   borderSpacing: 0,
+                              tableLayout: 'fixed',
+                              width: '100%',
+                              minWidth: '700px',
+                              borderCollapse: 'separate',
+
                               '& .MuiTableBody-root > .MuiTableRow-root': {
                                   backgroundColor: 'var(--utility-neutral-0)',
 
@@ -32,14 +35,13 @@ const MuiTable: React.FC<MuiTableProps> = ({ children, isStriped = false }) => {
                                   borderBottom: '2px solid var(--theme-a-4)',
                               },
                               '& .MuiTableRow-root:not(.nested-row, .MuiTableRow-head, .MuiTableRow-footer):hover': {
-                                  borderTop: '2px solid var(--theme-a-4)',
-                                  borderBottom: '2px solid var(--theme-a-4)',
+                                  boxShadow: '0 1px 0 0 var(--theme-a-4), 0 -1px 0 0 var(--theme-a-4)',
                               },
                               '& .MuiTableCell-root.MuiTableCell-footer.MuiTablePagination-root': {
                                   padding: '0 !important',
                               },
                           }
-                        : {}
+                        : { tableLayout: 'fixed', width: '100%', minWidth: '700px', borderCollapse: 'separate' }
                 }
             >
                 {children}
