@@ -218,16 +218,18 @@ const dummyRowData: RowData[] = [
     },
 ];
 
-const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
+const CollapsibleTableRow: React.FC<{ row: RowData; isOpen: boolean; onToggle: () => void }> = ({
+    row,
+    isOpen,
+    onToggle,
+}) => {
     return (
         <>
             <MuiTableRow
                 isNested={false}
                 sx={{ boxShadow: isOpen ? '0 -1px 0 0 var(--theme-a-4)' : 'none', position: 'relative' }}
             >
-                <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+                <CollapseButton onClick={onToggle} isOpen={isOpen} />
                 <MuiTableCell sx={{ width: '20%' }}>{row.customerName}</MuiTableCell>
                 <MuiTableCell sx={{ width: '20%' }}>{row.accountNumber}</MuiTableCell>
                 <MuiTableCell sx={{ width: '20%' }}>Invoice Number</MuiTableCell>
@@ -268,7 +270,7 @@ const CollapsibleTableRow: React.FC<{ row: RowData }> = ({ row }) => {
 };
 
 const CollapsibleTable = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [expandedRows, setExpandedRows] = useState<Record<string, boolean>>({});
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -281,6 +283,30 @@ const CollapsibleTable = () => {
         setPage(0);
     };
 
+    // Toggle all rows
+    const toggleAllRows = () => {
+        const allCurrentlyExpanded = Object.values(expandedRows).every(Boolean);
+        const newExpandedState: Record<string, boolean> = {};
+
+        // biome-ignore lint: forEach is fine
+        dummyRowData.forEach(row => {
+            newExpandedState[row.accountNumber] = !allCurrentlyExpanded;
+        });
+
+        setExpandedRows(newExpandedState);
+    };
+
+    // Toggle single row
+    const toggleRow = (accountNumber: string) => {
+        setExpandedRows(prev => ({
+            ...prev,
+            [accountNumber]: !prev[accountNumber],
+        }));
+    };
+
+    // Check if all rows are expanded (for header button state)
+    const allExpanded = dummyRowData.length > 0 && dummyRowData.every(row => expandedRows[row.accountNumber]);
+
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dummyRowData.length) : 0;
 
@@ -289,7 +315,7 @@ const CollapsibleTable = () => {
             <MuiTable isStriped={true}>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
-                        <CollapseButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+                        <CollapseButton onClick={toggleAllRows} isOpen={allExpanded} />
                         <MuiTableCell sx={{ width: '20%' }}>Customer Name</MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Account Number</MuiTableCell>
                         <MuiTableCell sx={{ width: '20%' }}>Invoices</MuiTableCell>
@@ -297,13 +323,20 @@ const CollapsibleTable = () => {
                         <MuiTableCell sx={{ width: '20%' }} />
                     </MuiTableRow>
                 </MuiTableHead>
+
                 <MuiTableBody>
                     {(rowsPerPage > 0
                         ? dummyRowData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         : dummyRowData
                     ).map(row => (
-                        <CollapsibleTableRow key={row.accountNumber} row={row} />
+                        <CollapsibleTableRow
+                            key={row.accountNumber}
+                            row={row}
+                            isOpen={!!expandedRows[row.accountNumber]}
+                            onToggle={() => toggleRow(row.accountNumber)}
+                        />
                     ))}
+
                     {emptyRows > 0 && (
                         <MuiTableRow isNested={false} sx={{ height: 50 * emptyRows }}>
                             <MuiTableCell colSpan={6} />
