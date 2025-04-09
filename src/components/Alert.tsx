@@ -6,13 +6,13 @@ import { useState } from 'react';
 import classes from './Alert.module.scss';
 
 interface AlertProps {
-    content: string;
+    children?: React.ReactNode;
     isDismissable: boolean;
     spacing?: Spacing | Spacing[];
     variant: 'default' | 'warning' | 'error' | 'success';
 }
 
-const Alert: React.FC<AlertProps> = ({ content, isDismissable, spacing, variant }) => {
+const Alert: React.FC<AlertProps> = ({ children, isDismissable, spacing, variant }) => {
     const [isActive, setIsActive] = useState(true);
     const getFillColor = (variant: string) => {
         switch (variant) {
@@ -43,7 +43,7 @@ const Alert: React.FC<AlertProps> = ({ content, isDismissable, spacing, variant 
             {isActive && (
                 <div role="alert" className={clsx(classes.alert, classes[variant], spacing)}>
                     <span aria-hidden="true">{symbol}</span>
-                    {content}
+                    {children}
                     {isDismissable && (
                         <button className={classes.button} onClick={() => setIsActive(false)} type="button">
                             <MenuClose fill={getFillColor(variant)} />
