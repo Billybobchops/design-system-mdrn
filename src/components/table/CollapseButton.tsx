@@ -1,4 +1,5 @@
 import { TableChevronCollapsed, TableChevronExpanded } from '@components/Icon';
+import VisuallyHidden from '../accessibility/VisuallyHidden';
 import classes from './CollapseButton.module.scss';
 import MuiTableCell from './MuiTableCell';
 
@@ -18,12 +19,13 @@ const CollapseButton: React.FC<CollapseButtonProps> = ({ onClick, isOpen }) => {
                 minWidth: '50px',
             }}
         >
-            <button className={classes.button} onClick={onClick} type="button">
+            <button className={classes.button} onClick={onClick} type="button" aria-expanded={isOpen}>
                 {isOpen ? (
                     <TableChevronExpanded fill={'var(--theme-a-3)'} />
                 ) : (
                     <TableChevronCollapsed fill={'var(--theme-a-3)'} />
                 )}
+                <VisuallyHidden>{isOpen ? 'Collapse all' : 'Expand all'}</VisuallyHidden>
             </button>
         </MuiTableCell>
     );

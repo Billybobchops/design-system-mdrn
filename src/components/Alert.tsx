@@ -1,15 +1,18 @@
 import { ErrorIcon, Info, MenuClose, Success, Warning } from '@components/Icon';
 import VisuallyHidden from '@components/accessibility/VisuallyHidden';
+import type { Spacing } from '@styles/spacing';
+import clsx from 'clsx';
 import { useState } from 'react';
 import classes from './Alert.module.scss';
 
 interface AlertProps {
     content: string;
     isDismissable: boolean;
+    spacing?: Spacing | Spacing[];
     variant: 'default' | 'warning' | 'error' | 'success';
 }
 
-const Alert: React.FC<AlertProps> = ({ content, isDismissable, variant }) => {
+const Alert: React.FC<AlertProps> = ({ content, isDismissable, spacing, variant }) => {
     const [isActive, setIsActive] = useState(true);
     const getFillColor = (variant: string) => {
         switch (variant) {
@@ -38,7 +41,7 @@ const Alert: React.FC<AlertProps> = ({ content, isDismissable, variant }) => {
     return (
         <>
             {isActive && (
-                <div role="alert" className={`${classes.alert} ${classes[variant]}`}>
+                <div role="alert" className={clsx(classes.alert, classes[variant], spacing)}>
                     <span aria-hidden="true">{symbol}</span>
                     {content}
                     {isDismissable && (
