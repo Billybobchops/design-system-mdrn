@@ -1,8 +1,8 @@
 import CollapseButton from '@components/table/CollapseButton';
 import MuiCollapse from '@components/table/MuiCollapse';
-import MuiTable from '@components/table/MuiTable';
 import MuiTableBody from '@components/table/MuiTableBody';
 import MuiTableCell from '@components/table/MuiTableCell';
+import MuiTableContainer from '@components/table/MuiTableContainer';
 import MuiTableFooter from '@components/table/MuiTableFooter';
 import MuiTableHead from '@components/table/MuiTableHead';
 import MuiTablePagination from '@components/table/MuiTablePagination';
@@ -240,7 +240,7 @@ const CollapsibleTableRow: React.FC<{ row: RowData; isOpen: boolean; onToggle: (
             <MuiTableRow isNested={true}>
                 <MuiTableCell colSpan={6} sx={{ padding: 0 }}>
                     <MuiCollapse in={isOpen}>
-                        <MuiTable>
+                        <MuiTableContainer>
                             <MuiTableBody>
                                 {row.payments.map(payment => (
                                     <MuiTableRow key={payment.invoice} isNested={true}>
@@ -261,7 +261,7 @@ const CollapsibleTableRow: React.FC<{ row: RowData; isOpen: boolean; onToggle: (
                                     </MuiTableRow>
                                 ))}
                             </MuiTableBody>
-                        </MuiTable>
+                        </MuiTableContainer>
                     </MuiCollapse>
                 </MuiTableCell>
             </MuiTableRow>
@@ -312,7 +312,7 @@ const CollapsibleTable = () => {
 
     return (
         <Box sx={{ width: '100%', overflowX: 'auto' }}>
-            <MuiTable isStriped={true}>
+            <MuiTableContainer isStriped={true}>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
                         <CollapseButton onClick={toggleAllRows} isOpen={allExpanded} />
@@ -338,7 +338,7 @@ const CollapsibleTable = () => {
                     ))}
 
                     {emptyRows > 0 && (
-                        <MuiTableRow isNested={false} sx={{ height: 50 * emptyRows }}>
+                        <MuiTableRow isNested={false} sx={{ height: 45 * emptyRows }}>
                             <MuiTableCell colSpan={6} />
                         </MuiTableRow>
                     )}
@@ -356,13 +356,17 @@ const CollapsibleTable = () => {
                         />
                     </MuiTableRow>
                 </MuiTableFooter>
-            </MuiTable>
+            </MuiTableContainer>
         </Box>
     );
 };
 
 const TableStory = () => {
-    return <CollapsibleTable />;
+    return (
+        <>
+            <CollapsibleTable />
+        </>
+    );
 };
 
 export default TableStory;
