@@ -56,7 +56,7 @@ const CollapsibleTableRow = <T extends Record<string, unknown>, K extends Record
                                 if (!nestedData || !nestedData.length) return null;
 
                                 return (
-                                    <MuiTableContainer key={section.title} isStriped={true}>
+                                    <MuiTableContainer key={section.title} sx={{ tableLayout: 'fixed' }}>
                                         <MuiTableHead>
                                             <MuiTableRow isNested={true}>
                                                 <MuiTableCell colSpan={section.columns.length}>

@@ -3,16 +3,19 @@ import CollapsibleTableRow from '@components/table/CollapsibleTableRow';
 import MuiTableBody from '@components/table/MuiTableBody';
 import MuiTableCell from '@components/table/MuiTableCell';
 import MuiTableContainer from '@components/table/MuiTableContainer';
+import MuiTableFooter from '@components/table/MuiTableFooter';
 import MuiTableHead from '@components/table/MuiTableHead';
 import MuiTableRow from '@components/table/MuiTableRow';
+import Heading from '@components/typography/Heading';
 import { useCallback, useState } from 'react';
 
 interface MuiTableProps {
     data: unknown[];
     getRowId?: (row: Record<string, unknown>) => string;
+    title?: string;
 }
 
-const MuiTable = ({ data, getRowId }: MuiTableProps) => {
+const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
     // Validate data shape
     if (!data.every(isRecord)) {
         return <div>Invalid data format</div>;
@@ -68,55 +71,59 @@ const MuiTable = ({ data, getRowId }: MuiTableProps) => {
     const hasNestedData = nestedTables.length > 0;
 
     return (
-        <MuiTableContainer>
-            <MuiTableHead>
-                <MuiTableRow isNested={false}>
-                    {/* This first cell will need a select all checkbox or expand all chevron IF hasNestedData is TRUE */}
-                    {hasNestedData && <MuiTableCell />}
-                    {columns.map(col => (
-                        <MuiTableCell key={col.key}>{col.header}</MuiTableCell>
-                    ))}
-                </MuiTableRow>
-            </MuiTableHead>
+        <>
+            <Heading semanticLevel={'h3'}>{title}</Heading>
+            <MuiTableContainer>
+                <MuiTableHead>
+                    <MuiTableRow isNested={false}>
+                        {/* This first cell will need a select all checkbox or expand all chevron IF hasNestedData is TRUE */}
+                        {hasNestedData && <MuiTableCell />}
+                        {columns.map(col => (
+                            <MuiTableCell key={col.key}>{col.header}</MuiTableCell>
+                        ))}
+                    </MuiTableRow>
+                </MuiTableHead>
 
-            <MuiTableBody>
-                {typedData.map(row => {
-                    const rowId = getRowKey(row);
-                    const isExpanded = !!expandedRows[rowId];
-                    const rowHasNestedData = hasNestedData && nestedTables.some(table => isNestedArray(row[table.key]));
+                <MuiTableBody>
+                    {typedData.map(row => {
+                        const rowId = getRowKey(row);
+                        const isExpanded = !!expandedRows[rowId];
+                        const rowHasNestedData =
+                            hasNestedData && nestedTables.some(table => isNestedArray(row[table.key]));
 
-                    return rowHasNestedData ? (
-                        <CollapsibleTableRow
-                            key={rowId}
-                            row={row}
-                            isOpen={isExpanded}
-                            onToggle={() => toggleRow(rowId)}
-                            columns={columns}
-                            nestedTables={nestedTables}
-                        />
-                    ) : (
-                        <MuiTableRow isNested={false} key={rowId}>
-                            {columns.map(column => (
-                                <MuiTableCell key={column.key}>{String(row[column.key])}</MuiTableCell>
-                            ))}
-                        </MuiTableRow>
-                    );
-                })}
-            </MuiTableBody>
+                        return rowHasNestedData ? (
+                            <CollapsibleTableRow
+                                key={rowId}
+                                row={row}
+                                isOpen={isExpanded}
+                                onToggle={() => toggleRow(rowId)}
+                                columns={columns}
+                                nestedTables={nestedTables}
+                            />
+                        ) : (
+                            <MuiTableRow isNested={false} key={rowId}>
+                                {columns.map(column => (
+                                    <MuiTableCell key={column.key}>{String(row[column.key])}</MuiTableCell>
+                                ))}
+                            </MuiTableRow>
+                        );
+                    })}
+                </MuiTableBody>
 
-            {/* <MuiTableFooter>
-                <MuiTableRow isNested={false}>
-                    <MuiTablePagination
-                        count={dummyRowData.length}
-                        colSpan={6}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        handleChangePage={handleChangePage}
-                        handleChangeRowsPerPage={handleChangeRowsPerPage}
-                    />
-                </MuiTableRow>
-            </MuiTableFooter> */}
-        </MuiTableContainer>
+                <MuiTableFooter>
+                    <MuiTableRow isNested={false}>
+                        {/* <MuiTablePagination
+                            count={dummyRowData.length}
+                            colSpan={6}
+                            rowsPerPage={rowsPerPage}
+                            page={page}
+                            handleChangePage={handleChangePage}
+                            handleChangeRowsPerPage={handleChangeRowsPerPage}
+                        /> */}
+                    </MuiTableRow>
+                </MuiTableFooter>
+            </MuiTableContainer>
+        </>
     );
 };
 

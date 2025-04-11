@@ -312,7 +312,7 @@ const CollapsibleTable = () => {
 
     return (
         <Box sx={{ width: '100%', overflowX: 'auto' }}>
-            <MuiTableContainer isStriped={true}>
+            <MuiTableContainer>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
                         <CollapseButton onClick={toggleAllRows} isOpen={allExpanded} />

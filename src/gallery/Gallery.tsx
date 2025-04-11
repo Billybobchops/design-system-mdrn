@@ -81,11 +81,11 @@ export function Gallery() {
                 <InputStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Table">
+            <GalleryDisplayArea title="Table OG">
                 <TableStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Table Alternative Version">
+            <GalleryDisplayArea title="Dynamic Table">
                 <TableStory2 />
             </GalleryDisplayArea>
 
