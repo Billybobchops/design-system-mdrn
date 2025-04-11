@@ -5,6 +5,7 @@ import MuiTableCell from '@components/table/MuiTableCell';
 import MuiTableContainer from '@components/table/MuiTableContainer';
 import MuiTableFooter from '@components/table/MuiTableFooter';
 import MuiTableHead from '@components/table/MuiTableHead';
+import MuiTablePagination from '@components/table/MuiTablePagination';
 import MuiTableRow from '@components/table/MuiTableRow';
 import Heading from '@components/typography/Heading';
 import { useCallback, useState } from 'react';
@@ -23,6 +24,8 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
 
     // State management
     const [expandedRows, setExpandedRows] = useState<Record<string, boolean>>({});
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
     const typedData = data as Array<Record<string, unknown>>;
     const sampleItem = typedData[0] || {};
 
@@ -70,6 +73,34 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
     // Derived values
     const hasNestedData = nestedTables.length > 0;
 
+    const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setRowsPerPage(Number.parseInt(event.target.value, 10));
+        setPage(0);
+    };
+
+    // Toggle all rows
+    // const toggleAllRows = () => {
+    //     const allCurrentlyExpanded = Object.values(expandedRows).every(Boolean);
+    //     const newExpandedState: Record<string, boolean> = {};
+
+    //     // biome-ignore lint: forEach is fine
+    //     data.forEach(row => {
+    //         newExpandedState[row.accountNumber] = !allCurrentlyExpanded;
+    //     });
+
+    //     setExpandedRows(newExpandedState);
+    // };
+
+    // Check if all rows are expanded (for header button state)
+    // const allExpanded = data.length > 0 && data.every(row => expandedRows[row.accountNumber]);
+
+    // Avoid a layout jump when reaching the last page with empty rows.
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
+
     return (
         <>
             <Heading semanticLevel={'h3'}>{title}</Heading>
@@ -85,11 +116,13 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
                 </MuiTableHead>
 
                 <MuiTableBody>
-                    {typedData.map(row => {
+                    {(rowsPerPage > 0
+                        ? typedData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                        : typedData
+                    ).map(row => {
                         const rowId = getRowKey(row);
                         const isExpanded = !!expandedRows[rowId];
-                        const rowHasNestedData =
-                            hasNestedData && nestedTables.some(table => isNestedArray(row[table.key]));
+                        const rowHasNestedData = nestedTables.some(table => isNestedArray(row[table.key]));
 
                         return rowHasNestedData ? (
                             <CollapsibleTableRow
@@ -108,18 +141,24 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
                             </MuiTableRow>
                         );
                     })}
+
+                    {emptyRows > 0 && (
+                        <MuiTableRow isNested={false} sx={{ height: 45 * emptyRows }}>
+                            <MuiTableCell colSpan={columns.length + 1} />
+                        </MuiTableRow>
+                    )}
                 </MuiTableBody>
 
                 <MuiTableFooter>
                     <MuiTableRow isNested={false}>
-                        {/* <MuiTablePagination
-                            count={dummyRowData.length}
+                        <MuiTablePagination
+                            count={data.length}
                             colSpan={6}
                             rowsPerPage={rowsPerPage}
                             page={page}
                             handleChangePage={handleChangePage}
                             handleChangeRowsPerPage={handleChangeRowsPerPage}
-                        /> */}
+                        />
                     </MuiTableRow>
                 </MuiTableFooter>
             </MuiTableContainer>
