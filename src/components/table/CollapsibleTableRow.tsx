@@ -1,10 +1,10 @@
-import CollapseButton from '@components/table/CollapseButton';
 import MuiCollapse from '@components/table/MuiCollapse';
 import MuiTableBody from '@components/table/MuiTableBody';
 import MuiTableCell from '@components/table/MuiTableCell';
 import MuiTableContainer from '@components/table/MuiTableContainer';
 import MuiTableHead from '@components/table/MuiTableHead';
 import MuiTableRow from '@components/table/MuiTableRow';
+import TableRowAction from '@components/table/TableRowAction';
 import type { ColumnConfig } from '@components/table/types';
 
 interface NestedTableConfig<T, K extends Record<string, unknown>> {
@@ -33,7 +33,7 @@ const CollapsibleTableRow = <T extends Record<string, unknown>, K extends Record
                 isNested={false}
                 sx={{ boxShadow: isOpen ? '0 -1px 0 0 var(--theme-a-4)' : 'none', position: 'relative' }}
             >
-                <CollapseButton onClick={onToggle} isOpen={isOpen} />
+                <TableRowAction type="chevron" onClick={onToggle} isOpen={isOpen} />
                 {columns.map(column => {
                     if (column.isNestedHeader) {
                         return <MuiTableCell key={String(column.key)}>Expand to View</MuiTableCell>;

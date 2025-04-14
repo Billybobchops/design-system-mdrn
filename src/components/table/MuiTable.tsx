@@ -7,20 +7,31 @@ import MuiTableFooter from '@components/table/MuiTableFooter';
 import MuiTableHead from '@components/table/MuiTableHead';
 import MuiTablePagination from '@components/table/MuiTablePagination';
 import MuiTableRow from '@components/table/MuiTableRow';
+import TableRowAction from '@components/table/TableRowAction';
 import Heading from '@components/typography/Heading';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 interface MuiTableProps {
     data: unknown[];
     getRowId?: (row: Record<string, unknown>) => string;
     title?: string;
+    hasCheckboxes?: boolean;
+    onSelectAll?: (selected: boolean) => void;
+    allSelected?: boolean;
 }
 
-const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
+const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelected }: MuiTableProps) => {
     // Validate data shape
     if (!data.every(isRecord)) {
         return <div>Invalid data format</div>;
     }
+
+    const getRowKey = useCallback(
+        (row: Record<string, unknown>) => {
+            return (getRowId?.(row) ?? row.id) ? String(row.id) : JSON.stringify(row);
+        },
+        [getRowId],
+    );
 
     // State management
     const [expandedRows, setExpandedRows] = useState<Record<string, boolean>>({});
@@ -29,10 +40,26 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
     const typedData = data as Array<Record<string, unknown>>;
     const sampleItem = typedData[0] || {};
 
-    // Memoized callbacks
+    // Toggle all rows
+    const toggleAllRows = useCallback(() => {
+        setExpandedRows(prev => {
+            const allCurrentlyExpanded = typedData.every(row => prev[getRowKey(row)]);
+            return Object.fromEntries(typedData.map(row => [getRowKey(row), !allCurrentlyExpanded]));
+        });
+    }, [typedData, getRowKey]); // Removed expandedRows dependency
+
+    // Toggle single row
     const toggleRow = useCallback((rowId: string) => {
-        setExpandedRows(prev => ({ ...prev, [rowId]: !prev[rowId] }));
+        setExpandedRows(prev => ({
+            ...prev,
+            [rowId]: !prev[rowId],
+        }));
     }, []);
+
+    // Check if all rows are expanded
+    const allExpanded = useMemo(() => {
+        return typedData.length > 0 && typedData.every(row => expandedRows[getRowKey(row)]);
+    }, [typedData, expandedRows, getRowKey]);
 
     // Get all top-level keys in original order
     const allKeysInOrder = Object.keys(sampleItem);
@@ -63,13 +90,6 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
             columns: getNestedColumns(sampleItem[key]),
         }));
 
-    const getRowKey = useCallback(
-        (row: Record<string, unknown>) => {
-            return (getRowId?.(row) ?? row.id) ? String(row.id) : JSON.stringify(row);
-        },
-        [getRowId],
-    );
-
     // Derived values
     const hasNestedData = nestedTables.length > 0;
 
@@ -82,22 +102,6 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
         setPage(0);
     };
 
-    // Toggle all rows
-    // const toggleAllRows = () => {
-    //     const allCurrentlyExpanded = Object.values(expandedRows).every(Boolean);
-    //     const newExpandedState: Record<string, boolean> = {};
-
-    //     // biome-ignore lint: forEach is fine
-    //     data.forEach(row => {
-    //         newExpandedState[row.accountNumber] = !allCurrentlyExpanded;
-    //     });
-
-    //     setExpandedRows(newExpandedState);
-    // };
-
-    // Check if all rows are expanded (for header button state)
-    // const allExpanded = data.length > 0 && data.every(row => expandedRows[row.accountNumber]);
-
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
 
@@ -107,8 +111,18 @@ const MuiTable = ({ data, getRowId, title }: MuiTableProps) => {
             <MuiTableContainer>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
-                        {/* This first cell will need a select all checkbox or expand all chevron IF hasNestedData is TRUE */}
-                        {hasNestedData && <MuiTableCell />}
+                        {hasNestedData ? (
+                            <TableRowAction type="chevron" onClick={toggleAllRows} isOpen={allExpanded} />
+                        ) : hasCheckboxes ? (
+                            <TableRowAction
+                                type="checkbox"
+                                onClick={() => onSelectAll?.(!allSelected)}
+                                isChecked={allSelected}
+                            />
+                        ) : (
+                            <MuiTableCell /> // Empty cell if no actions needed
+                        )}
+
                         {columns.map(col => (
                             <MuiTableCell key={col.key}>{col.header}</MuiTableCell>
                         ))}

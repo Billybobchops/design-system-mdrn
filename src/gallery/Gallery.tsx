@@ -15,7 +15,6 @@ import LinkIconButtonStory from './story/LinkIconButtonStory';
 import NavigationStory from './story/NavigationStory';
 import TabsStory from './story/TabStory';
 import TableStory from './story/TableStory';
-import TableStory2 from './story/TableStory2';
 import TypographyStory from './story/TypographyStory';
 
 export function Gallery() {
@@ -81,12 +80,8 @@ export function Gallery() {
                 <InputStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Table OG">
-                <TableStory />
-            </GalleryDisplayArea>
-
             <GalleryDisplayArea title="Dynamic Table">
-                <TableStory2 />
+                <TableStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Divider">
