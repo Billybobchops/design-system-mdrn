@@ -3,9 +3,9 @@ import Label from '@components/form/Label';
 import type { Spacing } from '@styles/spacing';
 import clsx from 'clsx';
 import { useId } from 'react';
-import classes from './InputMonetary.module.scss';
+import classes from './MonetaryInput.module.scss';
 
-interface InputMonetaryProps {
+interface MonetaryInput {
     disabled?: boolean;
     helperText?: string;
     label: string;
@@ -14,7 +14,7 @@ interface InputMonetaryProps {
     spacing?: Spacing | Spacing[];
 }
 
-const InputMonetary: React.FC<InputMonetaryProps> = ({
+const MonetaryInput: React.FC<MonetaryInput> = ({
     disabled = false,
     helperText = '',
     label,
@@ -46,4 +46,4 @@ const InputMonetary: React.FC<InputMonetaryProps> = ({
     );
 };
 
-export default InputMonetary;
+export default MonetaryInput;

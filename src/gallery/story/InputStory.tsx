@@ -2,13 +2,15 @@ import { Chevron } from '@components/Icon';
 import PrimaryButton from '@components/button/PrimaryButton';
 import Checkboxes from '@components/form/Checkboxes';
 import DatePickerInput from '@components/form/DatePicker';
+import EmailInput from '@components/form/EmailInput';
 import Form from '@components/form/Form';
-import Input from '@components/form/Input';
-import InputMonetary from '@components/form/InputMonetary';
+import MonetaryInput from '@components/form/MonetaryInput';
 import MultiSelect from '@components/form/MultiSelect';
+import PasswordInput from '@components/form/PasswordInput';
 import PhoneInput from '@components/form/PhoneInput';
 import RadioGroup from '@components/form/RadioGroup';
 import Select from '@components/form/Select';
+import TextInput from '@components/form/TextInput';
 import Textarea from '@components/form/Textarea';
 import { useState } from 'react';
 
@@ -44,7 +46,7 @@ const InputStory = () => {
 
     const radioGroupOptions = [{ id: 'Bland' }, { id: 'Medium' }, { id: 'Hot' }, { id: 'Absolute Destruction' }];
 
-    const [selectedValues, setSelectValues] = useState<string[]>(['Real Estate', 'Utility']);
+    const [selectedValues, setSelectValues] = useState<string[]>(['Real Estate', 'Utility', 'Electric']);
 
     const multiSelectOptions = [
         { value: 'Real Estate' },
@@ -64,24 +66,24 @@ const InputStory = () => {
     return (
         <>
             <Form onSubmit={onSubmit}>
-                <Input label="First name" name="firstName" required={true} type="text" />
-                <Input
+                <EmailInput required={true} />
+                <PasswordInput required={true} />
+                <TextInput label="First name" name="firstName" required={true} />
+                <TextInput
                     disabled={true}
                     helperText="This is a disabled input"
                     label="Last name"
                     name="lastName"
                     required={false}
-                    type="text"
                 />
-                <Input
+                <TextInput
                     helperText="Please enter a valid billing address."
                     label="Billing address"
                     name="billingAddress"
                     required={true}
-                    type="text"
                 />
                 <PhoneInput
-                    helperText="Please enter a valid phone number."
+                    helperText="Example helper text goes here!"
                     label="Phone number"
                     name="phoneNumber"
                     required={true}
@@ -102,7 +104,7 @@ const InputStory = () => {
                     required={true}
                     helperText="Select your account from the options."
                 />
-                <InputMonetary
+                <MonetaryInput
                     helperText="Helper text goes here!"
                     label="How much do you wish to pay?"
                     name="paymentAmount"

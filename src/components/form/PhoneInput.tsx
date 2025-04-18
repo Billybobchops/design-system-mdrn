@@ -1,4 +1,4 @@
-import InputHelperText from '@components/form/HelperText';
+import HelperText from '@components/form/HelperText';
 import Label from '@components/form/Label';
 import type { Spacing } from '@styles/spacing';
 import clsx from 'clsx';
@@ -65,7 +65,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
                 })}
                 defaultValue={getValues(name) || ''}
             />
-            <InputHelperText helperID={helperID} helperText={hasError ? errorMessage : helperText} />
+            <HelperText helperID={helperID} helperText={helperText} error={hasError ? errorMessage : undefined} />
         </div>
     );
 };
