@@ -30,24 +30,29 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
     const { setValue } = useFormContext();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const inputValue = e.target.value;
+        const input = e.target.value;
 
-        // Allow empty input (lets user clear the field)
-        if (inputValue === '') {
+        // Allow empty or single decimal
+        if (input === '' || input === '.') {
             setValue(name, '', { shouldValidate: false });
             return;
         }
 
-        const numValue = Number.parseFloat(inputValue);
+        // Block invalid characters (including 'e', '+', '-')
+        if (!/^[\d.]*$/.test(input)) {
+            e.target.value = input.replace(/[^\d.]/g, '');
+            return;
+        }
 
-        // Skip if not a valid number (let user keep typing)
-        if (Number.isNaN(numValue)) return;
+        // Enforce max 2 decimal places
+        const decimalParts = input.split('.');
+        if (decimalParts[1]?.length > 2) {
+            e.target.value = `${decimalParts[0]}.${decimalParts[1].slice(0, 2)}`;
+            return;
+        }
 
-        // Enforce boundaries
-        const clampedValue = Math.max(min, max ? Math.min(numValue, max) : numValue);
-
-        // Update value without validation
-        setValue(name, clampedValue, { shouldValidate: false });
+        const numValue = Number.parseFloat(input);
+        setValue(name, Number.isNaN(numValue) ? '' : numValue, { shouldValidate: false });
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -55,15 +60,14 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
 
         // Handle empty/invalid input
         if (Number.isNaN(numValue)) {
-            numValue = min; // Default to min value
+            numValue = min;
         }
 
         // Apply step precision and boundaries
         const steppedValue = Math.round(numValue / step) * step;
         const finalValue = Math.max(min, max ? Math.min(steppedValue, max) : steppedValue);
 
-        // Format and validate
-        setValue(name, finalValue.toFixed(2), { shouldValidate: true });
+        setValue(name, finalValue, { shouldValidate: true });
     };
 
     return (

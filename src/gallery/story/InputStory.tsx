@@ -82,6 +82,12 @@ const InputStory = () => {
                     name="billingAddress"
                     required={true}
                 />
+                <MonetaryInput
+                    helperText="Helper text goes here!"
+                    label="How much do you wish to pay?"
+                    name="paymentAmount"
+                    required={true}
+                />
                 <PhoneInput
                     helperText="Example helper text goes here!"
                     label="Phone number"
@@ -103,12 +109,6 @@ const InputStory = () => {
                     ]}
                     required={true}
                     helperText="Select your account from the options."
-                />
-                <MonetaryInput
-                    helperText="Helper text goes here!"
-                    label="How much do you wish to pay?"
-                    name="paymentAmount"
-                    required={true}
                 />
                 <Textarea
                     helperText="The quick brown fox jumps over the lazy dog."
