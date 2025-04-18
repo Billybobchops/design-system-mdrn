@@ -7,7 +7,7 @@ interface FormProps<T extends Record<string, unknown>> {
 }
 
 const Form = <T extends Record<string, unknown>>({ defaultValues, onSubmit, children }: FormProps<T>) => {
-    const methods = useForm({ defaultValues });
+    const methods = useForm({ defaultValues, mode: 'onBlur' });
 
     return (
         <FormProvider {...methods}>
