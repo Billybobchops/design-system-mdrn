@@ -2,7 +2,7 @@ import { Chevron } from '@components/Icon';
 import PrimaryButton from '@components/button/PrimaryButton';
 import Checkboxes from '@components/form/Checkboxes';
 import DatePickerInput from '@components/form/DatePicker';
-import EmailInput from '@components/form/EmaiInput';
+import EmailInput from '@components/form/EmailInput';
 import Form from '@components/form/Form';
 import MonetaryInput from '@components/form/MonetaryInput';
 import MultiSelect from '@components/form/MultiSelect';

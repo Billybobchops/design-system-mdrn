@@ -108,7 +108,12 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
                         message: `Maximum amount is ${max}`,
                     },
                 }),
-                valueAsNumber: true,
+                validate: value => {
+                    if (value !== '' && Number.isNaN(Number(value))) {
+                        return 'Please enter a valid number';
+                    }
+                    return true;
+                },
             }}
             required={required}
             spacing={spacing}
