@@ -2,7 +2,7 @@ import { Chevron } from '@components/Icon';
 import PrimaryButton from '@components/button/PrimaryButton';
 import Checkboxes from '@components/form/Checkboxes';
 import DatePickerInput from '@components/form/DatePicker';
-import EmailInput from '@components/form/EmailInput';
+import EmailInput from '@components/form/EmaiInput';
 import Form from '@components/form/Form';
 import MonetaryInput from '@components/form/MonetaryInput';
 import MultiSelect from '@components/form/MultiSelect';
@@ -68,7 +68,23 @@ const InputStory = () => {
             <Form onSubmit={onSubmit}>
                 <EmailInput required={true} />
                 <PasswordInput required={true} />
-                <TextInput label="First name" name="firstName" required={true} />
+                <TextInput
+                    label="First name"
+                    name="firstName"
+                    required={true}
+                    rules={{
+                        minLength: {
+                            value: 2,
+                            message: 'Password must be at least 2 characters',
+                        },
+                        validate: value => {
+                            if (/\d/.test(value)) {
+                                return 'Numbers are not allowed';
+                            }
+                            return true;
+                        },
+                    }}
+                />
                 <TextInput
                     disabled={true}
                     helperText="This is a disabled input"
@@ -77,10 +93,26 @@ const InputStory = () => {
                     required={false}
                 />
                 <TextInput
-                    helperText="Please enter a valid billing address."
+                    helperText="Example helper text goes here!"
                     label="Billing address"
                     name="billingAddress"
                     required={true}
+                    rules={{
+                        minLength: {
+                            value: 5,
+                            message: 'Billing address must be at least 5 characters long',
+                        },
+                        maxLength: {
+                            value: 100,
+                            message: 'Billing address cannot exceed 100 characters',
+                        },
+                        validate: value => {
+                            if (!/^[a-zA-Z0-9\s,.'-]*$/.test(value)) {
+                                return 'Billing address contains invalid characters';
+                            }
+                            return true;
+                        },
+                    }}
                 />
                 <MonetaryInput
                     helperText="Helper text goes here!"

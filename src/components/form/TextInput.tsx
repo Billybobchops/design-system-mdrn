@@ -19,7 +19,9 @@ interface TextInputProps {
     name: string;
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onKeydown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     placeholder?: string;
+    ref?: React.Ref<HTMLInputElement>;
     required?: boolean;
     rules?: RegisterOptions;
     spacing?: Spacing | Spacing[];
@@ -28,6 +30,7 @@ interface TextInputProps {
 }
 
 const TextInput: React.FC<TextInputProps> = ({
+    ref,
     adornment,
     adornmentPosition = 'left',
     disabled = false,
@@ -39,6 +42,7 @@ const TextInput: React.FC<TextInputProps> = ({
     name,
     onBlur: propOnBlur,
     onChange: propOnChange,
+    onKeydown,
     placeholder = '',
     required = false,
     rules = {},
@@ -61,11 +65,13 @@ const TextInput: React.FC<TextInputProps> = ({
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setValue(name, value, { shouldValidate: false });
+        console.log('handleChange value', value);
         propOnChange?.(e); // Call prop if provided
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         const value = e.target.value;
+        console.log('handleBlur value', value);
         setValue(name, value, { shouldValidate: true });
         propOnBlur?.(e); // Call prop if provided
     };
@@ -95,17 +101,19 @@ const TextInput: React.FC<TextInputProps> = ({
                         [classes.inputPaddingRight]: adornment && adornmentPosition === 'right',
                         [classes.inputPaddingLeft]: adornment && adornmentPosition === 'left',
                     })}
+                    onKeyDown={onKeydown}
+                    ref={ref}
+                    defaultValue={getValues(name) || ''}
                     disabled={disabled}
                     id={inputID}
                     inputMode={inputMode}
-                    min={min}
                     max={max}
+                    min={min}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
                     placeholder={placeholder}
                     step={step}
                     type={type}
-                    defaultValue={getValues(name) || ''}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
                 />
             </div>
             <HelperText helperID={helperID} helperText={helperText} error={hasError ? errorMessage : undefined} />

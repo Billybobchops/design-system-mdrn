@@ -1,4 +1,5 @@
 import type { Spacing } from '@styles/spacing';
+import { useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import TextInput from './TextInput';
 
@@ -6,12 +7,12 @@ interface MonetaryInputProps {
     disabled?: boolean;
     helperText?: string;
     label?: string;
+    max?: number;
+    min?: number;
     name?: string;
     placeholder?: string;
     required?: boolean;
     spacing?: Spacing | Spacing[];
-    min?: number;
-    max?: number;
     step?: number;
 }
 
@@ -19,28 +20,30 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
     disabled = false,
     helperText = '',
     label = 'Amount',
+    max,
+    min = 0,
     name = 'amount',
     placeholder = '',
     required = false,
     spacing,
-    min = 0,
-    max,
     step = 0.01,
 }) => {
     const { setValue } = useFormContext();
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        // Block 'e', 'E', '+', '-' characters
+        if (['e', 'E', '+', '-'].includes(e.key)) {
+            e.preventDefault();
+        }
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input = e.target.value;
 
         // Allow empty or single decimal
         if (input === '' || input === '.') {
-            setValue(name, '', { shouldValidate: false });
-            return;
-        }
-
-        // Block invalid characters (including 'e', '+', '-')
-        if (!/^[\d.]*$/.test(input)) {
-            e.target.value = input.replace(/[^\d.]/g, '');
+            setValue(name, min, { shouldValidate: false });
             return;
         }
 
@@ -52,14 +55,17 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
         }
 
         const numValue = Number.parseFloat(input);
-        setValue(name, Number.isNaN(numValue) ? '' : numValue, { shouldValidate: false });
+        setValue(name, Number.isNaN(numValue) ? min : numValue, { shouldValidate: false });
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         let numValue = Number.parseFloat(e.target.value);
 
-        // Handle empty/invalid input
         if (Number.isNaN(numValue)) {
+            if (required) {
+                // Let it stay NaN to trigger validation
+                return;
+            }
             numValue = min;
         }
 
@@ -67,6 +73,10 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
         const steppedValue = Math.round(numValue / step) * step;
         const finalValue = Math.max(min, max ? Math.min(steppedValue, max) : steppedValue);
 
+        // Format display without changing the actual value
+        if (inputRef.current) {
+            inputRef.current.value = finalValue.toFixed(2);
+        }
         setValue(name, finalValue, { shouldValidate: true });
     };
 
@@ -76,10 +86,16 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
             adornmentPosition="left"
             disabled={disabled}
             helperText={helperText}
+            inputMode="decimal"
             label={label}
+            max={max}
+            min={min}
             name={name}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            onKeydown={handleKeyDown}
             placeholder={placeholder}
-            required={required}
+            ref={inputRef}
             rules={{
                 required: required ? 'Amount is required' : false,
                 min: {
@@ -94,14 +110,10 @@ const MonetaryInput: React.FC<MonetaryInputProps> = ({
                 }),
                 valueAsNumber: true,
             }}
+            required={required}
             spacing={spacing}
-            type="number"
-            inputMode="decimal"
-            min={min}
-            max={max}
             step={step}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            type="number"
         />
     );
 };
