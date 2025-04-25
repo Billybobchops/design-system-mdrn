@@ -42,28 +42,33 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
     const errorMessage = errors[name]?.message?.toString();
     const hasError = !!errorMessage;
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const formatted = formatPhoneNumber(e.target.value);
+        setValue(name, formatted, { shouldValidate: false });
+    };
+
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        const formatted = formatPhoneNumber(e.target.value);
+        setValue(name, formatted, { shouldValidate: true });
+    };
+
     return (
         <div className={clsx(classes.inputContainer, spacing)}>
             <Label inline={false} inputID={inputID} label={label} required={required} />
             <input
+                {...register(name, {
+                    required: required ? 'Phone number is required' : false,
+                    pattern: { value: /^\(\d{3}\) \d{3}-\d{4}$/, message: 'Invalid phone number format' },
+                })}
                 aria-invalid={hasError}
                 aria-describedby={helperID}
                 className={clsx(classes.input, { [classes.error]: hasError })}
                 disabled={disabled}
                 id={inputID}
                 type="tel"
-                {...register(name, {
-                    required: required ? 'Phone number is required' : false,
-                    pattern: { value: /^\(\d{3}\) \d{3}-\d{4}$/, message: 'Invalid phone number format' },
-                    onChange: e => {
-                        const formatted = formatPhoneNumber(e.target.value);
-                        setValue(name, formatted, { shouldValidate: false }); // Prevent validation on input
-                    },
-                    onBlur: e => {
-                        setValue(name, formatPhoneNumber(e.target.value), { shouldValidate: true }); // Validate on blur only
-                    },
-                })}
                 defaultValue={getValues(name) || ''}
+                onChange={handleChange}
+                onBlur={handleBlur}
             />
             <HelperText helperID={helperID} helperText={helperText} error={hasError ? errorMessage : undefined} />
         </div>
