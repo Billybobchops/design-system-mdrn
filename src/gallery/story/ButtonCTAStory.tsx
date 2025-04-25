@@ -6,6 +6,7 @@ const ButtonCTAStory = () => {
         <>
             <CTAButton disabled={false} icon={<Chevron />} text="Pay Now" />
             <CTAButton disabled={false} icon={<Chevron />} text="Pay Now" variant="green" />
+            <CTAButton disabled={false} icon={<Chevron />} text="Pay Now" variant="outline" />
             <CTAButton disabled={true} icon={<Chevron />} text="Pay Now" />
         </>
     );

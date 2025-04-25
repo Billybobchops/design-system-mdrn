@@ -1,6 +1,6 @@
 import type { Spacing } from '@styles/spacing';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './CTAButton.module.scss';
 
 interface ButtonProps {
@@ -11,7 +11,7 @@ interface ButtonProps {
     spacing?: Spacing | Spacing[];
     text: string;
     type?: 'button' | 'submit';
-    variant?: 'blue' | 'green';
+    variant?: 'blue' | 'green' | 'outline';
 }
 
 const CTAButton: React.FC<ButtonProps> = ({
@@ -24,7 +24,17 @@ const CTAButton: React.FC<ButtonProps> = ({
     type = 'button',
     variant = 'blue',
 }) => {
-    const fillColor = disabled ? 'var(--utility-neutral-60)' : 'var(--utility-neutral-0)';
+    const [isHovered, setIsHovered] = useState(false);
+
+    const fillColor = disabled
+        ? variant === 'outline'
+            ? 'var(--theme-a-4)'
+            : 'var(--utility-neutral-60)'
+        : isHovered
+          ? 'var(--theme-a-3)'
+          : variant === 'outline'
+            ? 'var(--theme-a-4)'
+            : 'var(--utility-neutral-0)';
 
     return (
         <button
@@ -32,6 +42,8 @@ const CTAButton: React.FC<ButtonProps> = ({
             disabled={disabled}
             onClick={clickHandler}
             type={type}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
             {icon && iconPosition === 'start' && (
                 <span aria-hidden="true" className={classes.iconStart}>

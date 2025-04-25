@@ -37,6 +37,17 @@
         }
     }
 
+    &.outline {
+        background-color: var(--utility-neutral-0);
+        border: var(--button-border-outline);
+        color: var(--theme-a-4);
+
+        &:hover {
+            border: var(--button-border-outline-hover);
+            color: var(--theme-a-3);
+        }
+    }
+
     &:focus-visible {
         outline: 2.5px solid var(--theme-a-3);
         outline-offset: var(--outline-offset-s);

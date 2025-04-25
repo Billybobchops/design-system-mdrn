@@ -116,6 +116,8 @@
 
         /* Buttons */
         --button-border: none;
+        --button-border-outline: 2px solid var(--theme-a-4);
+        --button-border-outline-hover: 2px solid var(--theme-a-3);
         --button-focus-offset: var(--outline-offset-s);
         --button-font-size: 1rem;
         --button-font-weight: 700;
