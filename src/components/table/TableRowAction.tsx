@@ -18,7 +18,7 @@ const TableRowAction: React.FC<TableRowActionProps> = ({ onClick, isOpen, isChec
         <MuiTableCell
             sx={{
                 padding: '0 !important',
-                backgroundColor: isOpen ? 'var(--ic-blue-10)' : 'none',
+                backgroundColor: isOpen ? 'var(--utility-blue-10)' : 'none',
                 boxShadow: isOpen ? '0 1px 0 0 var(--theme-a-4)' : 'none',
                 position: isOpen ? 'relative' : 'static',
                 minWidth: '50px',

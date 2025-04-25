@@ -8,18 +8,20 @@
         --display-border: 3px dashed skyblue;
         --component-area-border: 2px dashed #b511b5;
 
-        /* IC Product Colors */
-        --ic-blue-10: #e9eff7;
-        --ic-blue-20: #a5c0e1;
-        --ic-blue-30: #79a0d1;
-        --ic-blue-40: #4c81c2;
-        --ic-blue-50: #1f61b3;
-        --ic-blue-60: #194e8f;
-        --ic-blue-70: #133a6b;
-        --ic-blue-80: #0c2748;
-        --ic-blue-90: #061324;
-
         /* Utility colors (theme-agnostic) */
+
+        --utilitiy-blue-05: #f4f7fb;
+        --utility-blue-10: #e9eff7;
+        --utility-blue-20: #a5c0e1;
+        --utility-blue-30: #79a0d1;
+        --utility-blue-40: #4c81c2;
+        --utility-blue-50: #1f61b3;
+        --utility-blue-60: #194e8f;
+        --utility-blue-70: #133a6b;
+        --utility-blue-80: #0c2748;
+        --utility-blue-90: #061324;
+
+        --utility-green-05: #f6fbf7;
         --utility-green-10: #dbf1de;
         --utility-green-20: #b8e3bd;
         --utility-green-30: #94d49b;
@@ -30,6 +32,7 @@
         --utility-green-80: #1f4a24;
         --utility-green-90: #0f2512;
 
+        --utility-red-05: #fcf4f4;
         --utility-red-10: #f3d4d4;
         --utility-red-20: #e7a9a9;
         --utility-red-30: #dc7e7d;
@@ -40,6 +43,7 @@
         --utility-red-80: #4e1010;
         --utility-red-90: #270808;
 
+        --utility-yellow-05: #fbf9e6;
         --utility-yellow-10: #f6f2c8;
         --utility-yellow-20: #f1ecac;
         --utility-yellow-30: #ede690;
@@ -64,10 +68,10 @@
         --utility-neutral-100: #000;
 
         /* Blue Theme Tokens */
-        --theme-a-1: var(--ic-blue-10);
-        --theme-a-2: var(--ic-blue-30);
-        --theme-a-3: var(--ic-blue-50);
-        --theme-a-4: var(--ic-blue-70);
+        --theme-a-1: var(--utility-blue-10);
+        --theme-a-2: var(--utility-blue-30);
+        --theme-a-3: var(--utility-blue-50);
+        --theme-a-4: var(--utility-blue-70);
 
         /* Green Theme Tokens */
 
