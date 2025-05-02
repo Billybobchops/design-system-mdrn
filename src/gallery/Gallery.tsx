@@ -20,11 +20,11 @@ import TypographyStory from './story/TypographyStory';
 export function Gallery() {
     return (
         <main>
-            <GalleryDisplayArea title="Header & Navigation">
+            <GalleryDisplayArea title="Header & Navigation *Updating to match latest design*">
                 <NavigationStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Typography (Fluid)">
+            <GalleryDisplayArea title="Typography (Fluid) *Need to add sizing variations to the paragraph*">
                 <TypographyStory />
             </GalleryDisplayArea>
 
@@ -36,7 +36,7 @@ export function Gallery() {
                 <AccountLinksStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Primary Button">
+            <GalleryDisplayArea title="Primary Button *Need to update all icons to latest icons (without baked in spacing)*">
                 <ButtonPrimaryStory />
             </GalleryDisplayArea>
 
@@ -52,7 +52,7 @@ export function Gallery() {
                 <ButtonSimpleStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="CTA Button">
+            <GalleryDisplayArea title="CTA Button *Need to fix hover state styles*">
                 <ButtonCTAStory />
             </GalleryDisplayArea>
 
@@ -60,7 +60,7 @@ export function Gallery() {
                 <AccordionStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Tabs">
+            <GalleryDisplayArea title="Tabs *Need to update to match latest design updates*">
                 <TabsStory />
             </GalleryDisplayArea>
 
@@ -76,17 +76,29 @@ export function Gallery() {
                 <AlertStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Inputs">
+            <GalleryDisplayArea title="Inputs *Need to add validationt to all inputs after the phone input, etc.*">
                 <InputStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Dynamic Table">
+            <GalleryDisplayArea title="Dynamic Table (Our most complex component) *Work In Progress now*">
                 <TableStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Divider">
                 <DividerStory />
             </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Kebab Menu: COMING SOON"> </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Charts: COMING SOON"> </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Toast: COMING SOON"> </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Grid: COMING SOON"> </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Progress Indicator: COMING SOON"> </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Transfer: COMING SOON"> </GalleryDisplayArea>
         </main>
     );
 }
