@@ -2,6 +2,7 @@
 
 @layer components {
     .header {
+        background-color: var(--nav-background-color);
         border-bottom: 1px solid var(--utility-neutral-20); // temp
     }
 
