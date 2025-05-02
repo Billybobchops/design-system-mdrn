@@ -76,7 +76,7 @@ export function Gallery() {
                 <AlertStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Inputs *Need to add validationt to all inputs after the phone input, etc.*">
+            <GalleryDisplayArea title="Inputs *Need to add validation to all inputs after the phone input, etc.*">
                 <InputStory />
             </GalleryDisplayArea>
 
