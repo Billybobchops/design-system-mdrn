@@ -108,7 +108,7 @@ const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelect
     return (
         <>
             <Heading semanticLevel={'h3'}>{title}</Heading>
-            <MuiTableContainer>
+            <MuiTableContainer sx={{ tableLayout: hasNestedData ? 'auto' : 'fixed' }}>
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
                         {hasNestedData ? (
@@ -120,11 +120,13 @@ const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelect
                                 isChecked={allSelected}
                             />
                         ) : (
-                            <MuiTableCell /> // Empty cell if no actions needed
+                            ''
                         )}
 
                         {columns.map(col => (
-                            <MuiTableCell key={col.key}>{col.header}</MuiTableCell>
+                            <MuiTableCell key={col.key} sx={{ width: `${100 / columns.length}%` }}>
+                                {col.header}
+                            </MuiTableCell>
                         ))}
                     </MuiTableRow>
                 </MuiTableHead>

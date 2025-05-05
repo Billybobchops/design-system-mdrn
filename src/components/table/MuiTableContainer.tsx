@@ -9,9 +9,10 @@ interface MuiTableContainerProps {
 
 const MuiTableContainer: React.FC<MuiTableContainerProps> = ({ children, sx = {} }) => {
     const baseStyles: SxProps<Theme> = {
-        width: '100%',
-        minWidth: '700px',
         borderCollapse: 'separate',
+        marginBottom: 'var(--spacing-xxl)',
+        minWidth: '700px',
+        width: '100%',
 
         '& .MuiTableBody-root > .MuiTableRow-root': {
             backgroundColor: 'var(--utility-neutral-0)',

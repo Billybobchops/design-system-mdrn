@@ -255,10 +255,64 @@ const dummyRowData = [
     },
 ];
 
+const dummyRowData2 = [
+    {
+        customerName: 'Joseph Erlinda Fillare',
+        accountNumber: 'XSD38513336',
+        invoiceNumber: 'INV-000000000001',
+    },
+    {
+        customerName: 'Nikephoros Botaneiates',
+        accountNumber: 'BSD32113337',
+        invoiceNumber: 'INV-000000000002',
+    },
+    {
+        customerName: 'Vlad Wallachian',
+        accountNumber: 'CSD32119986',
+        invoiceNumber: 'INV-000000000003',
+    },
+    {
+        customerName: 'Octavian Augustus',
+        accountNumber: 'CSD32344986',
+        invoiceNumber: 'INV-000000000004',
+    },
+    {
+        customerName: 'Marcus Aurelius',
+        accountNumber: 'DSD44444986',
+        invoiceNumber: 'INV-000000000005',
+    },
+    {
+        customerName: 'Constantine the Great',
+        accountNumber: 'XSD55513336',
+        invoiceNumber: 'INV-000000000006',
+    },
+    {
+        customerName: 'Justinian I',
+        accountNumber: 'BSD66613337',
+        invoiceNumber: 'INV-000000000007',
+    },
+    {
+        customerName: 'Theodora',
+        accountNumber: 'CSD77719986',
+        invoiceNumber: 'INV-000000000008',
+    },
+    {
+        customerName: 'Basil II',
+        accountNumber: 'CSD88844986',
+        invoiceNumber: 'INV-000000000009',
+    },
+    {
+        customerName: 'Alexios I Komnenos',
+        accountNumber: 'DSD99944986',
+        invoiceNumber: 'INV-000000000010',
+    },
+];
+
 const TableStory = () => {
     return (
         <>
             <MuiTable title="Example Ai Report Generator with nested rows" data={dummyRowData} />
+            <MuiTable title="Non-nested table" data={dummyRowData2} />
         </>
     );
 };
