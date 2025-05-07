@@ -21,7 +21,7 @@ import TypographyStory from './story/TypographyStory';
 export function Gallery() {
     return (
         <main>
-            <GalleryDisplayArea title="Header & Navigation *Updating to match latest design*">
+            <GalleryDisplayArea title="Header & Navigation">
                 <NavigationStory />
             </GalleryDisplayArea>
 

@@ -4,6 +4,8 @@
     .header {
         background-color: var(--nav-background-color);
         border-bottom: 1px solid var(--utility-neutral-20); // temp
+        position: relative;
+        z-index: 1000;
     }
 
     .container {
@@ -42,6 +44,29 @@
         // Make the button appear on mobile
         @media (max-width: 900px) {
             display: block;
+        }
+    }
+
+    .backdrop {
+        @media (max-width: 900px) {
+            animation: fadeIn 0.1s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.75);
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
         }
     }
 }

@@ -102,6 +102,10 @@
         line-height: 1.4;
         text-decoration: none;
 
+        @media (max-width: 900px) {
+            white-space: normal;
+        }
+
         svg {
             vertical-align: middle;
         }
