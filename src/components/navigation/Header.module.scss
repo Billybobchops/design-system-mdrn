@@ -40,7 +40,7 @@
         z-index: 10; // Ensure it's above the nav when open
 
         // Make the button appear on mobile
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             display: block;
         }
     }

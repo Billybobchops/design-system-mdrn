@@ -11,6 +11,7 @@ import DialogStory from './story/DialogStory';
 import DividerStory from './story/DividerStory';
 import InlineLinkStory from './story/InlineLinkStory';
 import InputStory from './story/InputStory';
+import KebabMenuStory from './story/KebabMenuStory';
 import LinkIconButtonStory from './story/LinkIconButtonStory';
 import NavigationStory from './story/NavigationStory';
 import TabsStory from './story/TabStory';
@@ -88,7 +89,9 @@ export function Gallery() {
                 <DividerStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Kebab Menu: COMING SOON"> </GalleryDisplayArea>
+            <GalleryDisplayArea title="Kebab Menu: COMING SOON">
+                <KebabMenuStory />
+            </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Charts: COMING SOON"> </GalleryDisplayArea>
 

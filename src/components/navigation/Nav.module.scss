@@ -2,15 +2,16 @@
 
 @layer components {
     .nav {
+        align-self: end; // important for larger logos
         background-color: var(--nav-background-color);
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             display: none;
             flex-direction: column;
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         .navOpen {
             display: flex;
             width: 100%;
@@ -25,7 +26,7 @@
         margin: 0;
         padding: 0;
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             background-color: var(--utility-neutral-0);
             flex-direction: column;
             width: 100%;
@@ -37,20 +38,32 @@
         position: relative;
         padding: var(--nav-link-padding);
 
-        &:hover,
-        &:focus {
-            border-bottom: 2px solid var(--nav-link-hover-color);
-            color: var(--nav-link-hover-color);
-            margin-bottom: -2px;
+        .navLink {
+            cursor: pointer;
+        }
 
-            .navLink {
+        @media (min-width: 1101px) {
+            &:hover,
+            &:focus,
+            &.isActive {
+                border-bottom: 2px solid var(--nav-link-hover-color);
                 color: var(--nav-link-hover-color);
+                margin-bottom: -2px;
+
+                .navLink {
+                    color: var(--nav-link-hover-color);
+                }
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             display: block;
             border-bottom: var(--submenu-link-border);
+            padding: var(--nav-link-mobile-padding);
+
+            .navLink {
+                text-align: left;
+            }
 
             &:last-child {
                 border: none;
@@ -80,11 +93,13 @@
     }
 
     .navLink {
+        background: none;
+        border: none;
         color: var(--nav-link-color);
         display: inline-block;
         font-size: var(--nav-link-font-size);
         font-weight: var(--nav-link-font-weight);
-        line-height: 1;
+        line-height: 1.4;
         text-decoration: none;
 
         svg {
@@ -98,32 +113,30 @@
         cursor: pointer;
     }
 
-    .iconWrapper {
-        align-items: center;
-        display: flex;
-    }
-
-    .iconRotate {
+    .iconRotate svg {
         transform: rotate(180deg);
     }
 
     .subMenu {
         background: var(--submenu-background-color);
         box-shadow: var(--submenu-elevation);
-        display: none;
         list-style: none;
         position: absolute;
         right: 0;
         top: 105%;
 
-        @media (max-width: 768px) {
+        .subMenu {
+            top: 0;
+            right: 100%;
+        }
+
+        @media (max-width: 900px) {
             position: static;
             box-shadow: none;
         }
 
         .navItem {
             border-bottom: var(--submenu-link-border);
-            color: var(--submenu-link-color);
             display: block;
             margin: 0;
             padding: var(--submenu-link-padding);
@@ -135,45 +148,35 @@
                 font-weight: var(--submenu-font-weight);
             }
 
+            &:hover > .linkGrid .navLink,
+            &:focus > .linkGrid .navLink {
+                color: var(--submenu-link-hover-color);
+            }
+
             &:hover,
             &:focus {
                 background: var(--submenu-link-hover-background);
                 margin-bottom: 0;
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 900px) {
                 margin: 0 calc(-1 * var(--spacing-s));
 
                 &:first-child {
                     border-top: var(--submenu-link-border);
-                    margin-top: var(--spacing-s);
+                    margin-top: var(--spacing-xs);
                 }
 
                 &:last-child {
                     border-bottom: none;
-                    margin-bottom: calc(-1 * var(--spacing-s));
+                    margin-bottom: calc(-1 * var(--spacing-xs));
                 }
 
                 &:hover,
                 &:focus {
                     background: none;
                 }
-
-                .subMenu .navItem {
-                    &:first-child {
-                        margin-top: var(--spacing-xs);
-                    }
-
-                    &:last-child {
-                        margin-bottom: calc(-1 * var(--spacing-xs));
-                    }
-                }
             }
-        }
-
-        .navItem:hover &,
-        .dropdownToggle[aria-expanded='true'] + & {
-            display: block;
         }
     }
 }

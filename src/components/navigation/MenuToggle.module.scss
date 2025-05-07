@@ -10,7 +10,7 @@
         cursor: pointer;
         display: none;
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             display: block;
         }
     }
@@ -20,7 +20,7 @@
         position: absolute;
         height: 2px;
         width: 100%;
-        background: var(--theme-a-4);
+        background: var(--utility-neutral-70);
         border-radius: var(--border-radius-m);
         opacity: 1;
         left: 0;

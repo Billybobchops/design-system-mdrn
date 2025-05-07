@@ -1,12 +1,12 @@
 import logo from '@/assets/example-logo.png';
-import { Info } from '@/components/Icon';
+import { Home } from '@components/Icon';
 import Header from '@components/navigation/Header';
 
 const NavigationStory = () => {
     const navLinks = [
+        { label: 'Home', href: '/', icon: <Home fill="var(--nav-link-color)" />, iconOnly: true },
         {
             label: 'My Account',
-            href: '/account',
             subMenu: [
                 { label: 'View or Pay Open Invoices', href: '/account/openinvoices' },
                 { label: 'View or Pay Closed Invoices', href: '/account/closedinvoices' },
@@ -16,7 +16,6 @@ const NavigationStory = () => {
         },
         {
             label: 'My Profile',
-            href: '/profile',
             subMenu: [
                 { label: 'AutoPay', href: '/profile/autopay' },
                 { label: 'Change Password', href: '/profile/changepassword' },
@@ -32,11 +31,13 @@ const NavigationStory = () => {
         },
         {
             label: 'Support',
-            href: '/support',
             subMenu: [
                 {
+                    label: 'Customer Service',
+                    href: '/support/customerservice',
+                },
+                {
                     label: 'Help - User Videos',
-                    href: '/support/uservideos',
                     subMenu: [
                         { label: 'Account Linking', href: '/support/uservideos/accountlinking' },
                         { label: 'Managing Your InvoiceCloud Account', href: '/support/uservideos/accountmanagement' },
@@ -55,7 +56,6 @@ const NavigationStory = () => {
             ],
         },
         { label: 'Sign Out', href: '/signout' },
-        { label: 'Settings', href: '/settings', icon: <Info fill="var(--nav-link-color)" />, iconOnly: true },
     ];
 
     return (

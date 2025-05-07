@@ -1,5 +1,5 @@
 export type NavigationLink = {
-    href: string;
+    href?: string;
     label: string;
     subMenu?: NavigationLink[];
     icon?: React.ReactNode;

@@ -103,18 +103,21 @@
 
         /* Navigation */
         --nav-background-color: var(--utility-neutral-0);
-        --nav-link-color: var(--theme-a-4);
+        --nav-link-color: var(--utility-neutral-70);
         --nav-link-font-size: 16px;
-        --nav-link-hover-color: var(--theme-a-3);
+        --nav-link-hover-color: var(--utility-neutral-100);
         --nav-link-hover-weight: 2px;
         --nav-link-font-weight: 600;
         --nav-link-padding: var(--spacing-s);
+        --nav-link-mobile-padding: var(--spacing-xs) var(--spacing-s);
         --submenu-background-color: var(--utility-neutral-0);
         --submenu-elevation: var(--elevation-1);
         --submenu-link-border: 1px solid var(--utility-neutral-20);
-        --submenu-link-color: var(--theme-a-4);
-        --submenu-link-padding: var(--spacing-xs) var(--spacing-m);
-        --submenu-link-hover-background: var(--theme-a-1);
+        --submenu-link-color: var(--nav-link-color);
+        --submenu-link-hover-color: var(--utility-neutral-100);
+        --submenu-link-padding: var(--spacing-xs) var(--spacing-s)
+            var(--spacing-xs) var(--spacing-m);
+        --submenu-link-hover-background: var(--utility-neutral-05);
         --submenu-font-weight: 400;
 
         /* Buttons */
