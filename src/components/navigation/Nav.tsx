@@ -70,8 +70,11 @@ const NavItem = ({ link }: { link: NavigationLink }) => {
             <div className={`${classes.linkGrid} ${link.subMenu ? '' : classes.linkGridSingleColumn}`}>
                 {link.href ? (
                     <NavLink to={link.href} className={classes.navLink}>
-                        {!link.iconOnly && <span>{link.label}</span>}
-                        {link.icon && link.icon}
+                        <span className={classes.labelContent}>
+                            {!link.iconOnly && !link.mobileOnlyText && <span>{link.label}</span>}
+                            {link.mobileOnlyText && <span className={classes.mobileLabel}>{link.label}</span>}
+                            {link.icon && link.icon}
+                        </span>
                     </NavLink>
                 ) : (
                     <button className={classes.navLink} onClick={() => setIsOpen(prev => !prev)} type="button">

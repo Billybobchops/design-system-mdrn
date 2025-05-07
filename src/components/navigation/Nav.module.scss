@@ -102,6 +102,19 @@
         line-height: 1.4;
         text-decoration: none;
 
+        .labelContent {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mobileLabel {
+            display: none;
+
+            @media (max-width: 900px) {
+                display: block;
+            }
+        }
+
         @media (max-width: 900px) {
             white-space: normal;
         }

@@ -4,7 +4,7 @@ import Header from '@components/navigation/Header';
 
 const NavigationStory = () => {
     const navLinks = [
-        { label: 'Home', href: '/', icon: <Home fill="var(--nav-link-color)" />, iconOnly: true },
+        { label: 'Home', href: '/', icon: <Home fill="var(--nav-link-color)" />, mobileOnlyText: true },
         {
             label: 'My Account',
             subMenu: [
