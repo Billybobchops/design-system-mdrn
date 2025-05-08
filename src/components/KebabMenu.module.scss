@@ -1,0 +1,55 @@
+@import '@styles/layer-order.scss';
+
+@layer components {
+    .container {
+        position: relative;
+        width: fit-content;
+    }
+
+    .button {
+        background: none;
+        border: none;
+        border-radius: var(--border-radius-s);
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+
+        &:hover {
+            background-color: var(--theme-a-1);
+        }
+
+        &.active {
+            background-color: var(--theme-a-4);
+        }
+    }
+
+    .actions {
+        background: var(--utility-neutral-0);
+        box-shadow: 0px 8px 16px 0px rgba(28, 28, 28, 0.16);
+        list-style: none;
+        position: absolute;
+        right: 0;
+
+        .actionItem {
+            border-bottom: var(--submenu-link-border);
+
+            &:hover {
+                background-color: var(--utility-neutral-05);
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+
+        .action {
+            background: inherit;
+            border: none;
+            font-size: 16px;
+            line-height: 1.4;
+            padding: var(--spacing-xs) var(--spacing-s);
+            width: 100%;
+            width: max-content;
+        }
+    }
+}

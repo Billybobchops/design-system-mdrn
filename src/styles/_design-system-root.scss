@@ -140,6 +140,8 @@
         --h6-font-size: 0.75rem;
         --heading-margin: 0 0 var(--spacing-s) 0;
         --body-font-size: clamp(0.75rem, 2vw + 0.55rem, 1rem);
+        --body-font-size-xs: clamp(0.75rem, 1vw + 0.5rem, 0.75rem);
+        --body-font-size-s: clamp(0.875rem, 1.5vw + 0.5rem, 0.875rem);
 
         /* Forms */
         --input-border-radius: var(--border-radius-s);

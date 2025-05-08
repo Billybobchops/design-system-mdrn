@@ -54,6 +54,7 @@
     }
 
     &.disabled {
+        border: none;
         background-color: var(--utility-neutral-10);
         color: var(--utility-neutral-60);
 

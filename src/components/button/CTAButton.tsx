@@ -26,15 +26,22 @@ const CTAButton: React.FC<ButtonProps> = ({
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
-    const fillColor = disabled
-        ? variant === 'outline'
-            ? 'var(--theme-a-4)'
-            : 'var(--utility-neutral-60)'
-        : isHovered
-          ? 'var(--theme-a-3)'
-          : variant === 'outline'
-            ? 'var(--theme-a-4)'
-            : 'var(--utility-neutral-0)';
+    const fillColor = (() => {
+        if (disabled) {
+            return 'var(--utility-neutral-60)';
+        }
+
+        if (isHovered && variant !== 'outline') {
+            return 'var(--utility-neutral-0)';
+        }
+
+        if (variant === 'outline') {
+            if (isHovered) {
+                return 'var(--theme-a-3)';
+            }
+            return 'var(--theme-a-4)';
+        }
+    })();
 
     return (
         <button

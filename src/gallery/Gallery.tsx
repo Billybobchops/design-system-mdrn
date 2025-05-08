@@ -25,7 +25,7 @@ export function Gallery() {
                 <NavigationStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Typography (Fluid) *Need to add sizing variations to the paragraph*">
+            <GalleryDisplayArea title="Typography (Fluid)">
                 <TypographyStory />
             </GalleryDisplayArea>
 
@@ -53,16 +53,12 @@ export function Gallery() {
                 <ButtonSimpleStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="CTA Button *Need to fix hover state styles*">
+            <GalleryDisplayArea title="CTA Button">
                 <ButtonCTAStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Accordion">
                 <AccordionStory />
-            </GalleryDisplayArea>
-
-            <GalleryDisplayArea title="Tabs *Need to update to match latest design updates*">
-                <TabsStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Dialog">
@@ -89,15 +85,19 @@ export function Gallery() {
                 <DividerStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Kebab Menu: COMING SOON">
+            <GalleryDisplayArea title="Tabs *Need to update to match latest design updates*">
+                <TabsStory />
+            </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Kebab Menu">
                 <KebabMenuStory />
             </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Grid: COMING SOON"> </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Charts: COMING SOON"> </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Toast: COMING SOON"> </GalleryDisplayArea>
-
-            <GalleryDisplayArea title="Grid: COMING SOON"> </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Progress Indicator: COMING SOON"> </GalleryDisplayArea>
 
