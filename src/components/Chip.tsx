@@ -1,4 +1,4 @@
-import { MenuClose } from '@components/Icon';
+import { MenuCloseSmall } from '@components/Icon';
 import VisuallyHidden from '@components/accessibility/VisuallyHidden';
 import { useState } from 'react';
 import classes from './Chip.module.scss';
@@ -21,7 +21,7 @@ const Chip: React.FC<ChipProps> = ({ title, onRemove }) => {
         >
             <span className={classes.title}>{title}</span>
             <span aria-hidden="true" className={`${classes.icon} ${isHovered ? classes.iconHover : ''}`}>
-                <MenuClose fill={isHovered ? 'var(--utility-neutral-0)' : 'var(--theme-a-4)'} />
+                <MenuCloseSmall fill={isHovered ? 'var(--utility-neutral-0)' : 'var(--theme-a-4)'} />
             </span>
             <VisuallyHidden>{`Remove ${title} as a selection`}</VisuallyHidden>
         </button>

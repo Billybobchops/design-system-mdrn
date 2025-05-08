@@ -1,4 +1,4 @@
-import { Chevron } from '@components/Icon';
+import { ChevronRight } from '@components/Icon';
 import PrimaryButton from '@components/button/PrimaryButton';
 import Checkboxes from '@components/form/Checkboxes';
 import DatePickerInput from '@components/form/DatePicker';
@@ -159,7 +159,7 @@ const InputStory = () => {
                     name="selectInvoiceType"
                     options={multiSelectOptions}
                 />
-                <PrimaryButton clickHandler={onSubmit} disabled={false} icon={<Chevron />} text="Complete Form" />
+                <PrimaryButton clickHandler={onSubmit} disabled={false} icon={<ChevronRight />} text="Complete Form" />
             </Form>
         </>
     );

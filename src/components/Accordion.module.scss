@@ -51,11 +51,6 @@
         border-bottom: none;
     }
 
-    .icon,
-    .activeIcon {
-        transform: rotate(90deg);
-    }
-
     .activeIcon svg {
         transform: rotate(180deg);
     }

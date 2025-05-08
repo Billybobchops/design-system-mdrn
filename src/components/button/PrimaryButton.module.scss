@@ -6,11 +6,14 @@
         @include buttons;
 
         border-radius: var(--border-radius-s);
+        padding: 0;
 
         .innerButton {
             align-items: center;
             display: flex;
             justify-content: center;
+            gap: var(--spacing-xs);
+            padding: var(--button-padding-small);
         }
 
         @include mobile-100-w;

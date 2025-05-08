@@ -1,12 +1,12 @@
 import Divider from '@/components/Divider';
-import { Chevron, NewWindow, Plus, Remove } from '@components/Icon';
+import { ChevronRight, MenuCloseMedium, NewWindow, Plus } from '@components/Icon';
 import LinkIconButton from '@components/button/LinkIconButton';
 
 const LinkIconButtonStory = () => {
     return (
         <>
-            <LinkIconButton disabled={false} icon={<Chevron />} text="Recent Open Invoices" variant="blue" />
-            <LinkIconButton disabled={true} icon={<Chevron />} text="Recent Open Invoices" variant="blue" />
+            <LinkIconButton disabled={false} icon={<ChevronRight />} text="Recent Open Invoices" variant="blue" />
+            <LinkIconButton disabled={true} icon={<ChevronRight />} text="Recent Open Invoices" variant="blue" />
             <LinkIconButton
                 disabled={false}
                 icon={<NewWindow />}
@@ -23,14 +23,14 @@ const LinkIconButtonStory = () => {
             />
             <LinkIconButton
                 disabled={false}
-                icon={<Remove />}
+                icon={<MenuCloseMedium />}
                 iconPosition="start"
                 text="Delete Email Address"
                 variant="red"
             />
             <LinkIconButton
                 disabled={true}
-                icon={<Remove />}
+                icon={<MenuCloseMedium />}
                 iconPosition="start"
                 text="Delete Email Address"
                 variant="red"

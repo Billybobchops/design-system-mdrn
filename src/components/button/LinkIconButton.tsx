@@ -73,17 +73,9 @@ const IconButton: React.FC<IconButtonProps> = ({
             onMouseLeave={() => setIsHovered(false)}
             type={type}
         >
-            {icon && iconPosition === 'start' && (
-                <span aria-hidden="true" className={classes.iconStart}>
-                    {React.cloneElement(icon, { fill: fillColor })}
-                </span>
-            )}
+            {icon && iconPosition === 'start' && React.cloneElement(icon, { fill: fillColor })}
             {text && <span>{text}</span>}
-            {icon && iconPosition === 'end' && (
-                <span aria-hidden="true" className={classes.iconEnd}>
-                    {React.cloneElement(icon, { fill: fillColor })}
-                </span>
-            )}
+            {icon && iconPosition === 'end' && React.cloneElement(icon, { fill: fillColor })}
         </button>
     );
 };

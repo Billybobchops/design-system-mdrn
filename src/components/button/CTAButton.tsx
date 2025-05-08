@@ -52,17 +52,9 @@ const CTAButton: React.FC<ButtonProps> = ({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {icon && iconPosition === 'start' && (
-                <span aria-hidden="true" className={classes.iconStart}>
-                    {React.cloneElement(icon, { fill: fillColor })}
-                </span>
-            )}
+            {icon && iconPosition === 'start' && React.cloneElement(icon, { fill: fillColor })}
             {text}
-            {icon && iconPosition === 'end' && (
-                <span aria-hidden="true" className={classes.iconEnd}>
-                    {React.cloneElement(icon, { fill: fillColor })}
-                </span>
-            )}
+            {icon && iconPosition === 'end' && React.cloneElement(icon, { fill: fillColor })}
         </button>
     );
 };

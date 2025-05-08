@@ -22,11 +22,12 @@
         }
 
         .icon {
-            padding: var(--spacing-xxs);
+            padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) 0;
         }
 
         .iconHover {
             background-color: var(--theme-a-3);
+            padding: var(--spacing-xs);
         }
     }
 

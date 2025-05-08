@@ -6,12 +6,13 @@
         @include buttons;
 
         align-items: center;
+        color: var(--theme-a-4);
         display: inline-flex;
+        gap: var(--spacing-xs);
         justify-content: center;
         line-height: 1;
         padding: 4px;
         vertical-align: middle;
-        color: var(--theme-a-4);
 
         .iconStart,
         .iconEnd {

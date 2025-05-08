@@ -37,7 +37,7 @@ export function Gallery() {
                 <AccountLinksStory />
             </GalleryDisplayArea>
 
-            <GalleryDisplayArea title="Primary Button *Need to update all icons to latest icons (without baked in spacing)*">
+            <GalleryDisplayArea title="Primary Button">
                 <ButtonPrimaryStory />
             </GalleryDisplayArea>
 

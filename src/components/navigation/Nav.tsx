@@ -1,4 +1,4 @@
-import { DropdownChevron } from '@components/Icon';
+import { ChevronDown } from '@components/Icon';
 import { NavLink } from '@modern-js/runtime/router';
 import { useEffect, useRef, useState } from 'react';
 import classes from './Nav.module.scss';
@@ -93,9 +93,7 @@ const NavItem = ({ link }: { link: NavigationLink }) => {
                         type="button"
                     >
                         <span aria-hidden="true" className={`${isOpen ? classes.iconRotate : ''}`}>
-                            <DropdownChevron
-                                fill={isHovered ? 'var(--nav-link-hover-color)' : 'var(--nav-link-color)'}
-                            />
+                            <ChevronDown fill={isHovered ? 'var(--nav-link-hover-color)' : 'var(--nav-link-color)'} />
                         </span>
                     </button>
                 )}

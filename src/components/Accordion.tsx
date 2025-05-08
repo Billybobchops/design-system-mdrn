@@ -1,4 +1,4 @@
-import { Chevron } from '@components/Icon';
+import { ChevronDown } from '@components/Icon';
 import { useId, useState } from 'react';
 import classes from './Accordion.module.scss';
 
@@ -15,7 +15,7 @@ const Accordion: React.FC<AccordionProps> = ({ children, title }) => {
     const accordionContentID = useId();
 
     const buttonClasses = `${classes.button} ${isOpen ? classes.activeButton : ''}`;
-    const iconClasses = `${isOpen ? classes.activeIcon : classes.icon}`;
+    const iconClasses = `${isOpen ? classes.activeIcon : ''}`;
     const sectionClasses = `${classes.section} ${isFocused ? classes.focusedSection : classes.section}`;
 
     return (
@@ -37,7 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({ children, title }) => {
                     type="button"
                 >
                     <span className={iconClasses}>
-                        <Chevron fill={isHovered ? 'var(--theme-a-3)' : 'var(--theme-a-4)'} />
+                        <ChevronDown fill={isHovered ? 'var(--theme-a-3)' : 'var(--theme-a-4)'} />
                     </span>
                     <span className="sr-only">
                         {isOpen ? 'Collapse' : 'Expand'} {title}

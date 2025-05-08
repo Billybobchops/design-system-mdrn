@@ -1,5 +1,5 @@
 import Chip from '@components/Chip';
-import { Chevron } from '@components/Icon';
+import { ChevronDown } from '@components/Icon';
 import SimpleButton from '@components/button/SimpleButton';
 import Checkbox from '@components/form/Checkbox';
 import HelperText from '@components/form/HelperText';
@@ -129,7 +129,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                         value={searchTerm}
                     />
                     <span aria-hidden="true" className={isOpen ? classes.activeChevron : ''}>
-                        <Chevron fill={'var(--utility-neutral-70)'} />
+                        <ChevronDown fill={'var(--utility-neutral-70)'} />
                     </span>
                 </button>
 

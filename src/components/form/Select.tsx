@@ -1,4 +1,4 @@
-import { SelectChevron } from '@components/Icon';
+import { ChevronDown } from '@components/Icon';
 import HelperText from '@components/form/HelperText';
 import type { Spacing } from '@styles/spacing';
 import clsx from 'clsx';
@@ -58,7 +58,7 @@ const Select: React.FC<SelectProps> = ({
                         </option>
                     ))}
                 </select>
-                <SelectChevron fill={'var(--utility-neutral-70)'} />
+                <ChevronDown fill={'var(--utility-neutral-70)'} />
             </div>
             <HelperText helperID={helperID} helperText={helperText} />
         </div>

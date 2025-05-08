@@ -1,4 +1,4 @@
-import { ErrorIcon, Info, MenuClose, Success, Warning } from '@components/Icon';
+import { ErrorIcon, Info, MenuCloseMedium, Success, Warning } from '@components/Icon';
 import VisuallyHidden from '@components/accessibility/VisuallyHidden';
 import type { Spacing } from '@styles/spacing';
 import clsx from 'clsx';
@@ -46,7 +46,7 @@ const Alert: React.FC<AlertProps> = ({ children, isDismissable, spacing, variant
                     {children}
                     {isDismissable && (
                         <button className={classes.button} onClick={() => setIsActive(false)} type="button">
-                            <MenuClose fill={getFillColor(variant)} />
+                            <MenuCloseMedium fill={getFillColor(variant)} />
                             <VisuallyHidden>close alert</VisuallyHidden>
                         </button>
                     )}

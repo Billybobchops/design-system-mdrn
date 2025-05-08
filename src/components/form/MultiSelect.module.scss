@@ -13,7 +13,6 @@
             width: fit-content;
 
             svg {
-                transform: rotate(90deg);
                 pointer-events: none;
                 position: absolute;
                 right: 1rem;
@@ -21,7 +20,7 @@
             }
 
             .activeChevron svg {
-                transform: rotate(-90deg);
+                transform: rotate(-180deg);
             }
 
             @include mobile-100-w;

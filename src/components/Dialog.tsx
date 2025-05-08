@@ -1,4 +1,4 @@
-import { Chevron, MenuCloseLarge } from '@components/Icon';
+import { ChevronRight, MenuCloseLarge } from '@components/Icon';
 import VisuallyHidden from '@components/accessibility/VisuallyHidden';
 import PrimaryButton from '@components/button/PrimaryButton';
 import SimpleButton from '@components/button/SimpleButton';
@@ -96,7 +96,7 @@ const Dialog: React.FC<DialogProps> = ({
                                     <PrimaryButton
                                         disabled={false}
                                         clickHandler={handleDialogAction}
-                                        icon={<Chevron />}
+                                        icon={<ChevronRight />}
                                         text={actionButtonText ? actionButtonText : ''}
                                         variant="blue"
                                     />
@@ -106,7 +106,7 @@ const Dialog: React.FC<DialogProps> = ({
                                 <PrimaryButton
                                     disabled={false}
                                     clickHandler={closeDialog}
-                                    icon={<Chevron />}
+                                    icon={<ChevronRight />}
                                     text="Close"
                                     variant="blue"
                                 />
