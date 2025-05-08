@@ -36,7 +36,6 @@ export default createModuleFederationConfig({
         './Tabs': './src/components/tabular/Tabs.tsx',
         './TabsContext': './src/components/tabular/TabsContext.tsx',
         './Heading': './src/components/typography/Heading.tsx',
-        './IconParagraph': './src/components/typography/IconParagraph.tsx',
         './Paragraph': './src/components/typography/Paragraph.tsx',
         './UnorderedList': './src/components/typography/UnorderedList.tsx',
         './Accordion': './src/components/Accordion.tsx',
@@ -57,6 +56,7 @@ export default createModuleFederationConfig({
         './MuiTableHead': './src/components/table/MuiTableHead.tsx',
         './MuiTableRow': './src/components/table/MuiTableRow.tsx',
         './MuiCollapse': './src/components/table/MuiCollapse.tsx',
+        './FeatureStatus': './src/components/FeatureStatus.tsx',
         './DesignSystemSpacing': './src/styles/design-system-spacing.ts',
     },
     shared: {

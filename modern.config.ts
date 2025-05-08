@@ -14,12 +14,6 @@ export default defineConfig({
             process.env.NODE_ENV === 'production'
                 ? 'https://starling-ui-design-system.netlify.app/'
                 : 'http://localhost:3001/',
-        copy: [
-            {
-                from: './src/assets/favicon-32x32.png',
-                to: 'static/favicon-32x32.png',
-            },
-        ],
     },
     plugins: [
         appTools({
@@ -29,6 +23,5 @@ export default defineConfig({
     ],
     html: {
         favicon: './src/assets/favicon-32x32.png',
-        // favicon: './static/image/favicon-32x32.png',
     },
 });

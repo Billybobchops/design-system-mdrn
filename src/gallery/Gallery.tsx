@@ -9,6 +9,7 @@ import ButtonSecondaryStory from './story/ButtonSecondaryStory';
 import ButtonSimpleStory from './story/ButtonSimpleStory';
 import DialogStory from './story/DialogStory';
 import DividerStory from './story/DividerStory';
+import FeatureStatusStory from './story/FeatureStatusStory';
 import InlineLinkStory from './story/InlineLinkStory';
 import InputStory from './story/InputStory';
 import KebabMenuStory from './story/KebabMenuStory';
@@ -81,16 +82,20 @@ export function Gallery() {
                 <TableStory />
             </GalleryDisplayArea>
 
+            <GalleryDisplayArea title="Kebab Menu">
+                <KebabMenuStory />
+            </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Feature Status">
+                <FeatureStatusStory />
+            </GalleryDisplayArea>
+
             <GalleryDisplayArea title="Divider">
                 <DividerStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Tabs *Need to update to match latest design updates*">
                 <TabsStory />
-            </GalleryDisplayArea>
-
-            <GalleryDisplayArea title="Kebab Menu">
-                <KebabMenuStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Grid: COMING SOON"> </GalleryDisplayArea>
