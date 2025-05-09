@@ -1,0 +1,56 @@
+@import '@styles/layer-order.scss';
+
+@layer components {
+    .container {
+        align-items: center;
+        background-color: var(--utility-neutral-10);
+        color: var(--utility-neutral-70);
+        display: grid;
+        font-size: var(--spacing-s);
+        grid-template-columns: repeat(auto-fill, minmax(0, auto));
+        padding: var(--spacing-m);
+        row-gap: var(--spacing-s);
+
+        .logo {
+            padding-right: var(--spacing-m);
+        }
+
+        > :not(.logo) {
+            border-left: 1px solid var(--utility-neutral-20);
+        }
+
+        > :not(.logo):not(.flex) {
+            padding: 0 var(--spacing-m);
+        }
+
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr;
+
+            > * {
+                width: 100%;
+            }
+
+            > :not(.logo) {
+                border-left: none;
+            }
+
+            > :not(.logo):not(.flex) {
+                padding: 0;
+            }
+        }
+    }
+
+    .flex {
+        align-items: center;
+        display: flex;
+        padding-left: var(--spacing-m);
+
+        img {
+            padding-right: var(--spacing-s);
+        }
+
+        @media (max-width: 800px) {
+            padding: 0;
+        }
+    }
+}

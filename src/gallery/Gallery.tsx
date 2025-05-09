@@ -10,6 +10,7 @@ import ButtonSimpleStory from './story/ButtonSimpleStory';
 import DialogStory from './story/DialogStory';
 import DividerStory from './story/DividerStory';
 import FeatureStatusStory from './story/FeatureStatusStory';
+import FooterStory from './story/FooterStory';
 import InlineLinkStory from './story/InlineLinkStory';
 import InputStory from './story/InputStory';
 import KebabMenuStory from './story/KebabMenuStory';
@@ -24,6 +25,10 @@ export function Gallery() {
         <main>
             <GalleryDisplayArea title="Header & Navigation">
                 <NavigationStory />
+            </GalleryDisplayArea>
+
+            <GalleryDisplayArea title="Footer">
+                <FooterStory />
             </GalleryDisplayArea>
 
             <GalleryDisplayArea title="Typography (Fluid)">

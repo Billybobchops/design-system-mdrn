@@ -47,6 +47,7 @@ export default createModuleFederationConfig({
         './Icon': './src/components/Icon.tsx',
         './InlineLink': './src/components/InlineLink.tsx',
         './Header': './src/components/navigation/Header.tsx',
+        './Footer': './src/components/navigation/Footer.tsx',
         './AccountLinks': './src/components/AccountLinks.tsx',
         './Form': './src/components/form/Form.tsx',
         './PhoneInput': './src/components/form/PhoneInput.tsx',
