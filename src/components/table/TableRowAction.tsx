@@ -7,11 +7,11 @@ import classes from './TableRowAction.module.scss';
 interface TableRowActionProps {
     onClick: () => void;
     isOpen?: boolean;
-    isChecked?: boolean;
+    isActive?: boolean;
     type: 'chevron' | 'checkbox';
 }
 
-const TableRowAction: React.FC<TableRowActionProps> = ({ onClick, isOpen, isChecked = false, type }) => {
+const TableRowAction: React.FC<TableRowActionProps> = ({ onClick, isOpen, isActive = false, type }) => {
     const accessibleText = type === 'chevron' ? (isOpen ? 'Collapse' : 'Expand') : 'Select all rows';
 
     return (
@@ -22,11 +22,12 @@ const TableRowAction: React.FC<TableRowActionProps> = ({ onClick, isOpen, isChec
                 boxShadow: isOpen ? '0 1px 0 0 var(--theme-a-4)' : 'none',
                 position: isOpen ? 'relative' : 'static',
                 minWidth: '50px',
+                width: '5%',
             }}
         >
             <button
                 className={classes.button}
-                onClick={onClick}
+                onClick={type === 'chevron' ? onClick : undefined}
                 type="button"
                 aria-expanded={type === 'chevron' ? isOpen : undefined}
             >
@@ -37,7 +38,7 @@ const TableRowAction: React.FC<TableRowActionProps> = ({ onClick, isOpen, isChec
                         <TableChevronCollapsed fill={'var(--theme-a-3)'} />
                     )
                 ) : (
-                    <Checkbox checked={isChecked} onChange={onClick} />
+                    <Checkbox checked={isActive} onChange={onClick} spacing={'u-m-none'} />
                 )}
                 <VisuallyHidden>{accessibleText}</VisuallyHidden>
             </button>

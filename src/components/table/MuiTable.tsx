@@ -1,4 +1,5 @@
 import { formatHeader, getNestedColumns, isNestedArray, isRecord } from '@/components/table/utils';
+import Checkbox from '@components/form/Checkbox';
 import CollapsibleTableRow from '@components/table/CollapsibleTableRow';
 import MuiTableBody from '@components/table/MuiTableBody';
 import MuiTableCell from '@components/table/MuiTableCell';
@@ -16,11 +17,9 @@ interface MuiTableProps {
     getRowId?: (row: Record<string, unknown>) => string;
     title?: string;
     hasCheckboxes?: boolean;
-    onSelectAll?: (selected: boolean) => void;
-    allSelected?: boolean;
 }
 
-const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelected }: MuiTableProps) => {
+const MuiTable = ({ data, getRowId, title, hasCheckboxes }: MuiTableProps) => {
     // Validate data shape
     if (!data.every(isRecord)) {
         return <div>Invalid data format</div>;
@@ -34,7 +33,7 @@ const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelect
     );
 
     // State management
-    const [expandedRows, setExpandedRows] = useState<Record<string, boolean>>({});
+    const [activeRows, setActiveRows] = useState<Record<string, boolean>>({});
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
     const typedData = data as Array<Record<string, unknown>>;
@@ -42,24 +41,24 @@ const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelect
 
     // Toggle all rows
     const toggleAllRows = useCallback(() => {
-        setExpandedRows(prev => {
-            const allCurrentlyExpanded = typedData.every(row => prev[getRowKey(row)]);
-            return Object.fromEntries(typedData.map(row => [getRowKey(row), !allCurrentlyExpanded]));
+        setActiveRows(prev => {
+            const allCurrentlyActive = typedData.every(row => prev[getRowKey(row)]);
+            return Object.fromEntries(typedData.map(row => [getRowKey(row), !allCurrentlyActive]));
         });
-    }, [typedData, getRowKey]); // Removed expandedRows dependency
+    }, [typedData, getRowKey]);
 
     // Toggle single row
     const toggleRow = useCallback((rowId: string) => {
-        setExpandedRows(prev => ({
+        setActiveRows(prev => ({
             ...prev,
             [rowId]: !prev[rowId],
         }));
     }, []);
 
-    // Check if all rows are expanded
-    const allExpanded = useMemo(() => {
-        return typedData.length > 0 && typedData.every(row => expandedRows[getRowKey(row)]);
-    }, [typedData, expandedRows, getRowKey]);
+    // Check if all rows are active
+    const allActive = useMemo(() => {
+        return typedData.length > 0 && typedData.every(row => activeRows[getRowKey(row)]);
+    }, [typedData, activeRows, getRowKey]);
 
     // Get all top-level keys in original order
     const allKeysInOrder = Object.keys(sampleItem);
@@ -112,13 +111,9 @@ const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelect
                 <MuiTableHead>
                     <MuiTableRow isNested={false}>
                         {hasNestedData ? (
-                            <TableRowAction type="chevron" onClick={toggleAllRows} isOpen={allExpanded} />
+                            <TableRowAction type="chevron" onClick={toggleAllRows} isActive={allActive} />
                         ) : hasCheckboxes ? (
-                            <TableRowAction
-                                type="checkbox"
-                                onClick={() => onSelectAll?.(!allSelected)}
-                                isChecked={allSelected}
-                            />
+                            <TableRowAction type="checkbox" onClick={toggleAllRows} isActive={allActive} />
                         ) : (
                             ''
                         )}
@@ -137,20 +132,30 @@ const MuiTable = ({ data, getRowId, title, hasCheckboxes, onSelectAll, allSelect
                         : typedData
                     ).map(row => {
                         const rowId = getRowKey(row);
-                        const isExpanded = !!expandedRows[rowId];
+                        const isActive = !!activeRows[rowId];
                         const rowHasNestedData = nestedTables.some(table => isNestedArray(row[table.key]));
 
                         return rowHasNestedData ? (
                             <CollapsibleTableRow
-                                key={rowId}
-                                row={row}
-                                isOpen={isExpanded}
-                                onToggle={() => toggleRow(rowId)}
                                 columns={columns}
+                                isOpen={isActive}
+                                key={rowId}
                                 nestedTables={nestedTables}
+                                onToggle={() => toggleRow(rowId)}
+                                row={row}
                             />
                         ) : (
                             <MuiTableRow isNested={false} key={rowId}>
+                                {hasCheckboxes && (
+                                    <MuiTableCell sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                                        <Checkbox
+                                            checked={isActive}
+                                            onChange={() => toggleRow(rowId)}
+                                            spacing={'u-m-none'}
+                                        />
+                                    </MuiTableCell>
+                                )}
+
                                 {columns.map(column => (
                                     <MuiTableCell key={column.key}>{String(row[column.key])}</MuiTableCell>
                                 ))}

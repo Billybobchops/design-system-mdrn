@@ -33,7 +33,7 @@ const CollapsibleTableRow = <T extends Record<string, unknown>, K extends Record
                 isNested={false}
                 sx={{ boxShadow: isOpen ? '0 -1px 0 0 var(--theme-a-4)' : 'none', position: 'relative' }}
             >
-                <TableRowAction type="chevron" onClick={onToggle} isOpen={isOpen} />
+                <TableRowAction type="chevron" onClick={onToggle} isActive={isOpen} />
                 {columns.map(column => {
                     if (column.isNestedHeader) {
                         return <MuiTableCell key={String(column.key)}>Expand to View</MuiTableCell>;
@@ -56,7 +56,10 @@ const CollapsibleTableRow = <T extends Record<string, unknown>, K extends Record
                                 if (!nestedData || !nestedData.length) return null;
 
                                 return (
-                                    <MuiTableContainer key={section.title} sx={{ tableLayout: 'fixed' }}>
+                                    <MuiTableContainer
+                                        key={section.title}
+                                        sx={{ tableLayout: 'fixed', marginBottom: '0' }}
+                                    >
                                         <MuiTableHead>
                                             <MuiTableRow isNested={true}>
                                                 <MuiTableCell colSpan={section.columns.length}>

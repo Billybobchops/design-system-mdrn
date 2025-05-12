@@ -64,8 +64,8 @@ export const Paperless: React.FC<IconProps> = ({ fill = 'var(--utility-neutral-0
             <title>Paperless</title>
             <g clipPath="url(#clip0_8671_7103)">
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M8.54521 14.3286C8.48414 14.585 8.22654 14.7439 7.96988 14.6834C7.71348 14.6223 7.55401 14.3645 7.61514 14.1081C7.61514 14.1081 8.69295 9.48292 5.30041 4.30228C5.15607 4.08213 5.21787 3.78547 5.43887 3.64082C5.65901 3.49649 5.95567 3.55833 6.10061 3.77875C9.74675 9.34738 8.54521 14.3286 8.54521 14.3286Z"
                     fill={fill}
                 />
@@ -75,8 +75,8 @@ export const Paperless: React.FC<IconProps> = ({ fill = 'var(--utility-neutral-0
                     stroke={fill}
                 />
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M7.63803 13.6698C7.58588 13.9001 7.36585 14.0428 7.14663 13.9885C6.92763 13.9336 6.79142 13.7021 6.84364 13.4717C6.84364 13.4717 7.76422 9.31739 4.86656 4.66414C4.74328 4.4664 4.79607 4.19995 4.98483 4.07002C5.17285 3.94038 5.42624 3.99592 5.55003 4.1939C8.6643 9.19566 7.63803 13.6698 7.63803 13.6698Z"
                     fill={fill}
                 />
@@ -86,8 +86,8 @@ export const Paperless: React.FC<IconProps> = ({ fill = 'var(--utility-neutral-0
                     stroke={fill}
                 />
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M2.35484 15.9903C2.10284 16.0453 1.85828 15.8609 1.80863 15.5785C1.7596 15.296 1.92408 15.0212 2.17608 14.9663C2.17608 14.9663 6.71208 13.9513 9.94153 8.24196C10.0787 7.99917 10.3667 7.92682 10.5839 8.08126C10.8006 8.235 10.8651 8.55779 10.7279 8.80127C7.25642 14.9378 2.35484 15.9903 2.35484 15.9903Z"
                     fill={fill}
                 />

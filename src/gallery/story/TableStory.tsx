@@ -312,7 +312,8 @@ const TableStory = () => {
     return (
         <>
             <MuiTable title="Example Ai Report Generator with nested rows" data={dummyRowData} />
-            <MuiTable title="Non-nested table" data={dummyRowData2} />
+            <MuiTable title="Selectable Rows" hasCheckboxes={true} data={dummyRowData2} />
+            <MuiTable title="Basic non-nested table" data={dummyRowData2} />
         </>
     );
 };
