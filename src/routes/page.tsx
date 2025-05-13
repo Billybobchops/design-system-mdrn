@@ -1,6 +1,5 @@
 import { Helmet } from '@modern-js/runtime/head';
-// import '@styles/_layer-order.scss';
-import '../styles/_design-system-root.scss';
+import '../styles/design-system.scss';
 import { Gallery } from '@/gallery/Gallery';
 
 const Index = () => (

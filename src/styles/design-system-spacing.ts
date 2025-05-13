@@ -1,1 +1,1 @@
-import './_design-system-spacing.scss';
+import './_spacing.scss';

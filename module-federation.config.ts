@@ -58,7 +58,7 @@ export default createModuleFederationConfig({
         './MuiTableRow': './src/components/table/MuiTableRow.tsx',
         './MuiCollapse': './src/components/table/MuiCollapse.tsx',
         './FeatureStatus': './src/components/FeatureStatus.tsx',
-        // './DesignSystemSpacing': './src/styles/design-system-spacing.ts'
+        // './DesignSystemSpacing': './src/styles/spacing.ts'
     },
     shared: {
         react: { singleton: true, requiredVersion: '18.3.1' },

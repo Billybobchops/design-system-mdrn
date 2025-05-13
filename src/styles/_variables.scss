@@ -1,5 +1,5 @@
-@import './layer-order';
-@import './design-system-reset';
+// @import './layer-order';
+// @import './reset';
 
 @layer design-system {
     :root {
@@ -162,4 +162,4 @@
     }
 }
 
-@import './design-system-spacing';
+// @import './spacing';
