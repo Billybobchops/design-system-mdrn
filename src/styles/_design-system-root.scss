@@ -1,6 +1,5 @@
 @import './layer-order';
 @import './design-system-reset';
-@import './design-system-spacing';
 
 @layer design-system {
     :root {
@@ -162,3 +161,5 @@
         --required-color: var(--utility-red-50);
     }
 }
+
+@import './design-system-spacing';
