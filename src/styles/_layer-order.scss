@@ -4,27 +4,37 @@
 @layer reset, design-system, components, overrides, spacing;
 
 // Use the !important flag to force the order
-// @layer reset {
-//   /* Empty rule to ensure layer exists first */
-//   :root { --layer-reset: true !important; }
-// }
+@layer reset {
+    /* Empty rule to ensure layer exists first */
+    :root {
+        --layer-reset: true !important;
+    }
+}
 
-// @layer design-system {
-//   /* Empty rule to ensure layer exists second */
-//   :root { --layer-design-system: true !important; }
-// }
+@layer design-system {
+    /* Empty rule to ensure layer exists second */
+    :root {
+        --layer-design-system: true !important;
+    }
+}
 
-// @layer components {
-//   /* Empty rule to ensure layer exists third */
-//   :root { --layer-components: true !important; }
-// }
+@layer components {
+    /* Empty rule to ensure layer exists third */
+    :root {
+        --layer-components: true !important;
+    }
+}
 
-// @layer overrides {
-//   /* Empty rule to ensure layer exists fourth */
-//   :root { --layer-overrides: true !important; }
-// }
+@layer overrides {
+    /* Empty rule to ensure layer exists fourth */
+    :root {
+        --layer-overrides: true !important;
+    }
+}
 
-// @layer spacing {
-//   /* Empty rule to ensure layer exists last */
-//   :root { --layer-spacing: true !important; }
-// }
+@layer spacing {
+    /* Empty rule to ensure layer exists last */
+    :root {
+        --layer-spacing: true !important;
+    }
+}
