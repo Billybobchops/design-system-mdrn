@@ -1,6 +1,6 @@
 @import '@styles/layer-order.scss';
 
-@layer components {
+@layer base.components {
     .link {
         color: var(--theme-a-4);
         text-decoration: underline;

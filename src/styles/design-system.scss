@@ -1,9 +1,10 @@
 @import '@/styles/_layer-order.scss';
-// @import '@/styles/_reset.scss';
-// @import '@/styles/_variables.scss';
-// @import '@/styles/mixins.scss';
-// @import '@/styles/_spacing.scss';
-@import url('@/styles/_reset.scss') layer(reset);
-@import url('@/styles/_variables.scss') layer(variables);
-@import url('@/styles/mixins.scss') layer(variables);
-@import url('@/styles/_spacing.scss') layer(spacing);
+@import '@/styles/_reset.scss';
+@import '@/styles/_variables.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/_spacing.scss';
+
+// @import url('@/styles/_reset.scss') layer(reset);
+// @import url('@/styles/_variables.scss') layer(variables);
+// @import url('@/styles/mixins.scss') layer(variables);
+// @import url('@/styles/_spacing.scss') layer(spacing);

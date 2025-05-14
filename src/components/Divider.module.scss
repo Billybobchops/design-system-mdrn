@@ -1,6 +1,6 @@
 @import '@styles/layer-order.scss';
 
-@layer components {
+@layer base.components {
     .dividerLight,
     .dividerDark {
         margin: 12px 0;

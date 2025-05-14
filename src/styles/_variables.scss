@@ -1,7 +1,7 @@
 // @import './layer-order';
 // @import './reset';
 
-@layer design-system {
+@layer base.variables {
     :root {
         /* Display Vars: just for demo gallery purposes */
         --display-border: 3px dashed skyblue;
